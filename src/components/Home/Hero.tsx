@@ -53,7 +53,7 @@ const Hero = () => {
         modules={[Navigation, Autoplay]}
         slidesPerView={"auto"}
         loop={true}
-        speed={2000}
+        speed={1000}
         autoplay={{ delay: 5000 }}
         navigation={{
           nextEl: ".hero-next",

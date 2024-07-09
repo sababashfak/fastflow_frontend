@@ -32,7 +32,7 @@ const HeroSlide: React.FC<SlideProps> = ({ slide }) => {
           >
             {slide.btnText}
           </Link>
-          <div className="absolute bottom-[60px] left-[-100px] z-[-1] h-[250px] w-[400px] bg-black/40"></div>
+          <div className="absolute bottom-[60px] left-[-100px] z-[-1] h-[250px] w-[400px] bg-black/20 blur-3xl"></div>
         </div>
       </div>
     </div>
