@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const NavbarTop = () => {
   return (
-    <div className="bg-dark fixed left-0 top-0 w-full">
+    <div className="bg-dark fixed left-0 top-0 z-[999] w-full">
       <div className="container">
         <div className="flex flex-wrap items-center justify-between gap-x-10">
           <div className="flex gap-6 border-l border-r border-[#ffffff36] px-5">

@@ -36,7 +36,7 @@ const Navbar = () => {
         <NavbarTop />
         <div
           className={cn(
-            "fixed left-0 top-[50px] w-full bg-white duration-300",
+            "fixed left-0 top-[50px] z-[999] w-full bg-white duration-300",
             sticky && "top-0",
           )}
         >
