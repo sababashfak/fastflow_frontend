@@ -53,7 +53,7 @@ const AboutUs = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="bg-white py-12 md:py-16 lg:py-20">
+    <section className="bg-white py-16 md:py-20">
       <div className="container grid grid-cols-1 items-center gap-x-10 md:grid-cols-[auto_1fr] xl:gap-x-16">
         <div className="w-full md:max-w-sm lg:max-w-md xl:max-w-lg">
           <img
