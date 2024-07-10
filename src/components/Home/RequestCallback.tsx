@@ -47,7 +47,7 @@ const RequestCallback = () => {
               touch with you shortly to discuss your project needs.
             </p>
           </div>
-          <div className="mx-auto w-full max-w-md rounded-md bg-white p-5 shadow-[0_2px_10px_rgba(0,0,0,0.075)] md:min-w-[380px]">
+          <div className="mx-auto w-full max-w-md rounded-md bg-white p-5 shadow-[0_2px_10px_rgba(0,0,0,0.075)] md:min-w-[380px] lg:p-7">
             <Form {...form}>
               <form
                 className="space-y-4"
