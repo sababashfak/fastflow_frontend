@@ -2,6 +2,7 @@ import AboutUs from "../components/Home/AboutUs";
 import Hero from "../components/Home/Hero";
 import NextSections from "../components/Home/NextSections";
 import OurServices from "../components/Home/OurServices";
+import RequestCallback from "../components/Home/RequestCallback";
 import WhyChooseUs from "../components/Home/WhyChooseUs";
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
       <AboutUs />
       <OurServices />
       <WhyChooseUs />
+      <RequestCallback />
       <NextSections />
     </main>
   );

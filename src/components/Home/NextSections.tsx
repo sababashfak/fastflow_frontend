@@ -1,12 +1,4 @@
-const sections = [
-  "Callback Form",
-  "Projects",
-  "Reviews",
-  "Blog",
-  "FAQ",
-  "Contact Callback",
-  "Footer",
-];
+const sections = ["Projects", "Reviews", "Blog", "FAQ", "Contact Callback"];
 
 const NextSections = () => {
   return (
