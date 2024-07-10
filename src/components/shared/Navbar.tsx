@@ -1,9 +1,16 @@
 import { useEffect, useState } from "react";
+import { IoMdMenu } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { cn } from "../../lib/utils";
+import MobileNavbar from "./MobileNavbar";
 import NavbarTop from "./NavbarTop";
 
-const menutItems = [
+export type MenuItem = {
+  name: string;
+  link: string;
+};
+
+const menuItems: MenuItem[] = [
   { name: "Home", link: "/" },
   { name: "About", link: "/about" },
   { name: "Services", link: "/services" },
@@ -12,7 +19,15 @@ const menutItems = [
 ];
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
+
+  const openNavbar = () => {
+    setIsOpen(true);
+  };
+  const closeNavbar = () => {
+    setIsOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,32 +51,42 @@ const Navbar = () => {
         <NavbarTop />
         <div
           className={cn(
-            "fixed left-0 top-[50px] z-[999] w-full bg-white duration-300",
+            "fixed left-0 top-[0] z-[999] w-full bg-white duration-300 md:top-[50px]",
             sticky && "top-0",
           )}
         >
           <div className="container">
-            <div className="flex flex-wrap justify-between gap-x-10 py-5">
-              <h2 className="text-primary text-2xl font-bold uppercase">
+            <div className="flex flex-wrap items-center justify-between gap-x-10 py-3.5 md:py-5">
+              <h2 className="text-2xl font-bold uppercase text-primary">
                 Renovate
               </h2>
-              <ul className="flex items-center gap-3">
-                {menutItems.map((item) => (
+              <div className="md:hidden">
+                <button onClick={openNavbar} className="flex items-center">
+                  <IoMdMenu className="text-3xl text-dark" />
+                </button>
+              </div>
+              <ul className="hidden items-center gap-5 md:flex">
+                {menuItems.map((item) => (
                   <li key={item.name}>
                     <NavLink
                       to={item.link}
-                      className="hover:text-primary text-dark [&.active]:text-primary text-[13px] font-semibold uppercase duration-300"
+                      className="text-[13px] font-semibold uppercase text-dark duration-300 hover:text-primary [&.active]:text-primary"
                     >
                       {item.name}
                     </NavLink>
                   </li>
                 ))}
               </ul>
+              <MobileNavbar
+                items={menuItems}
+                isOpen={isOpen}
+                closeNavbar={closeNavbar}
+              />
             </div>
           </div>
         </div>
       </header>
-      <div className="h-[122px] w-full"></div>
+      <div className="h-[60px] w-full md:h-[122px]"></div>
     </>
   );
 };

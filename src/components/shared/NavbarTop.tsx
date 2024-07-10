@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 
 const NavbarTop = () => {
   return (
-    <div className="bg-dark fixed left-0 top-0 z-[999] w-full">
+    <div className="fixed left-0 top-0 z-[999] hidden w-full bg-dark md:block">
       <div className="container">
-        <div className="flex flex-wrap items-center justify-between gap-x-10">
+        <div className="flex items-center justify-between gap-x-10">
           <div className="flex gap-6 border-l border-r border-[#ffffff36] px-5">
             <div className="flex items-center gap-2.5">
               <IoMdCall className="text-primary" />
               <a
                 href="#"
-                className="hover:text-primary text-[11px] font-medium uppercase text-[#fffc] duration-300"
+                className="text-[11px] font-medium uppercase text-[#fffc] duration-300 hover:text-primary"
               >
                 +1-2345-6789-101
               </a>
@@ -20,7 +20,7 @@ const NavbarTop = () => {
               <IoMdMail className="text-primary" />
               <a
                 href="#"
-                className="hover:text-primary text-[11px] font-medium uppercase text-[#fffc] duration-300"
+                className="text-[11px] font-medium uppercase text-[#fffc] duration-300 hover:text-primary"
               >
                 contact@reconstruction.com
               </a>
@@ -31,14 +31,14 @@ const NavbarTop = () => {
               <IoMdPerson className="text-primary" />
               <Link
                 to="/login"
-                className="hover:text-primary text-[11px] font-medium uppercase text-[#fffc] duration-300"
+                className="text-[11px] font-medium uppercase text-[#fffc] duration-300 hover:text-primary"
               >
                 Login
               </Link>
             </div>
             <Link
               to="/contact"
-              className="bg-primary text-darkt-primary hover:bg-primary/90 flex h-[50px] items-center px-4 text-[11px] font-semibold uppercase duration-300"
+              className="text-darkt-primary flex h-[50px] items-center bg-primary px-4 text-[11px] font-semibold uppercase duration-300 hover:bg-primary/90"
             >
               Get a quote
             </Link>

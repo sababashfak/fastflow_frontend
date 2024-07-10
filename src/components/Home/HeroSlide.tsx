@@ -8,7 +8,7 @@ type SlideProps = {
 
 const HeroSlide: React.FC<SlideProps> = ({ slide }) => {
   return (
-    <div className="relative min-h-[650px]">
+    <div className="relative flex min-h-[560px] flex-col justify-center sm:min-h-[650px]">
       <img
         src={slide.image}
         alt={slide.title}
@@ -16,14 +16,14 @@ const HeroSlide: React.FC<SlideProps> = ({ slide }) => {
       />
       <div className="absolute left-0 top-0 z-[-1] h-full w-full bg-black/60"></div>
       <div className="z-30">
-        <div className="container relative py-36">
-          <h4 className="mb-3 text-[15px] font-semibold uppercase tracking-wide text-primary">
+        <div className="container relative py-12">
+          <h4 className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary sm:text-[15px]">
             {slide.title}
           </h4>
-          <h2 className="mb-5 max-w-lg text-[42px] font-bold leading-tight text-white">
+          <h2 className="mb-5 max-w-lg text-4xl font-bold leading-tight text-white md:text-[42px]">
             {slide.subtitle}
           </h2>
-          <p className="mb-5 max-w-md text-base text-gray-100">
+          <p className="mb-7 max-w-md text-[15px] text-gray-100 sm:text-base">
             {slide.description}
           </p>
           <Link
