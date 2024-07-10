@@ -1,5 +1,6 @@
 import AboutUs from "../components/Home/AboutUs";
 import Hero from "../components/Home/Hero";
+import NextSections from "../components/Home/NextSections";
 import OurServices from "../components/Home/OurServices";
 import WhyChooseUs from "../components/Home/WhyChooseUs";
 
@@ -10,6 +11,7 @@ const Home = () => {
       <AboutUs />
       <OurServices />
       <WhyChooseUs />
+      <NextSections />
     </main>
   );
 };
