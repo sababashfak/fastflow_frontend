@@ -15,6 +15,7 @@ const menuItems: MenuItem[] = [
   { name: "About", link: "/about" },
   { name: "Services", link: "/services" },
   { name: "Projects", link: "/projects" },
+  { name: "Blog", link: "/blog" },
   { name: "Contact", link: "/contact" },
 ];
 
@@ -51,8 +52,8 @@ const Navbar = () => {
         <NavbarTop />
         <div
           className={cn(
-            "fixed left-0 top-[0] z-[999] w-full bg-white duration-300 md:top-[50px]",
-            sticky && "top-0",
+            "fixed left-0 top-[0] z-[999] w-full bg-white shadow-sm duration-300 md:top-[50px]",
+            sticky && "top-0 shadow-md md:top-0",
           )}
         >
           <div className="container">

@@ -10,11 +10,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   const { name, description, image, slug } = service;
 
   return (
-    <div className="mx-auto grid max-w-md grid-cols-[auto_1fr] items-center gap-5 border bg-white p-8 sm:p-5 md:p-8">
+    <div className="mx-auto grid max-w-md grid-cols-[auto_1fr] items-center gap-5 border bg-white p-8 sm:p-5 md:p-7">
       <img
         src={`/services/home/${image}`}
         alt={name}
-        className="h-full max-h-[130px] w-20 object-cover"
+        className="h-full max-h-[130px] w-20 object-cover xl:max-h-[115px] xl:w-24"
       />
       <div className="">
         <h3 className="border-b pb-3 font-semibold">{name}</h3>

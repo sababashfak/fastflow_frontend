@@ -3,6 +3,7 @@ const sections = [
   "Projects",
   "Reviews",
   "Blog",
+  "FAQ",
   "Contact Callback",
   "Footer",
 ];

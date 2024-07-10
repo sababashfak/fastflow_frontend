@@ -23,7 +23,7 @@ const OurServices = () => {
         <div className="container relative z-10 flex flex-wrap items-center justify-between gap-x-40 gap-y-5 bg-[linear-gradient(to_right,#222_75%,#333_75%,#333_100%)] py-10 lg:py-12">
           <h4 className="flex items-center gap-5 bg-[linear-gradient(to_right,#333_50%,#333_50%,#3330_50%,#0000_100%)] p-2 md:max-w-[70%]">
             <span className="block h-[1px] w-10 bg-primary"></span>
-            <span className="font-semibold text-white">
+            <span className="font-semibold text-white xl:text-lg">
               You need more information about our services and company
               capabilities?
             </span>
