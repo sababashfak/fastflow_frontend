@@ -24,7 +24,9 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
       )}
     >
       <div className="flex items-center pb-10">
-        <h2 className="text-2xl font-bold uppercase text-white">Renovate</h2>
+        <h2 className="text-2xl font-bold uppercase text-white">
+          Fast<span className="text-primary">flow</span>
+        </h2>
         <button
           onClick={closeNavbar}
           className="ml-auto text-3xl text-gray-200 duration-300 hover:text-white"

@@ -59,7 +59,7 @@ const Navbar = () => {
           <div className="container">
             <div className="flex flex-wrap items-center justify-between gap-x-10 py-3.5 md:py-5">
               <h2 className="text-2xl font-bold uppercase text-primary">
-                Renovate
+                Fast<span className="text-dark">flow</span>
               </h2>
               <div className="md:hidden">
                 <button onClick={openNavbar} className="flex items-center">
