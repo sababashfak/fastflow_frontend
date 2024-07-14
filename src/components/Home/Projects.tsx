@@ -45,8 +45,8 @@ const Projects = () => {
                     src={`/projects/${project.image}`}
                     alt={project.name}
                   />
-                  <div className="bg-black/30">
-                    <div className="absolute left-0 top-0 flex h-full w-full flex-col items-start justify-between bg-[linear-gradient(to_top,#000d,#0000)] px-8 py-6">
+                  <div className="absolute left-0 top-0 h-full w-full bg-black/30">
+                    <div className="flex h-full w-full flex-col items-start justify-between bg-[linear-gradient(to_top,#000d,#0000)] px-8 py-6">
                       <h4 className="bg-black/30 p-1.5 text-xl font-bold text-white backdrop-blur-md">
                         0{index + 1}.
                       </h4>

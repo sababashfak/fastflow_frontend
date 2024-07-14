@@ -1,3 +1,4 @@
+import WorkingProcess from "@/components/Home/WorkingProcess";
 import AboutUs from "../components/Home/AboutUs";
 import Hero from "../components/Home/Hero";
 import NextSections from "../components/Home/NextSections";
@@ -14,6 +15,7 @@ const Home = () => {
       <OurServices />
       <WhyChooseUs />
       <RequestCallback />
+      <WorkingProcess />
       <Projects />
       <NextSections />
     </main>
