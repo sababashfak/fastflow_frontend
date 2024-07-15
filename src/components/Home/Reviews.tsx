@@ -1,4 +1,5 @@
 import { Review } from "@/interfaces/review";
+import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -40,15 +41,18 @@ const reviews: Review[] = [
 
 const Reviews = () => {
   return (
-    <section className="bg-[url(/review-cover.jpg)] bg-cover bg-center bg-no-repeat">
+    <section className="bg-[url(/review-cover-2.jpg)] bg-cover bg-fixed bg-center bg-no-repeat">
       <div className="bg-black/70 py-16 md:py-20">
-        <div className="container relative z-[1]">
+        <div className="container relative flex items-center gap-1 sm:gap-2 lg:gap-5">
+          <button className="review-prev flex size-10 shrink-0 items-center justify-center rounded-full border border-white bg-transparent text-white duration-300 hover:bg-white hover:text-dark md:size-14">
+            <GoChevronLeft className="size-6 md:size-7" />
+          </button>
           <Swiper
             modules={[Navigation, Autoplay]}
             slidesPerView={1}
             loop={true}
             speed={1000}
-            autoplay={{ delay: 5000 }}
+            autoplay={{ delay: 3000 }}
             navigation={{
               nextEl: ".review-next",
               prevEl: ".review-prev",
@@ -60,6 +64,9 @@ const Reviews = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+          <button className="review-prev flex size-10 shrink-0 items-center justify-center rounded-full border border-white bg-transparent text-white duration-300 hover:bg-white hover:text-dark md:size-14">
+            <GoChevronRight className="size-6 md:size-7" />
+          </button>
         </div>
       </div>
     </section>
