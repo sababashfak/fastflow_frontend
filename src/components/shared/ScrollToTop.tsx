@@ -28,7 +28,7 @@ const ScrollToTop = () => {
     <button
       onClick={handleClick}
       className={cn(
-        "invisible fixed bottom-16 right-4 z-[99] translate-y-[30px] opacity-0 duration-300",
+        "invisible fixed bottom-10 right-4 z-[99] translate-y-[30px] opacity-0 duration-300",
         isVisible && "visible translate-y-0 opacity-100",
       )}
     >

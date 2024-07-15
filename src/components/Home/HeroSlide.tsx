@@ -28,7 +28,7 @@ const HeroSlide: React.FC<SlideProps> = ({ slide }) => {
           </p>
           <Link
             to={slide.btnUrl!}
-            className="inline-block rounded-full border-2 border-primary bg-transparent px-5 py-3 font-semibold text-primary duration-300 hover:bg-primary hover:text-white"
+            className="inline-block rounded-full border-2 border-primary bg-transparent px-5 py-3 font-semibold text-primary duration-300 hover:bg-primary hover:text-dark"
           >
             {slide.btnText}
           </Link>
