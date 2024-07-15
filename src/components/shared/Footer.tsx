@@ -144,7 +144,11 @@ const Footer = () => {
           </p>
           <p className="text-xs text-white/60">
             Developed by{" "}
-            <a target="_blank" href="#" className="font-medium text-primary">
+            <a
+              target="_blank"
+              href="https://poshcoder.com"
+              className="font-medium text-primary"
+            >
               Posh Coder
             </a>
           </p>

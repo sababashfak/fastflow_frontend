@@ -1,8 +1,8 @@
 import AboutUs from "@/components/Home/AboutUs";
 import Blog from "@/components/Home/Blog";
+import ContactCallback from "@/components/Home/ContactCallback";
 import FAQs from "@/components/Home/FAQs";
 import Hero from "@/components/Home/Hero";
-import NextSections from "@/components/Home/NextSections";
 import OurServices from "@/components/Home/OurServices";
 import Projects from "@/components/Home/Projects";
 import RequestCallback from "@/components/Home/RequestCallback";
@@ -23,7 +23,7 @@ const Home = () => {
       <Reviews />
       <Blog />
       <FAQs />
-      <NextSections />
+      <ContactCallback />
     </main>
   );
 };
