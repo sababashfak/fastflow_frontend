@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { IoMdMenu } from "react-icons/io";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { cn } from "../../lib/utils";
 import MobileNavbar from "./MobileNavbar";
 import NavbarTop from "./NavbarTop";
@@ -20,6 +20,7 @@ const menuItems: MenuItem[] = [
 ];
 
 const Navbar = () => {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
 
@@ -45,6 +46,10 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    closeNavbar();
+  }, [location.pathname]);
 
   return (
     <>

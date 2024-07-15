@@ -2,9 +2,9 @@ const UnderConstruction = () => {
   return (
     <section className="py-16 md:py-20">
       <div className="container">
-        <div className="mx-auto aspect-video max-w-4xl overflow-hidden rounded-full bg-white">
+        <div className="mx-auto max-w-4xl">
           <img
-            className="h-full w-full object-cover"
+            className="aspect-video h-full w-full rounded-full object-cover"
             src="/under-construction.jpg"
             alt="Under Construction"
           />
