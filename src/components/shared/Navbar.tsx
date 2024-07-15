@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { IoMdMenu } from "react-icons/io";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { cn } from "../../lib/utils";
 import MobileNavbar from "./MobileNavbar";
 import NavbarTop from "./NavbarTop";
@@ -57,10 +57,10 @@ const Navbar = () => {
           )}
         >
           <div className="container">
-            <div className="flex flex-wrap items-center justify-between gap-x-10 py-3.5 md:py-5">
-              <h2 className="text-2xl font-bold uppercase text-primary">
-                Fast<span className="text-dark">flow</span>
-              </h2>
+            <div className="flex flex-wrap items-center justify-between gap-x-10 py-1.5 md:py-2">
+              <Link to="/">
+                <img src="/logo.png" alt="Fastflow" className="h-14" />
+              </Link>
               <div className="md:hidden">
                 <button onClick={openNavbar} className="flex items-center">
                   <IoMdMenu className="text-3xl text-dark" />
@@ -87,7 +87,7 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-      <div className="h-[60px] w-full md:h-[122px]"></div>
+      <div className="h-[68px] w-full md:h-[122px]"></div>
     </>
   );
 };

@@ -68,10 +68,10 @@ const Hero = () => {
       </Swiper>
       <div className="absolute bottom-5 right-5 z-10 flex items-center gap-2">
         <Button className="hero-prev bg-black/70" size="icon">
-          <HiMiniChevronLeft className="text-lg text-primary" />
+          <HiMiniChevronLeft className="text-2xl text-primary" />
         </Button>
         <Button className="hero-next bg-black/70" size="icon">
-          <HiMiniChevronRight className="text-lg text-primary" />
+          <HiMiniChevronRight className="text-2xl text-primary" />
         </Button>
       </div>
     </section>
