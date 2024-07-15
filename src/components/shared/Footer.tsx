@@ -58,30 +58,31 @@ const Footer = () => {
                   <span className="text-white/50">Phone:</span>
                 </div>
                 <a
-                  href="#"
+                  href="tel:+447946193824"
                   className="text-white duration-200 hover:text-primary"
                 >
-                  +1-2345-6789-101
+                  +44-7946-193824
                 </a>
                 <div className="flex items-center gap-2.5">
                   <MdOutlineEmail className="text-base text-primary" />
                   <span className="text-white/50">Email:</span>
                 </div>
                 <a
-                  href="#"
+                  href="mailto:fastflowgassafeengineer@gmail.com"
                   className="text-white duration-200 hover:text-primary"
                 >
-                  contact@construction.com
+                  fastflowgassafeengineer@gmail.com
                 </a>
                 <div className="flex items-center gap-2.5">
                   <SlLocationPin className="text-base text-primary" />
                   <span className="text-white/50">Address:</span>
                 </div>
                 <a
-                  href="#"
+                  href="https://maps.app.goo.gl/V879nD6SdMz9yyNg7"
                   className="text-white duration-200 hover:text-primary"
+                  target="_blank"
                 >
-                  2627 Payne Street, Houston, texas, US
+                  The Watermark, 9-15 Ribbleton Lane, Preston, PR1 5EZ
                 </a>
               </div>
             </div>
@@ -108,26 +109,30 @@ const Footer = () => {
               </h4>
               <div className="flex gap-2">
                 <a
-                  href="#"
-                  className="flex size-9 items-center justify-center border border-white/10 bg-[#333] text-xs text-primary"
+                  href="https://www.facebook.com/ffhpltd"
+                  className="flex size-9 items-center justify-center border border-white/10 bg-[#333] text-[13px] text-primary duration-200 lg:hover:bg-primary lg:hover:text-dark"
+                  target="_blank"
                 >
                   <FaFacebookF />
                 </a>
                 <a
                   href="#"
-                  className="flex size-9 items-center justify-center border border-white/10 bg-[#333] text-xs text-primary"
+                  className="flex size-9 items-center justify-center border border-white/10 bg-[#333] text-[13px] text-primary duration-200 lg:hover:bg-primary lg:hover:text-dark"
+                  target="_blank"
                 >
                   <FaTwitter />
                 </a>
                 <a
                   href="#"
-                  className="flex size-9 items-center justify-center border border-white/10 bg-[#333] text-xs text-primary"
+                  className="flex size-9 items-center justify-center border border-white/10 bg-[#333] text-[13px] text-primary duration-200 lg:hover:bg-primary lg:hover:text-dark"
+                  target="_blank"
                 >
                   <FaLinkedinIn />
                 </a>
                 <a
                   href="#"
-                  className="flex size-9 items-center justify-center border border-white/10 bg-[#333] text-xs text-primary"
+                  className="flex size-9 items-center justify-center border border-white/10 bg-[#333] text-[13px] text-primary duration-200 lg:hover:bg-primary lg:hover:text-dark"
+                  target="_blank"
                 >
                   <FaInstagram />
                 </a>

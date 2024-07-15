@@ -64,19 +64,19 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
         <div className="flex items-center gap-2.5">
           <IoMdCall className="text-lg text-primary" />
           <a
-            href="#"
+            href="tel:+447946193824"
             className="text-sm font-medium uppercase text-[#fffc] duration-300 hover:text-primary"
           >
-            +1-2345-6789-101
+            +44-7946-193824
           </a>
         </div>
         <div className="flex items-center gap-2.5">
           <IoMdMail className="text-lg text-primary" />
           <a
-            href="#"
+            href="mailto:fastflowgassafeengineer@gmail.com"
             className="text-sm font-medium uppercase text-[#fffc] duration-300 hover:text-primary"
           >
-            contact@reconstruction.com
+            fastflowgassafeengineer@gmail.com
           </a>
         </div>
       </div>
