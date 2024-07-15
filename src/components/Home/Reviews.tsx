@@ -41,7 +41,7 @@ const reviews: Review[] = [
 
 const Reviews = () => {
   return (
-    <section className="bg-[url(/review-cover-2.jpg)] bg-cover bg-fixed bg-center bg-no-repeat">
+    <section className="bg-[url(/review-cover.jpg)] bg-cover bg-fixed bg-center bg-no-repeat">
       <div className="bg-black/70 py-16 md:py-20">
         <div className="container relative flex items-center gap-1 sm:gap-2 lg:gap-5">
           <button className="review-prev flex size-10 shrink-0 items-center justify-center rounded-full border border-white bg-transparent text-white duration-300 hover:bg-white hover:text-dark md:size-14">
@@ -64,7 +64,7 @@ const Reviews = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <button className="review-prev flex size-10 shrink-0 items-center justify-center rounded-full border border-white bg-transparent text-white duration-300 hover:bg-white hover:text-dark md:size-14">
+          <button className="review-next flex size-10 shrink-0 items-center justify-center rounded-full border border-white bg-transparent text-white duration-300 hover:bg-white hover:text-dark md:size-14">
             <GoChevronRight className="size-6 md:size-7" />
           </button>
         </div>
