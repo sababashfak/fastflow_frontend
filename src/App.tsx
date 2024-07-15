@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Layout from "./components/shared/Layout";
+import PageNotFound from "./components/shared/PageNotFound";
 import UnderConstruction from "./components/shared/UnderConstruction";
 import { Toaster } from "./components/ui/sonner";
 import Home from "./pages/Home";
@@ -21,6 +22,7 @@ const App = () => {
             <Route path="login" element={<UnderConstruction />} />
             <Route path="privacy-policy" element={<UnderConstruction />} />
             <Route path="terms-of-use" element={<UnderConstruction />} />
+            <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>
