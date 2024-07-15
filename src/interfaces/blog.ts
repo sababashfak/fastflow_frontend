@@ -4,6 +4,5 @@ export interface TBlog {
   categories: string[];
   content: string;
   featuredImage: string;
-  totalComments: number;
   createdAt: string;
 }

@@ -7,7 +7,6 @@ const blogs: TBlog[] = [
     categories: ["Renovation", "Trends"],
     content: "",
     featuredImage: "/blogs/blog-1.jpg",
-    totalComments: 0,
     createdAt: "2024-07-15T00:00:00.000Z",
   },
   {
@@ -16,7 +15,6 @@ const blogs: TBlog[] = [
     categories: ["Tips", "Guides"],
     content: "",
     featuredImage: "/blogs/blog-2.jpg",
-    totalComments: 0,
     createdAt: "2024-07-15T00:00:00.000Z",
   },
   {
@@ -25,7 +23,6 @@ const blogs: TBlog[] = [
     categories: ["Kitchen", "Remodeling"],
     content: "",
     featuredImage: "/blogs/blog-3.jpg",
-    totalComments: 0,
     createdAt: "2024-07-15T00:00:00.000Z",
   },
   {
@@ -34,7 +31,6 @@ const blogs: TBlog[] = [
     categories: ["Budget", "Ideas"],
     content: "",
     featuredImage: "/blogs/blog-4.jpg",
-    totalComments: 0,
     createdAt: "2024-07-15T00:00:00.000Z",
   },
   {
@@ -43,7 +39,6 @@ const blogs: TBlog[] = [
     categories: ["Sustainability", "Materials"],
     content: "",
     featuredImage: "/blogs/blog-5.jpg",
-    totalComments: 0,
     createdAt: "2024-07-15T00:00:00.000Z",
   },
   {
@@ -52,7 +47,6 @@ const blogs: TBlog[] = [
     categories: ["Small Homes", "Space Management"],
     content: "",
     featuredImage: "/blogs/blog-6.jpg",
-    totalComments: 0,
     createdAt: "2024-07-15T00:00:00.000Z",
   },
 ];
