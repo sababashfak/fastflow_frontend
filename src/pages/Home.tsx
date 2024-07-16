@@ -1,5 +1,6 @@
 import AboutUs from "@/components/Home/AboutUs";
 import Blog from "@/components/Home/Blog";
+import Categories from "@/components/Home/Categories";
 import ContactCallback from "@/components/Home/ContactCallback";
 import FAQs from "@/components/Home/FAQs";
 import Hero from "@/components/Home/Hero";
@@ -14,6 +15,7 @@ const Home = () => {
   return (
     <main>
       <Hero />
+      <Categories />
       <AboutUs />
       <OurServices />
       <WhyChooseUs />
