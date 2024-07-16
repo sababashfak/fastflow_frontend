@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Layout from "./components/shared/Layout";
-import PageNotFound from "./components/shared/PageNotFound";
-import UnderConstruction from "./components/shared/UnderConstruction";
 import { Toaster } from "./components/ui/sonner";
+import BookService from "./pages/BookService";
 import Home from "./pages/Home";
+import PageNotFound from "./pages/PageNotFound";
+import UnderConstruction from "./pages/UnderConstruction";
 
 const App = () => {
   return (
@@ -16,6 +17,10 @@ const App = () => {
             <Route path="" index element={<Home />} />
             <Route path="about" element={<UnderConstruction />} />
             <Route path="services" element={<UnderConstruction />} />
+            <Route
+              path="/book-service/:categorySlug"
+              element={<BookService />}
+            />
             <Route path="projects" element={<UnderConstruction />} />
             <Route path="blog" element={<UnderConstruction />} />
             <Route path="contact" element={<UnderConstruction />} />
