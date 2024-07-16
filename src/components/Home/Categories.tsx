@@ -15,8 +15,12 @@ const Categories = () => {
   return (
     <section className="py-12 md:py-16">
       <div className="container">
-        <SectionTop title="Categories" subtitle="Browse Our Categories" />
-        <div className="mt-12 flex items-center gap-1.5 sm:gap-2 md:gap-3">
+        <SectionTop
+          title="Categories"
+          subtitle="Browse Our Popular Categories"
+          subtitleClass="xl:text-3xl"
+        />
+        <div className="mt-8 flex items-center gap-1.5 sm:mt-12 sm:gap-2 md:gap-3">
           <button className="category-prev flex size-8 shrink-0 items-center justify-center rounded-full bg-[#008FD3] text-white sm:size-10">
             <GoChevronLeft className="size-5 sm:size-6" />
           </button>
