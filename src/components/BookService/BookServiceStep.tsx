@@ -25,7 +25,7 @@ const BookServiceStep: React.FC<BookServiceStepProps> = ({
       className={cn(
         "hidden",
         currentStep >= index && "block",
-        currentStep !== index && "pointer-events-none opacity-60",
+        currentStep !== index && "pointer-events-none opacity-70",
       )}
     >
       <div className="mb-5">
@@ -51,7 +51,12 @@ const BookServiceStep: React.FC<BookServiceStepProps> = ({
           handleFormDataChange={handleFormDataChange}
         />
       )}
-      {step.step_type === "image" && <BookServiceInpImage />}
+      {step.step_type === "image" && (
+        <BookServiceInpImage
+          value={value}
+          handleFormDataChange={handleFormDataChange}
+        />
+      )}
     </div>
   );
 };
