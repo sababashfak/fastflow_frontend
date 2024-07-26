@@ -1,5 +1,6 @@
 import { TCategory } from "@/interfaces/categories";
 import React, { useState } from "react";
+import { toast } from "sonner";
 import BookServiceStep from "./BookServiceStep";
 
 type BookServiceFormProps = {
@@ -22,6 +23,16 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({ category }) => {
   };
 
   const handleContinue = () => {
+    if (!formData[currentStep]) {
+      const errorMessages = {
+        radio: "Please select an option",
+        textarea: "Please enter a description",
+        image: "Please upload an image",
+      };
+
+      return toast.error(errorMessages[steps[currentStep].step_type]);
+    }
+
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
     }
@@ -43,7 +54,7 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({ category }) => {
               step={step}
               index={index}
               currentStep={currentStep}
-              value={formData[currentStep]}
+              value={formData[index]}
               handleFormDataChange={handleFormDataChange}
             />
           ))}

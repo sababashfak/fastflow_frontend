@@ -6,7 +6,7 @@ export interface TStepOption {
 export interface TStep {
   step_name: string;
   step_description?: string;
-  step_type: string;
+  step_type: "radio" | "textarea" | "image";
   step_option?: TStepOption[];
   step_placeholder?: string;
 }

@@ -21,9 +21,10 @@ const BookServiceStep: React.FC<BookServiceStepProps> = ({
 }) => {
   return (
     <div
+      id={`step-${index}`}
       className={cn(
-        "bg-gray-100",
-        currentStep >= index && "bg-white",
+        "hidden",
+        currentStep >= index && "block",
         currentStep !== index && "pointer-events-none opacity-60",
       )}
     >
@@ -44,7 +45,12 @@ const BookServiceStep: React.FC<BookServiceStepProps> = ({
           handleFormDataChange={handleFormDataChange}
         />
       )}
-      {step.step_type === "textarea" && <BookServiceInpTextarea />}
+      {step.step_type === "textarea" && (
+        <BookServiceInpTextarea
+          value={value}
+          handleFormDataChange={handleFormDataChange}
+        />
+      )}
       {step.step_type === "image" && <BookServiceInpImage />}
     </div>
   );
