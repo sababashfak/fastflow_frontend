@@ -1,5 +1,6 @@
 import BookServiceForm from "@/components/BookService/BookServiceForm";
 import useCategories from "@/hooks/useCategories";
+import { TCategory } from "@/interfaces/categories";
 import { useSearchParams } from "react-router-dom";
 
 const BookService = () => {
@@ -22,8 +23,8 @@ const BookService = () => {
         </div>
       </section>
       <BookServiceForm
-        categories={categories}
-        defaultCategory={defaultCategory}
+        categories={categories as TCategory[]}
+        defaultCategory={defaultCategory as TCategory}
       />
     </main>
   );

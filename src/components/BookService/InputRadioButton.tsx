@@ -1,19 +1,17 @@
 import { cn } from "@/lib/utils";
 
 type InputButtonProps = {
-  question: string;
   option: {
     option_name: string;
     option_description?: string;
   };
-  handleFormDataChange: (question: string, value: string) => void;
+  onOptionSelect: (value?: string) => void;
   isChecked: boolean;
 };
 
 const InputRadioButton = ({
-  question,
   option,
-  handleFormDataChange,
+  onOptionSelect,
   isChecked,
 }: InputButtonProps) => {
   return (
@@ -43,7 +41,7 @@ const InputRadioButton = ({
         name="radio"
         value={option.option_name}
         checked={isChecked}
-        onChange={(e) => handleFormDataChange(question, e.target.value)}
+        onChange={(e) => onOptionSelect(e.target.value)}
         hidden
       />
     </label>

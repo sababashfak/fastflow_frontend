@@ -2,6 +2,7 @@ import { TCategory } from "@/interfaces/categories";
 import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 import { toast } from "sonner";
+import BookServiceStep from "./BookServiceStep";
 
 type BookServiceFormProps = {
   categories: TCategory[];
@@ -23,7 +24,7 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [isLastStep, setIsLastStep] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData[]>([]);
-  const steps = category?.steps || [];
+  const steps = category?.steps;
 
   const handleCategoryChange = (slug: string) => {
     const newCategory = categories.find(
@@ -32,7 +33,7 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
     setCategory(newCategory);
   };
 
-  const handleFormDataChange = (question: string, answer: string) => {
+  const handleFormDataSet = (question: string, answer: string) => {
     setFormData((prev) => {
       const newFormData = [...prev];
       newFormData[currentStep] = {
@@ -48,14 +49,8 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
       return toast.error("Please select a category");
     }
 
-    if (!formData[currentStep].answer) {
-      const errorMessages = {
-        radio: "Please select an option",
-        textarea: "Please enter a description",
-        image: "Please upload an image",
-      };
-
-      return toast.error(errorMessages[steps[currentStep].step_type]);
+    if (!formData[currentStep]?.answer) {
+      return toast.error("Please provide the required information");
     }
 
     if (!isLastStep) {
@@ -87,7 +82,7 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
       <div className="container">
         <div className="grid max-w-[640px] grid-cols-1 space-y-20">
           <div className={cn(!!category && "pointer-events-none opacity-70")}>
-            <h3 className="mb-5 text-3xl font-bold text-[#2D3748]">
+            <h3 className="mb-5 text-lg font-semibold text-gray-900 sm:text-xl">
               What would you like to have done?
             </h3>
             <div className="">
@@ -107,16 +102,16 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
               </select>
             </div>
           </div>
-          {/* {steps.map((step, index) => (
+          {!!category && (
             <BookServiceStep
-              key={index}
-              step={step}
-              index={index}
+              steps={steps!}
+              stepIndex={0}
               currentStep={currentStep}
-              value={formData[index]}
-              handleFormDataChange={handleFormDataChange}
+              formData={formData}
+              handleFormDataSet={handleFormDataSet}
+              setIsLastStep={setIsLastStep}
             />
-          ))} */}
+          )}
         </div>
         <div className="mt-5 flex items-center gap-3 sm:mt-7">
           {!!category && (
