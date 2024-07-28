@@ -10,7 +10,7 @@ const CategoriesList: React.FC<CategoriesListProps> = ({ categories }) => {
     <div className="grid grid-cols-2 gap-1 sm:grid-cols-3 sm:gap-2 lg:grid-cols-6 lg:gap-3">
       {categories.map((category) => (
         <Link
-          to={`/book-service/${category.cat_slug}`}
+          to={`/book-service?category=${category.cat_slug}`}
           className="flex flex-col items-center gap-3 rounded-lg bg-white p-4 shadow-sm xl:p-5"
           key={category.cat_slug}
         >

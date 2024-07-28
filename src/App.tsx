@@ -17,10 +17,7 @@ const App = () => {
             <Route path="" index element={<Home />} />
             <Route path="about" element={<UnderConstruction />} />
             <Route path="services" element={<UnderConstruction />} />
-            <Route
-              path="/book-service/:categorySlug"
-              element={<BookService />}
-            />
+            <Route path="/book-service" element={<BookService />} />
             <Route path="projects" element={<UnderConstruction />} />
             <Route path="blog" element={<UnderConstruction />} />
             <Route path="contact" element={<UnderConstruction />} />

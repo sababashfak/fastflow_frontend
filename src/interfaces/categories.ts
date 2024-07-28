@@ -9,6 +9,7 @@ export interface TStep {
   step_type: "radio" | "textarea" | "image";
   step_option?: TStepOption[];
   step_placeholder?: string;
+  substeps?: TStep[];
 }
 
 export interface TCategory {

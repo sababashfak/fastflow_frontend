@@ -14,6 +14,7 @@ const menuItems: MenuItem[] = [
   { name: "Home", link: "/" },
   { name: "About", link: "/about" },
   { name: "Services", link: "/services" },
+  { name: "Book Service", link: "/book-service" },
   { name: "Projects", link: "/projects" },
   { name: "Blog", link: "/blog" },
   { name: "Contact", link: "/contact" },

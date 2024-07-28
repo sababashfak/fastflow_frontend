@@ -19,8 +19,10 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
   return (
     <div
       className={cn(
-        "fixed left-0 top-0 h-screen w-full bg-dark p-5 duration-500 md:hidden",
-        isOpen ? "translate-y-0" : "-translate-y-full",
+        "fixed left-0 top-0 h-screen w-full overflow-y-auto bg-dark p-5 duration-500 md:hidden",
+        isOpen
+          ? "visible translate-y-0 opacity-100"
+          : "invisible -translate-y-full opacity-0",
       )}
     >
       <div className="flex items-center pb-10">
