@@ -102,7 +102,20 @@ const categories: TCategory[] = [
     cat_name: "Locksmith",
     cat_icon: "key-set.png",
     cat_slug: "locksmith",
-    steps: [],
+    steps: {
+      step_name: "What do you need help with?",
+      step_options: [
+        {
+          option_name: "Lock installation",
+        },
+        {
+          option_name: "Lock repair",
+        },
+        {
+          option_name: "Key cutting",
+        },
+      ],
+    },
   },
   {
     cat_name: "Bathrooms",

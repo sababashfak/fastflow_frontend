@@ -66,17 +66,20 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
   };
 
   const handleBack = () => {
-    if (currentStep >= 0) {
-      setFormData((prev) => {
-        const newFormData = [...prev];
-        newFormData[currentStep] = {
-          question: "",
-          answer: "",
-        };
-        return newFormData;
-      });
-      setCurrentStep(currentStep - 1);
+    if (currentStep === 0) {
+      return setCategory(undefined);
     }
+
+    setFormData((prev) => {
+      const newFormData = [...prev];
+      newFormData[currentStep] = {
+        question: "",
+        answer: "",
+      };
+      return newFormData;
+    });
+
+    setCurrentStep(currentStep - 1);
   };
 
   return (
@@ -91,7 +94,7 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
               <select
                 onChange={(e) => handleCategoryChange(e.target.value)}
                 className="min-h-14 w-full cursor-pointer rounded-[4px] border p-2.5 hover:border-gray-700 focus:outline-none"
-                defaultValue={""}
+                value={category?.cat_slug || ""}
               >
                 <option value="" disabled>
                   Select a Category
@@ -120,7 +123,7 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
             <button
               onClick={handleBack}
               className="rounded-[4px] border-2 border-[#008FD3]/60 px-5 py-2.5 font-medium text-[#008FD3] disabled:pointer-events-none disabled:opacity-60"
-              disabled={currentStep === 0}
+              disabled={currentStep === -1}
             >
               Back
             </button>
