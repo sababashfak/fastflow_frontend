@@ -2,8 +2,7 @@ import { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 
 type BookServiceInpImageProps = {
-  value: string;
-  handleFormDataChange: (value: string) => void;
+  handleFormDataChange?: (value: string) => void;
 };
 
 const BookServiceInpImage: React.FC<BookServiceInpImageProps> = () => {
@@ -11,6 +10,14 @@ const BookServiceInpImage: React.FC<BookServiceInpImageProps> = () => {
 
   return (
     <div>
+      <div className="mb-5">
+        <h3 className="text-lg font-semibold text-gray-900 sm:text-xl">
+          Add images to your job
+        </h3>
+        <p className="text-gray-600">
+          This will help your plumber understand your needs better
+        </p>
+      </div>
       <label className="flex cursor-pointer items-center gap-x-5 border-2 border-dashed px-5 py-3.5">
         <img
           className="h-12"

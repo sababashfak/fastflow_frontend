@@ -2,6 +2,8 @@ import { TCategory } from "@/interfaces/categories";
 import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 import { toast } from "sonner";
+import BookServiceInpImage from "./BookServiceInpImage";
+import BookServiceInpTextarea from "./BookServiceInpTextarea";
 import BookServiceStep from "./BookServiceStep";
 
 type BookServiceFormProps = {
@@ -23,6 +25,7 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
   );
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [isLastStep, setIsLastStep] = useState<boolean>(false);
+  const [isPhotoUpload, setIsPhotoUpload] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData[]>([]);
   const steps = category?.steps;
 
@@ -49,20 +52,35 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
       return toast.error("Please select a category");
     }
 
+    if (isLastStep && isPhotoUpload) {
+      console.log("Category: ", category?.cat_name, "FormData: ", formData);
+      return;
+    }
+
+    if (isLastStep && !isPhotoUpload) {
+      return setIsPhotoUpload(true);
+    }
+
     if (!formData[currentStep]?.answer) {
       return toast.error("Please provide the required information");
     }
 
     if (!isLastStep) {
       setCurrentStep(currentStep + 1);
-    } else {
-      console.log("Form Data", formData);
     }
   };
 
   const handleBack = () => {
     if (currentStep === 0) {
       return setCategory(undefined);
+    }
+
+    if (isPhotoUpload) {
+      return setIsPhotoUpload(false);
+    }
+
+    if (isLastStep) {
+      return setIsLastStep(false);
     }
 
     setFormData((prev) => {
@@ -112,6 +130,8 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
               setIsLastStep={setIsLastStep}
             />
           )}
+          {isLastStep && <BookServiceInpTextarea />}
+          {isLastStep && isPhotoUpload && <BookServiceInpImage />}
         </div>
         <div className="mt-5 flex items-center gap-3 sm:mt-7">
           {!!category && (
