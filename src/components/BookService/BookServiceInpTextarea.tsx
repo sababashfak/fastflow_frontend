@@ -18,7 +18,7 @@ const BookServiceInpTextarea: React.FC<BookServiceInpTextareaProps> = ({
         value={description}
         onChange={(e) => onDescriptionChange(e.target.value)}
         className="h-32 p-4"
-        placeholder="Please provide more details about your plumbing needs"
+        placeholder="Please provide more details about your job. It will help help us in accurately assessing your requirements"
       />
     </div>
   );

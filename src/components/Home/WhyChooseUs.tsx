@@ -2,9 +2,9 @@ import SectionTop from "../shared/SectionTop";
 
 const items = [
   {
-    title: "Over 12 Years Experience",
+    title: "Over 03 Years Experience",
     description:
-      "With over 12 years of experience, we bring expertise and dedication to every project.",
+      "With over 03 years of experience, we bring expertise and dedication to every project.",
     icon: "why-us-1.png",
   },
   {

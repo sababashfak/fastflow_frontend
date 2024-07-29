@@ -15,6 +15,7 @@ import { TStep, TStepOption } from "@/interfaces/categories";
 // ];
 
 // [...document.querySelectorAll(".sc-4c2e276a-11.jmjKcr button div span")].map(c => c.textContent)
+
 const typeOfBoilers: TStepOption[] = [
   {
     option_name: "Gas",
@@ -332,19 +333,138 @@ export const plumberSteps: TStep = {
 
 export const electricianSteps: TStep = {
   step_name: "What do you need an electrician to help with?",
-
   step_options: [
     {
       option_name: "Appliance & fixtures",
+      option_description: "e.g. cookers, showers, ovens, washinf machines",
+      substeps: {
+        step_name: "What do you need help with?",
+        step_options: [
+          {
+            option_name: "Electric Cookers or Stoves",
+          },
+          {
+            option_name: "Electric Showers",
+          },
+          {
+            option_name: "Electric Oven or Cooker",
+          },
+          {
+            option_name: "Washing Machine",
+          },
+          {
+            option_name: "Electric Range Cookers",
+          },
+        ],
+      },
     },
     {
       option_name: "Fuseboards, sockets & wiring",
+      substeps: {
+        step_name: "What does your wiring job involve?",
+        step_options: [
+          {
+            option_name: "Rewires",
+          },
+          {
+            option_name: "Fuseboards or consumer units",
+            substeps: {
+              step_name: "Do you need it installed or repaired?",
+              step_options: [
+                {
+                  option_name: "Installed or replaced",
+                },
+                {
+                  option_name: "Repair",
+                },
+              ],
+            },
+          },
+          {
+            option_name: "Fault finding",
+          },
+          {
+            option_name: "Sockets",
+          },
+          {
+            option_name: "Hot tub wiring",
+          },
+        ],
+      },
     },
     {
       option_name: "Boilers, heating & radiators",
+      substeps: {
+        step_name: "What heating appliance do you need help with?",
+        step_options: [
+          {
+            option_name: "Electric heating",
+          },
+          {
+            option_name: "Smart thermostats",
+          },
+          {
+            option_name: "Electric boilers",
+            substeps: {
+              step_name: "What does your electric boiler job involve?",
+              step_options: [
+                {
+                  option_name: "Installation or Replacement",
+                },
+                {
+                  option_name: "Servicing or Repair",
+                },
+              ],
+            },
+          },
+          {
+            option_name: "Storage heaters",
+          },
+          {
+            option_name: "Electric underfloor heating",
+            substeps: {
+              step_name: "Do you need it installed or repaired?",
+              step_options: [
+                {
+                  option_name: "Installed or replaced",
+                },
+                {
+                  option_name: "Repaired",
+                },
+              ],
+            },
+          },
+          {
+            option_name: "Immersion heating",
+          },
+          {
+            option_name: "Electric radiators",
+          },
+        ],
+      },
     },
     {
       option_name: "Lighting",
+      substeps: {
+        step_name: "What type of lighting do you need help with?",
+        step_options: [
+          {
+            option_name: "LED lighting",
+          },
+          {
+            option_name: "Garden lighting",
+          },
+          {
+            option_name: "Lighting design",
+          },
+          {
+            option_name: "Emergency lighting",
+          },
+          {
+            option_name: "Energy efficient lighting",
+          },
+        ],
+      },
     },
     {
       option_name: "Safety checks & certificates",
@@ -362,57 +482,116 @@ export const electricianSteps: TStep = {
 };
 
 export const rooferSteps: TStep = {
-  step_name: "What do you need a roofer to help with?",
-
+  step_name: "What roofing service do you require?",
   step_options: [
     {
-      option_name: "Roofs",
+      option_name: "New or replacement roof",
     },
     {
-      option_name: "Roof inspection report",
+      option_name: "Roof repair or assessment",
     },
     {
-      option_name: "Gutters, fascias & soffits",
-    },
-    {
-      option_name: "Chimneys",
-    },
-    {
-      option_name: "Cleaning",
-    },
-    {
-      option_name: "Damp proofing",
-    },
-    {
-      option_name: "Emergency issue",
-    },
-    {
-      option_name: "Metal & leadwork",
-    },
-    {
-      option_name: "Dry ridges & verges",
-    },
-    {
-      option_name: "Roof lights",
-    },
-    {
-      option_name: "Dormer or roof windows",
+      option_name: "Chimney work",
     },
   ],
 };
 
 export const builderSteps: TStep = {
-  step_name: "What do you need a builder to help with?",
+  step_name: "What building work do you need?",
 
   step_options: [
     {
       option_name: "Work inside the property",
+      substeps: {
+        step_name: "What do you need help with?",
+        step_options: [
+          {
+            option_name: "Small structural changes or repairs",
+          },
+          {
+            option_name: "Large structural changes or repairs",
+          },
+          {
+            option_name: "Refurbishments",
+            substeps: {
+              step_name: "What room do you need refurbished?",
+              step_options: [
+                {
+                  option_name: "Kitchen",
+                },
+                {
+                  option_name: "Bathroom",
+                },
+              ],
+            },
+          },
+        ],
+      },
     },
     {
       option_name: "Work outside the property",
+      substeps: {
+        step_name: "What do you need help with?",
+        step_options: [
+          {
+            option_name: "Cladding",
+          },
+          {
+            option_name: "Concreting",
+          },
+          {
+            option_name: "Driveways",
+          },
+          {
+            option_name: "Patios or paving",
+          },
+          {
+            option_name: "Car ports",
+          },
+        ],
+      },
     },
     {
       option_name: "Extension or conversion",
+      substeps: {
+        step_name: "What work do you need?",
+        step_options: [
+          {
+            option_name: "Extension",
+          },
+          {
+            option_name: "Conversion",
+            substeps: {
+              step_name: "What conversion job do you need?",
+              step_options: [
+                {
+                  option_name: "Loft conversion",
+                },
+                {
+                  option_name: "Garage conversion",
+                },
+                {
+                  option_name: "Refurbishment",
+                  substeps: {
+                    step_name: "What room do you need refurbished?",
+                    step_options: [
+                      {
+                        option_name: "Kitchen",
+                      },
+                      {
+                        option_name: "Bathroom",
+                      },
+                    ],
+                  },
+                },
+                {
+                  option_name: "Entire property",
+                },
+              ],
+            },
+          },
+        ],
+      },
     },
     {
       option_name: "Building a house",
@@ -422,9 +601,49 @@ export const builderSteps: TStep = {
     },
     {
       option_name: "Outbuildings",
+      substeps: {
+        step_name: "What do you need help with?",
+        step_options: [
+          {
+            option_name: "Convert a Garagae",
+          },
+          {
+            option_name: "Build a Garage",
+          },
+          {
+            option_name: "Garden Studios",
+          },
+          {
+            option_name: "Workshops",
+          },
+        ],
+      },
     },
     {
       option_name: "Planning, design & support",
+      substeps: {
+        step_name: "What do you need help with?",
+        step_options: [
+          {
+            option_name: "Architecture",
+          },
+          {
+            option_name: "Surveying",
+          },
+          {
+            option_name: "Project management",
+          },
+          {
+            option_name: "Structural design",
+          },
+          {
+            option_name: "Interior design",
+          },
+          {
+            option_name: "Insurance claim specialist",
+          },
+        ],
+      },
     },
   ],
 };
@@ -435,6 +654,64 @@ export const gardenerSteps: TStep = {
   step_options: [
     {
       option_name: "One-off gardening job",
+      substeps: {
+        step_name: "What does your job involve?",
+        step_options: [
+          {
+            option_name: "General Gardening",
+            substeps: {
+              step_name: "What does your job involve?",
+              step_options: [
+                {
+                  option_name: "Hedges",
+                },
+                {
+                  option_name: "Lawns",
+                },
+                {
+                  option_name: "Pruning",
+                },
+                {
+                  option_name: "Weed control",
+                },
+                {
+                  option_name: "Japanese knotweed",
+                },
+                {
+                  option_name: "Roof gardens",
+                },
+                {
+                  option_name: "Mulching",
+                },
+              ],
+            },
+          },
+          {
+            option_name: "Garden Clearance",
+          },
+          {
+            option_name: "Pond maintenance & cleaning",
+          },
+          {
+            option_name: "Tree surgery",
+          },
+          {
+            option_name: "Landscaping",
+          },
+          {
+            option_name: "Garden log supplies",
+          },
+          {
+            option_name: "Garden machinery repair ",
+          },
+          {
+            option_name: "Rainwater harvesting",
+          },
+          {
+            option_name: "Polytunnels",
+          },
+        ],
+      },
     },
     {
       option_name: "Ongoing gardening jobs",
@@ -444,10 +721,41 @@ export const gardenerSteps: TStep = {
 
 export const painterSteps: TStep = {
   step_name: "What do you need a painter to help with?",
-
   step_options: [
     {
       option_name: "Painting",
+      substeps: {
+        step_name: "Where do you need your painting done?",
+        step_options: [
+          {
+            option_name: "Inside",
+            substeps: {
+              step_name: "How many rooms do you need painted/decorated?",
+              step_options: [
+                {
+                  option_name: "Less than 1 / part of a room",
+                  option_description: "e.g. painting over a patch/fix",
+                },
+                {
+                  option_name: "1 room",
+                },
+                {
+                  option_name: "2 rooms",
+                },
+                {
+                  option_name: "3 or more rooms",
+                },
+              ],
+            },
+          },
+          {
+            option_name: "Outside",
+          },
+          {
+            option_name: "Both",
+          },
+        ],
+      },
     },
     {
       option_name: "Wallpapering",
@@ -460,6 +768,17 @@ export const painterSteps: TStep = {
     },
     {
       option_name: "Stripping and repainting",
+      substeps: {
+        step_name: "What do you need stripped and repainting?",
+        step_options: [
+          {
+            option_name: "Windows",
+          },
+          {
+            option_name: "Doors",
+          },
+        ],
+      },
     },
     {
       option_name: "Tiling",
@@ -479,15 +798,84 @@ export const landscaperSteps: TStep = {
     },
     {
       option_name: "Buildings or structures",
+      substeps: {
+        step_name: "What do you need help with?",
+        step_options: [
+          {
+            option_name: "Sheds",
+          },
+          {
+            option_name: "Shed bases",
+          },
+          {
+            option_name: "Garden rooms & annexes",
+          },
+          {
+            option_name: "Brickwork",
+          },
+          {
+            option_name: "Greenhouses",
+          },
+          {
+            option_name: "Summer houses",
+          },
+          {
+            option_name: "Sleepers",
+          },
+          {
+            option_name: "Play areas",
+          },
+          {
+            option_name: "Aviaries",
+          },
+        ],
+      },
     },
     {
       option_name: "Lawns & greens",
+      substeps: {
+        step_name: "What do you need help with?",
+        step_options: [
+          {
+            option_name: "Grass Cutting",
+          },
+          {
+            option_name: "Artificial Grass",
+          },
+          {
+            option_name: "Turfing",
+          },
+          {
+            option_name: "Golf & Bowls Greens",
+          },
+        ],
+      },
     },
     {
       option_name: "Decking",
     },
     {
       option_name: "Ponds, water features & systems",
+      substeps: {
+        step_name: "What do you need help with?",
+        step_options: [
+          {
+            option_name: "Pond construction",
+          },
+          {
+            option_name: "Pond maintenance & cleaning",
+          },
+          {
+            option_name: "Irrigation systems",
+          },
+          {
+            option_name: "Water features",
+          },
+          {
+            option_name: "Water gardens",
+          },
+        ],
+      },
     },
     {
       option_name: "Gardening",

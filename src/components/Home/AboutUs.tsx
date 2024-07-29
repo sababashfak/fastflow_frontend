@@ -28,7 +28,7 @@ const aboutItems = [
   {
     title: "Satisfaction",
     description:
-      "With over 12 years of experience, our team is driven by a passion for excellence. We prioritize customer satisfaction, ensuring that every detail is meticulously handled and that your home renovation experience is seamless and enjoyable.",
+      "With over 3 years of experience, our team is driven by a passion for excellence. We prioritize customer satisfaction, ensuring that every detail is meticulously handled and that your home renovation experience is seamless and enjoyable.",
     bullets: [
       "Customer-first",
       "High satisfaction",
@@ -80,7 +80,7 @@ const AboutUs = () => {
                 <button
                   onClick={() => setActive(index)}
                   className={cn(
-                    "text-secondary hover:border-secondary border px-5 py-3 text-sm duration-300",
+                    "border px-5 py-3 text-sm text-secondary duration-300 hover:border-secondary",
                     active === index &&
                       "border-secondary bg-secondary text-white",
                   )}
@@ -95,7 +95,7 @@ const AboutUs = () => {
               <ul className="mt-4 grid list-inside grid-cols-[auto_1fr] gap-x-10 gap-y-3 text-gray-500">
                 {aboutItems[active].bullets.map((bullet, index) => (
                   <li className="flex items-center" key={index}>
-                    <span className="bg-secondary mr-2 block size-1.5"></span>
+                    <span className="mr-2 block size-1.5 bg-secondary"></span>
                     {bullet}
                   </li>
                 ))}

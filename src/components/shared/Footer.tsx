@@ -37,7 +37,7 @@ const Footer = () => {
             <div className="">
               <FooterTitle title="About Us" />
               <p className="max-w-lg text-[13px] leading-[1.8] text-white/90">
-                We are a leading renovation and remodeling company with over 12
+                We are a leading renovation and remodeling company with over 3
                 years of experience. Committed to quality and customer
                 satisfaction, we transform spaces with expert craftsmanship and
                 premium materials.
@@ -144,7 +144,7 @@ const Footer = () => {
       <div className="bg-[#222] py-5">
         <div className="container flex flex-col items-center justify-between gap-3 sm:flex-row">
           <p className="text-xs text-white/60">
-            &copy; <span className="font-medium text-primary">Renovate</span>{" "}
+            &copy; <span className="font-medium text-primary">Fastflow</span>{" "}
             {new Date().getFullYear()}. All rights reserved.
           </p>
           <p className="text-xs text-white/60">

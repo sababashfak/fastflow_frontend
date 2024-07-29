@@ -12,7 +12,7 @@ const slides: Slide[] = [
     title: "Trusted Experts",
     subtitle: "Exceptional Home Renovations and Remodels",
     description:
-      "With over 15 years of experience and a focus on customer satisfaction, rely on us for impeccable renovations and remodeling projects.",
+      "With over 3 years of experience and a focus on customer satisfaction, rely on us for impeccable renovations and remodeling projects.",
     image: "/hero/slide-1.jpg",
     btnText: "Learn More",
     btnUrl: "/about",
