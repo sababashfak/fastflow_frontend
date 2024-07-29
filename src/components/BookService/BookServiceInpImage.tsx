@@ -1,12 +1,15 @@
-import { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 
 type BookServiceInpImageProps = {
-  handleFormDataChange?: (value: string) => void;
+  photos: string[] | null;
+  setPhotos: React.Dispatch<React.SetStateAction<string[] | null>>;
 };
 
-const BookServiceInpImage: React.FC<BookServiceInpImageProps> = () => {
-  const [selectedImages, setSelectedImages] = useState<string[] | null>(null);
+const BookServiceInpImage: React.FC<BookServiceInpImageProps> = ({
+  photos,
+  setPhotos,
+}) => {
+  // const [selectedImages, setSelectedImages] = useState<string[] | null>(null);
 
   return (
     <div>
@@ -33,7 +36,7 @@ const BookServiceInpImage: React.FC<BookServiceInpImageProps> = () => {
           onChange={(e) => {
             const files = e.target.files;
             if (files) {
-              setSelectedImages((prev) => {
+              setPhotos((prev) => {
                 const newImages = [...(prev || [])];
 
                 for (let i = 0; i < files.length; i++) {
@@ -47,9 +50,9 @@ const BookServiceInpImage: React.FC<BookServiceInpImageProps> = () => {
         />
       </label>
 
-      {selectedImages && selectedImages.length > 0 && (
+      {photos && photos.length > 0 && (
         <div className="mt-8 flex flex-wrap gap-5">
-          {selectedImages.map((image, index) => (
+          {photos.map((image, index) => (
             <div key={index} className="relative">
               <img
                 className="size-24 rounded-[4px] object-cover"
@@ -58,7 +61,7 @@ const BookServiceInpImage: React.FC<BookServiceInpImageProps> = () => {
               />
               <button
                 onClick={() => {
-                  setSelectedImages((prev) => {
+                  setPhotos((prev) => {
                     const newImages = [...(prev || [])];
                     newImages.splice(index, 1);
                     return newImages;

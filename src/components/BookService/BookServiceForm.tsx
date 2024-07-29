@@ -25,8 +25,11 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
   );
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [isLastStep, setIsLastStep] = useState<boolean>(false);
+  const [isDescription, setIsDescription] = useState<boolean>(false);
   const [isPhotoUpload, setIsPhotoUpload] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData[]>([]);
+  const [description, setDescription] = useState<string>("");
+  const [photos, setPhotos] = useState<string[] | null>(null);
   const steps = category?.steps;
 
   const handleCategoryChange = (slug: string) => {
@@ -53,11 +56,31 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
     }
 
     if (isLastStep && isPhotoUpload) {
-      console.log("Category: ", category?.cat_name, "FormData: ", formData);
-      return;
+      if (!photos) {
+        return toast.error("Please upload at least one photo");
+      }
+
+      console.log("Category: ", category?.cat_name, "FormData: ", [
+        ...formData,
+        { question: "Description", answer: description },
+        {
+          question: "Photos",
+          answer: photos,
+        },
+      ]);
+
+      return toast.success("Service booked successfully");
     }
 
-    if (isLastStep && !isPhotoUpload) {
+    if (isLastStep && !isDescription) {
+      return setIsDescription(true);
+    }
+
+    if (isLastStep && isDescription && !isPhotoUpload) {
+      if (!description) {
+        return toast.error("Please provide a description");
+      }
+
       return setIsPhotoUpload(true);
     }
 
@@ -76,10 +99,14 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
     }
 
     if (isPhotoUpload) {
+      setPhotos(null);
       return setIsPhotoUpload(false);
     }
 
-    if (isLastStep) {
+    if (isDescription) {
+      setDescription("");
+      setIsDescription(false);
+
       return setIsLastStep(false);
     }
 
@@ -130,8 +157,15 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
               setIsLastStep={setIsLastStep}
             />
           )}
-          {isLastStep && <BookServiceInpTextarea />}
-          {isLastStep && isPhotoUpload && <BookServiceInpImage />}
+          {isLastStep && isDescription && (
+            <BookServiceInpTextarea
+              description={description}
+              onDescriptionChange={(value) => setDescription(value)}
+            />
+          )}
+          {isLastStep && isPhotoUpload && (
+            <BookServiceInpImage photos={photos} setPhotos={setPhotos} />
+          )}
         </div>
         <div className="mt-5 flex items-center gap-3 sm:mt-7">
           {!!category && (
