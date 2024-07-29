@@ -7,6 +7,8 @@ import {
   carpenterSteps,
   centralHeatingSteps,
   chimneySteps,
+  conservatorySteps,
+  dampProofingSteps,
   drivewaysPatiosSteps,
   electricianSteps,
   fencingSteps,
@@ -128,6 +130,16 @@ const categories: TCategory[] = [
     cat_name: "Chimney & Fireplace",
     cat_slug: "chimney-fireplace",
     steps: chimneySteps,
+  },
+  {
+    cat_name: "Conservatories ",
+    cat_slug: "conservatories",
+    steps: conservatorySteps,
+  },
+  {
+    cat_name: "Damp Proofing ",
+    cat_slug: "damp-proofing",
+    steps: dampProofingSteps,
   },
 ];
 

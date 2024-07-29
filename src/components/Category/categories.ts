@@ -2249,3 +2249,89 @@ export const chimneySteps: TStep = {
     },
   ],
 };
+
+export const conservatorySteps: TStep = {
+  step_name: "What do you need a conservatory installer's help with?",
+  step_options: [
+    {
+      option_name: "A new conservatory installation",
+      substeps: {
+        step_name: "What do you need to have done?",
+        step_options: [
+          {
+            option_name: "Build the conservatory and base",
+          },
+          {
+            option_name: "Erect conservatory only",
+          },
+          {
+            option_name: "Build base only",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Replace or improve an existing conservatory",
+      substeps: {
+        step_name: "What needs doing?",
+        step_options: [
+          {
+            option_name: "Roof replacement",
+          },
+          {
+            option_name: "Windows and doors replacement",
+          },
+          {
+            option_name: "Large refurbishment of existing conservatory",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "A repair",
+      substeps: {
+        step_name: "What is the issue?",
+        step_options: [
+          {
+            option_name: "Leak",
+          },
+          {
+            option_name: "Roof",
+          },
+          {
+            option_name: "Faulty door or windows",
+          },
+          {
+            option_name: "Broken glass",
+          },
+        ],
+      },
+    },
+  ],
+};
+
+export const dampProofingSteps: TStep = {
+  step_name: "Do you know what is causing your damp problem?",
+  step_options: [
+    {
+      option_name: "No -  I need help investigating",
+    },
+    {
+      option_name: "Yes - I just need help fixing the problem",
+      substeps: {
+        step_name: "How big is the affected area?",
+        step_options: [
+          {
+            option_name: "Small isolated area",
+          },
+          {
+            option_name: "Widespread",
+          },
+          {
+            option_name: "I’m not sure",
+          },
+        ],
+      },
+    },
+  ],
+};
