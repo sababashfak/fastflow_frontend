@@ -1,9 +1,12 @@
 import {
+  architecturalSteps,
   bathroomsSteps,
   boilerRepairSteps,
+  bricklayingSteps,
   builderSteps,
   carpenterSteps,
   centralHeatingSteps,
+  chimneySteps,
   drivewaysPatiosSteps,
   electricianSteps,
   fencingSteps,
@@ -21,6 +24,16 @@ import {
 import { TCategory } from "@/interfaces/categories";
 
 const categories: TCategory[] = [
+  {
+    cat_name: "Architectural Services",
+    cat_slug: "architectural-services",
+    steps: architecturalSteps,
+  },
+  {
+    cat_name: "Bricklaying & Repointing",
+    cat_slug: "bricklaying-repointing",
+    steps: bricklayingSteps,
+  },
   {
     cat_name: "Plumber",
     cat_slug: "plumber",
@@ -110,6 +123,11 @@ const categories: TCategory[] = [
     cat_name: "Boiler Repair",
     cat_slug: "boiler-repair",
     steps: boilerRepairSteps,
+  },
+  {
+    cat_name: "Chimney & Fireplace",
+    cat_slug: "chimney-fireplace",
+    steps: chimneySteps,
   },
 ];
 

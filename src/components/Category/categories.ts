@@ -1921,3 +1921,331 @@ export const boilerRepairSteps: TStep = {
     },
   ],
 };
+
+const typeOfArchitectProject: TStepOption[] = [
+  {
+    option_name: "Extension",
+  },
+  {
+    option_name: "Loft Conversion",
+  },
+  {
+    option_name: "Renovation",
+  },
+  {
+    option_name: "New Build",
+  },
+];
+
+export const architecturalSteps: TStep = {
+  step_name: "What type of service do you need?",
+  step_options: [
+    {
+      option_name: "Basic outline plans",
+      option_description: "for quotes and planning application",
+      substeps: {
+        step_name: "What type of project are you planning?",
+        step_options: typeOfArchitectProject,
+      },
+    },
+    {
+      option_name: "Full regulation plans",
+      option_description: "for builders & building regs",
+      substeps: {
+        step_name: "What type of project are you planning?",
+        step_options: typeOfArchitectProject,
+      },
+    },
+    {
+      option_name: "Structural calculations",
+    },
+  ],
+};
+
+const repointingSize: TStepOption[] = [
+  {
+    option_name: "Small",
+    option_description: "e.g. garden walls, chimney, section of wall",
+  },
+  {
+    option_name: "Medium",
+    option_description:
+      "e.g. single wall, multiple areas, garage or outbuilding",
+  },
+  {
+    option_name: "Large",
+    option_description: "e.g. multiple walls",
+  },
+  {
+    option_name: "X - Large",
+    option_description: "e.g. whole property",
+  },
+];
+
+export const bricklayingSteps: TStep = {
+  step_name: "What type of bricklaying services are you looking for?",
+  step_options: [
+    {
+      option_name: "Building a wall",
+      substeps: {
+        step_name: "What type of wall are you looking to build?",
+        step_options: [
+          {
+            option_name: "Small decorative wall",
+            option_description: "A few courses high",
+          },
+          {
+            option_name: "Small wall",
+            option_description: "For a garden or front yard",
+          },
+          {
+            option_name: "Garden wall",
+          },
+          {
+            option_name: "Retaining wall",
+            option_description: "A large wall to support soil",
+          },
+          {
+            option_name: "More than one wall",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Building a structure",
+      option_description: "Outbuilding, garage, extension, etc.",
+      substeps: {
+        step_name: "What type of structure are you looking to build?",
+        step_options: [
+          {
+            option_name: "Outbuilding",
+          },
+          {
+            option_name: "Porch",
+          },
+          {
+            option_name: "Garage",
+          },
+          {
+            option_name: "Extension",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Building custom brickwork",
+      option_description: "Pillar, steps, etc.",
+      substeps: {
+        step_name: "What type of custom brickwork are you looking for?",
+        step_options: [
+          {
+            option_name: "Pillar",
+          },
+          {
+            option_name: "Steps",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Wall alterations",
+      option_description:
+        "Opening for windows and doors, knocking through, etc.",
+      substeps: {
+        step_name:
+          "Which of the following best describes your wall alteration job?",
+        step_options: [
+          {
+            option_name: "Window or door installation / replacement",
+          },
+          {
+            option_name: "Wall removal",
+            substeps: {
+              step_name: "Is it a load bearing wall?",
+              step_options: [
+                {
+                  option_name: "Yes",
+                },
+                {
+                  option_name: "No",
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Repointing",
+      option_description: "Renewing the mortar on brickwork or natural stone",
+      substeps: {
+        step_name: "What type of repointing needs to be done?",
+        step_options: [
+          {
+            option_name: "Brickwork",
+            substeps: {
+              step_name: "How large is the repointing job?",
+              step_options: repointingSize,
+            },
+          },
+          {
+            option_name: "Natural Stone",
+            substeps: {
+              step_name: "How large is the repointing job?",
+              step_options: repointingSize,
+            },
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Chimney work",
+      substeps: {
+        step_name: "What do you need doing to your chimney?",
+        step_options: [
+          {
+            option_name: "Removal",
+          },
+          {
+            option_name: "Revuilding / major alterations",
+          },
+          {
+            option_name: "Repointing / repair",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Repairs",
+      substeps: {
+        step_name: "How extensive is your repair job?",
+        step_options: [
+          {
+            option_name: "Small repair",
+            option_description: "e.g. replace some blown brickwork",
+          },
+          {
+            option_name: "Medium repair",
+            option_description: "e.g. re-lay a few courses",
+          },
+          {
+            option_name: "Large repair",
+            option_description: "e.g. rebuild a wall section",
+          },
+        ],
+      },
+    },
+  ],
+};
+
+const fireplaceNeeds: TStepOption[] = [
+  {
+    option_name: "Install",
+    substeps: {
+      step_name: "Does this include removal of an old fireplace?",
+      step_options: [
+        {
+          option_name: "Yes",
+        },
+        {
+          option_name: "No",
+        },
+      ],
+    },
+  },
+  {
+    option_name: "Repair",
+  },
+  {
+    option_name: "Remove",
+    substeps: {
+      step_name: "Does this include installation of a new fireplace?",
+      step_options: [
+        {
+          option_name: "Yes",
+        },
+        {
+          option_name: "No",
+        },
+      ],
+    },
+  },
+];
+
+export const chimneySteps: TStep = {
+  step_name: "What does your job involve?",
+  step_options: [
+    {
+      option_name: "Chimney",
+      option_description:
+        "Removal, repairs, capping, and sweeping of a chimney or chimney breast",
+      substeps: {
+        step_name: "What do you need doing to your chimney?",
+        step_options: [
+          {
+            option_name: "Capping",
+          },
+          {
+            option_name: "Sweeping",
+          },
+          {
+            option_name: "Removal",
+          },
+          {
+            option_name: "Rebuilding / major alterations",
+          },
+          {
+            option_name: "Repointing / repair",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Fireplace",
+      option_description:
+        "Installation or repair of any fireplace (gas, electric, solid fuel, etc.)",
+      substeps: {
+        step_name: "What type of fireplace does this involve?",
+        step_options: [
+          {
+            option_name: "Gas",
+            substeps: {
+              step_name: "What needs doing to your gas fireplace?",
+              step_options: fireplaceNeeds,
+            },
+          },
+          {
+            option_name: "Electric",
+            substeps: {
+              step_name: "What needs doing to your electric fireplace?",
+              step_options: fireplaceNeeds,
+            },
+          },
+          {
+            option_name: "Solid fuel",
+            option_description: "e.g. wood, coal burning stove etc.",
+            substeps: {
+              step_name: "What needs doing to your solid fuel fireplace?",
+              step_options: fireplaceNeeds,
+            },
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Flue",
+      option_description: "Istallation, alteration or repair",
+      substeps: {
+        step_name: "What needs doing to your flue?",
+        step_options: [
+          {
+            option_name: "Installation or alteration",
+          },
+          {
+            option_name: "Repair",
+          },
+        ],
+      },
+    },
+  ],
+};
