@@ -1,4 +1,4 @@
-import useCategories from "@/hooks/useCategories";
+import usePopularCategories from "@/hooks/usePopularCategories";
 import chunkArray from "@/lib/chunkArray";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import "swiper/css";
@@ -9,7 +9,7 @@ import CategoriesList from "../Category/CategoriesList";
 import SectionTop from "../shared/SectionTop";
 
 const Categories = () => {
-  const categories = useCategories(true);
+  const categories = usePopularCategories();
   const chunkedCategories = chunkArray(categories, 6);
 
   return (

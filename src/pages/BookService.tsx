@@ -6,7 +6,7 @@ import { useSearchParams } from "react-router-dom";
 const BookService = () => {
   const [params] = useSearchParams();
   const categorySlug = params.get("category") || "";
-  const categories = useCategories(false, "");
+  const categories = useCategories();
   const defaultCategory = categories.find(
     (category) => category.cat_slug === categorySlug,
   );

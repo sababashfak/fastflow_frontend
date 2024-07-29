@@ -18,3 +18,9 @@ export interface TCategory {
   cat_slug: string;
   steps: TStep;
 }
+
+export interface TPopularCategory {
+  cat_name: string;
+  cat_icon: string;
+  cat_slug: string;
+}

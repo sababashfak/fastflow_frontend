@@ -616,23 +616,38 @@ export const handymanSteps: TStep = {
 };
 
 export const locksmithSteps: TStep = {
-  step_name: "Where is the lock?",
-
+  step_name: "What do you need help with?",
   step_options: [
     {
-      option_name: "Door",
+      option_name: "Lock installation",
     },
     {
-      option_name: "Window",
+      option_name: "Lock repair",
     },
     {
-      option_name: "Vehicle",
-    },
-    {
-      option_name: "Safe",
+      option_name: "Key cutting",
     },
   ],
 };
+
+// export const locksmithSteps: TStep = {
+//   step_name: "Where is the lock?",
+
+//   step_options: [
+//     {
+//       option_name: "Door",
+//     },
+//     {
+//       option_name: "Window",
+//     },
+//     {
+//       option_name: "Vehicle",
+//     },
+//     {
+//       option_name: "Safe",
+//     },
+//   ],
+// };
 
 export const bathroomsSteps: TStep = {
   step_name: "What does your bathroom job involve?",

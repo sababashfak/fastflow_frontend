@@ -1,8 +1,8 @@
-import { TCategory } from "@/interfaces/categories";
+import { TPopularCategory } from "@/interfaces/categories";
 import { Link } from "react-router-dom";
 
 type CategoriesListProps = {
-  categories: TCategory[];
+  categories: TPopularCategory[];
 };
 
 const CategoriesList: React.FC<CategoriesListProps> = ({ categories }) => {
