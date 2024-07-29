@@ -14,7 +14,6 @@ export interface TStep {
 
 export interface TCategory {
   cat_name: string;
-  cat_icon?: string;
   cat_slug: string;
   steps: TStep;
 }

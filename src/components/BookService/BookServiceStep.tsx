@@ -98,7 +98,7 @@ const BookServiceStep: React.FC<BookServiceStepProps> = ({
                   option_name: e.target.value,
                 });
               }}
-              className="h-auto px-2.5 py-3 text-base placeholder:text-gray-400"
+              className="h-auto border-gray-300 px-2.5 py-3 text-base placeholder:text-gray-400"
             />
           )}
         </div>

@@ -481,17 +481,178 @@ export const electricianSteps: TStep = {
   ],
 };
 
+const typeOfRoof: TStepOption[] = [
+  {
+    option_name: "Porch or outhouse",
+  },
+  {
+    option_name: "Garage, extension, or part of the house",
+  },
+  {
+    option_name: "Whole house",
+  },
+];
+
+const propertyOwnership: TStepOption[] = [
+  {
+    option_name: "Yes",
+    substeps: {
+      step_name: "What type of roof is it?",
+      step_options: typeOfRoof,
+    },
+  },
+  {
+    option_name: "No, I'm a prospective buyer",
+  },
+  {
+    option_name: "No, I am posting this on the owner's behalf",
+    substeps: {
+      step_name: "What type of roof is it?",
+      step_options: typeOfRoof,
+    },
+  },
+];
+
 export const rooferSteps: TStep = {
   step_name: "What roofing service do you require?",
   step_options: [
     {
       option_name: "New or replacement roof",
+      substeps: {
+        step_name: "What type of roof do you need?",
+        step_options: [
+          {
+            option_name: "Pitched roof",
+            substeps: {
+              step_name: "Do you own the property?",
+              step_options: propertyOwnership,
+            },
+          },
+          {
+            option_name: "Flat roof",
+            substeps: {
+              step_name: "What material do you want for the new roof?",
+              step_options: [
+                {
+                  option_name: "GRP (fibreglass)",
+                  substeps: {
+                    step_name: "Do you own the property?",
+                    step_options: propertyOwnership,
+                  },
+                },
+                {
+                  option_name: "EPDM (rubber membrane)",
+                  substeps: {
+                    step_name: "Do you own the property?",
+                    step_options: propertyOwnership,
+                  },
+                },
+                {
+                  option_name: "Felt or bitumen",
+                  substeps: {
+                    step_name: "Do you own the property?",
+                    step_options: propertyOwnership,
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
     },
     {
       option_name: "Roof repair or assessment",
+      substeps: {
+        step_name: "What type of roof is it?",
+        step_options: [
+          {
+            option_name: "Pitched roof",
+            substeps: {
+              step_name: "What can a roofer help you with?",
+              step_options: [
+                {
+                  option_name: "Leak",
+                },
+                {
+                  option_name: "Tiling repairs",
+                  substeps: {
+                    step_name: "How extensive is the repair?",
+                    step_options: [
+                      {
+                        option_name: "A single tile",
+                      },
+                      {
+                        option_name: "2 - 5 tiles",
+                      },
+                      {
+                        option_name: "6 - 15 tiles",
+                      },
+                      {
+                        option_name: "16 - 30 tiles",
+                      },
+                      {
+                        option_name: "30+ tiles",
+                      },
+                    ],
+                  },
+                },
+                {
+                  option_name: "Roof structure",
+                },
+              ],
+            },
+          },
+          {
+            option_name: "Flat roof",
+            substeps: {
+              step_name: "What is the roof material?",
+              step_options: [
+                {
+                  option_name: "GRP (fibreglass)",
+                  substeps: {
+                    step_name: "Do you own the property?",
+                    step_options: propertyOwnership,
+                  },
+                },
+                {
+                  option_name: "EPDM (rubber membrane)",
+                  substeps: {
+                    step_name: "Do you own the property?",
+                    step_options: propertyOwnership,
+                  },
+                },
+                {
+                  option_name: "Felt or bitumen",
+                  substeps: {
+                    step_name: "Do you own the property?",
+                    step_options: propertyOwnership,
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
     },
     {
       option_name: "Chimney work",
+      substeps: {
+        step_name: "What chimney work needs doing?",
+        step_options: [
+          {
+            option_name: "Install or rebuild new chimney",
+          },
+          {
+            option_name: "Remove an existing chimney",
+          },
+          {
+            option_name: "Repair or repoint my chimney",
+          },
+          {
+            option_name: "Chimney capping",
+          },
+        ],
+      },
     },
   ],
 };
@@ -898,27 +1059,145 @@ export const carpenterSteps: TStep = {
   step_options: [
     {
       option_name: "Windows & doors",
+      substeps: {
+        step_name: "What do you need help with?",
+        step_options: [
+          {
+            option_name: "Windows",
+          },
+          {
+            option_name: "Doors",
+            substeps: {
+              step_name: "Are the doors internal or external?",
+              step_options: [
+                {
+                  option_name: "Internal",
+                },
+                {
+                  option_name: "External",
+                },
+              ],
+            },
+          },
+        ],
+      },
     },
     {
       option_name: "Furniture, cupboards & shelves",
+      substeps: {
+        step_name: "What type of furniture do you need help with?",
+        step_options: [
+          {
+            option_name: "Fitted wardrobes",
+          },
+          {
+            option_name: "Built-in furniture",
+          },
+          {
+            option_name: "Bespoke furniture",
+          },
+          {
+            option_name: "Cabinet making",
+          },
+          {
+            option_name: "Cupboards",
+          },
+          {
+            option_name: "Shelves",
+            substeps: {
+              step_name: "Are these standard or custom shelves?",
+              step_options: [
+                {
+                  option_name: "Standard shelves",
+                },
+                {
+                  option_name: "Custom fit",
+                },
+              ],
+            },
+          },
+        ],
+      },
     },
     {
       option_name: "Kitchens",
+      substeps: {
+        step_name: "What do you need help with?",
+        step_options: [
+          {
+            option_name: "Whole kitchen fitted",
+          },
+          {
+            option_name: "Bespoke kitchen fitted",
+          },
+          {
+            option_name: "Worktops",
+          },
+          {
+            option_name: "Cupboards",
+          },
+        ],
+      },
     },
     {
       option_name: "Flooring & skirting",
+      substeps: {
+        step_name: "What do you need help with?",
+        step_options: [
+          {
+            option_name: "Wooden flooring",
+          },
+          {
+            option_name: "Laminate",
+          },
+          {
+            option_name: "Skirting",
+          },
+          {
+            option_name: "Vinyl or vinyl tiles",
+          },
+          {
+            option_name: "Loft floor boarding",
+          },
+          {
+            option_name: "Floor sanding",
+          },
+        ],
+      },
     },
     {
       option_name: "Staircases",
     },
     {
       option_name: "Fencing & gates",
+      substeps: {
+        step_name: "What do you need help with?",
+        step_options: [
+          {
+            option_name: "Fencing",
+          },
+          {
+            option_name: "Gates",
+          },
+        ],
+      },
     },
     {
       option_name: "Outdoor structures & roofing",
-    },
-    {
-      option_name: "Other/I'm not sure",
+      substeps: {
+        step_name: "What structure do you need help with?",
+        step_options: [
+          {
+            option_name: "Shed or summer house",
+          },
+          {
+            option_name: "Log cabins",
+          },
+          {
+            option_name: "Roofing",
+          },
+        ],
+      },
     },
   ],
 };
@@ -929,6 +1208,26 @@ export const plastererSteps: TStep = {
   step_options: [
     {
       option_name: "Inside the property - plastering",
+      substeps: {
+        step_name: "What does your plastering job involve?",
+        step_options: [
+          {
+            option_name: "Skimming",
+          },
+          {
+            option_name: "Plasterboarding & dry lining",
+          },
+          {
+            option_name: "Artexing",
+          },
+          {
+            option_name: "Coving",
+          },
+          {
+            option_name: "Screeding",
+          },
+        ],
+      },
     },
     {
       option_name: "Outside the property - rendering",
@@ -942,6 +1241,32 @@ export const drivewaysPatiosSteps: TStep = {
   step_options: [
     {
       option_name: "Driveways",
+      substeps: {
+        step_name: "What do you need help with?",
+        step_options: [
+          {
+            option_name: "Block paving",
+          },
+          {
+            option_name: "Tarmac driveway",
+          },
+          {
+            option_name: "Resin bond/bound surfacing",
+          },
+          {
+            option_name: "Gravel & shingle driveways",
+          },
+          {
+            option_name: "Drop kerbs",
+          },
+          {
+            option_name: "Concrete driveway",
+          },
+          {
+            option_name: "Cleaning or sealing a driveway",
+          },
+        ],
+      },
     },
     {
       option_name: "Patios or paving",
@@ -958,16 +1283,43 @@ export const fencingSteps: TStep = {
   step_options: [
     {
       option_name: "Fencing",
+      substeps: {
+        step_name: "What type of fencing do you need?",
+        step_options: [
+          {
+            option_name: "Garden fencing",
+          },
+          {
+            option_name: "Panel fencing",
+          },
+          {
+            option_name: "Close board fencing",
+          },
+          {
+            option_name: "Picket fencing",
+          },
+        ],
+      },
     },
     {
       option_name: "Gates",
+      substeps: {
+        step_name: "What type of gates do you need?",
+        step_options: [
+          {
+            option_name: "Wooden gates",
+          },
+          {
+            option_name: "Metal gates",
+          },
+        ],
+      },
     },
   ],
 };
 
 export const treeSurgeonSteps: TStep = {
   step_name: "What do you need help with?",
-
   step_options: [
     {
       option_name: "Tree felling",
@@ -983,7 +1335,6 @@ export const treeSurgeonSteps: TStep = {
 
 export const handymanSteps: TStep = {
   step_name: "What do you need help with?",
-
   step_options: [
     {
       option_name: "General maintenance",
@@ -1004,38 +1355,62 @@ export const handymanSteps: TStep = {
 };
 
 export const locksmithSteps: TStep = {
-  step_name: "What do you need help with?",
+  step_name: "Where is the lock?",
   step_options: [
     {
-      option_name: "Lock installation",
+      option_name: "Door",
+      substeps: {
+        step_name: "What do you need a locksmith to help with?",
+        step_options: [
+          {
+            option_name: "Lock fitting",
+          },
+          {
+            option_name: "Emergency issue",
+          },
+          {
+            option_name: "Lock repair",
+          },
+          {
+            option_name: "Opening or unlocking a door",
+          },
+          {
+            option_name: "Security door lock",
+          },
+          {
+            option_name: "Digital door lock",
+          },
+          {
+            option_name: "Key cutting",
+          },
+          {
+            option_name: "Snap lock",
+          },
+        ],
+      },
     },
     {
-      option_name: "Lock repair",
+      option_name: "Window",
     },
     {
-      option_name: "Key cutting",
+      option_name: "Vehicle",
+      substeps: {
+        step_name: "What do you need a locksmith to help with?",
+        step_options: [
+          {
+            option_name: "Car key replacement",
+          },
+          {
+            option_name: "Van security lock",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Safe",
     },
   ],
 };
-
-// export const locksmithSteps: TStep = {
-//   step_name: "Where is the lock?",
-
-//   step_options: [
-//     {
-//       option_name: "Door",
-//     },
-//     {
-//       option_name: "Window",
-//     },
-//     {
-//       option_name: "Vehicle",
-//     },
-//     {
-//       option_name: "Safe",
-//     },
-//   ],
-// };
 
 export const bathroomsSteps: TStep = {
   step_name: "What does your bathroom job involve?",
@@ -1044,10 +1419,76 @@ export const bathroomsSteps: TStep = {
     {
       option_name: "Bathroom refit",
       option_description: "fitting a brand new bathroom",
+      substeps: {
+        step_name: "What kind of refit do you need?",
+        step_options: [
+          {
+            option_name: "Fit Only",
+            option_description: "I already have the bathroom",
+          },
+          {
+            option_name: "Supply & Fit",
+            option_description:
+              "I want to purchase a bathroom and have it fitted",
+          },
+          {
+            option_name: "Supply only",
+          },
+        ],
+      },
     },
     {
       option_name: "Bathroom fixtures",
       option_description: "e.g. showers, baths, sinks, toilets, etc.",
+      substeps: {
+        step_name: "What do you need help with?",
+        step_options: [
+          {
+            option_name: "Showers",
+            substeps: {
+              step_name: "What do you need help with?",
+              step_options: [
+                {
+                  option_name: "Shower Installation",
+                },
+                {
+                  option_name: "Shower Repair",
+                },
+                {
+                  option_name: "Shower Trays",
+                },
+              ],
+            },
+          },
+          {
+            option_name: "Baths, sinks or shower trays",
+          },
+          {
+            option_name: "Bath resurfacing",
+          },
+          {
+            option_name: "Blockages",
+            option_description: "blocked sinks, baths, toilets",
+            substeps: {
+              step_name: "What do you need help with?",
+              step_options: [
+                {
+                  option_name: "Blocked toilets",
+                },
+                {
+                  option_name: "Blocked sinks",
+                },
+                {
+                  option_name: "Blocked baths",
+                },
+                {
+                  option_name: "Blocked shower trays",
+                },
+              ],
+            },
+          },
+        ],
+      },
     },
     {
       option_name: "Plumbing or heating",
@@ -1071,12 +1512,49 @@ export const tilerSteps: TStep = {
   step_options: [
     {
       option_name: "Fit new or replace tiles",
+      substeps: {
+        step_name: "What type of tiles do you need?",
+        step_options: [
+          {
+            option_name: "Ceramic",
+          },
+          {
+            option_name: "Porcelain",
+          },
+          {
+            option_name: "Plain",
+          },
+          {
+            option_name: "Natural stone",
+          },
+          {
+            option_name: "Victorian",
+          },
+          {
+            option_name: "Brick",
+          },
+          {
+            option_name: "Mosaic",
+          },
+        ],
+      },
     },
     {
       option_name: "Repair tiles",
     },
     {
       option_name: "Fit appliances/fixtures as well as tiling",
+      substeps: {
+        step_name: "Which room do you need fitted and tiled?",
+        step_options: [
+          {
+            option_name: "Kitchen",
+          },
+          {
+            option_name: "Bathroom",
+          },
+        ],
+      },
     },
   ],
 };
@@ -1087,9 +1565,66 @@ export const centralHeatingSteps: TStep = {
   step_options: [
     {
       option_name: "Boilers",
+      substeps: {
+        step_name: "What does your boiler job involve?",
+        step_options: [
+          {
+            option_name: "Installation",
+            substeps: {
+              step_name: "What type of boiler do you need?",
+              step_options: typeOfBoilers,
+            },
+          },
+          {
+            option_name: "Repair/Service",
+            substeps: {
+              step_name: "What type of boiler do you have?",
+              step_options: typeOfBoilers,
+            },
+          },
+          {
+            option_name: "Replacement",
+            substeps: {
+              step_name: "What type of boiler do you have or need?",
+              step_options: typeOfBoilers,
+            },
+          },
+        ],
+      },
     },
     {
       option_name: "Heating & radiators",
+      substeps: {
+        step_name: "What does your job involve?",
+        step_options: [
+          {
+            option_name: "Central heating installation",
+          },
+          {
+            option_name: "Central heating service/repair",
+            substeps: {
+              step_name: "What type of system do you need serviced/repaired?",
+              step_options: [
+                {
+                  option_name: "Gas",
+                },
+                {
+                  option_name: "Oil",
+                },
+                {
+                  option_name: "LPG",
+                },
+              ],
+            },
+          },
+          {
+            option_name: "Radiators installation",
+          },
+          {
+            option_name: "Radiators repair",
+          },
+        ],
+      },
     },
     {
       option_name: "Emergency issue",
@@ -1102,6 +1637,39 @@ export const centralHeatingSteps: TStep = {
     },
     {
       option_name: "Heat pumps",
+      substeps: {
+        step_name: "What does your job involve?",
+        step_options: [
+          {
+            option_name: "Installation",
+            substeps: {
+              step_name: "What type of heat pump do you need installed?",
+              step_options: [
+                {
+                  option_name: "Ground source heat pump",
+                },
+                {
+                  option_name: "Air source heat pump",
+                },
+              ],
+            },
+          },
+          {
+            option_name: "Service/Repair",
+            substeps: {
+              step_name: "What type of heat pump do you need repaired?",
+              step_options: [
+                {
+                  option_name: "Ground source heat pump",
+                },
+                {
+                  option_name: "Air source heat pump",
+                },
+              ],
+            },
+          },
+        ],
+      },
     },
     {
       option_name: "Gas cookers",
@@ -1114,7 +1682,6 @@ export const centralHeatingSteps: TStep = {
 
 export const boilerRepairSteps: TStep = {
   step_name: "What does your boiler repair job involve?",
-
   step_options: [
     {
       option_name: "Boiler installation",

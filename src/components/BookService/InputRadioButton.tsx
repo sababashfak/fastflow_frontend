@@ -23,9 +23,9 @@ const InputRadioButton = ({
       )}
     >
       <div>
-        <h4 className="text-gray-700">{option.option_name}</h4>
+        <h4 className="font-medium text-gray-800">{option.option_name}</h4>
         {option.option_description && (
-          <p className="mt-1 text-sm text-gray-600">
+          <p className="mt-1 text-[13px] text-gray-500">
             {option.option_description}
           </p>
         )}

@@ -133,7 +133,7 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
             <div className="">
               <select
                 onChange={(e) => handleCategoryChange(e.target.value)}
-                className="min-h-14 w-full cursor-pointer rounded-[4px] border p-2.5 hover:border-gray-700 focus:outline-none"
+                className="min-h-14 w-full cursor-pointer rounded-[4px] border p-2.5 font-medium text-gray-800 hover:border-gray-300 focus:outline-none"
                 value={category?.cat_slug || ""}
               >
                 <option value="" disabled>
