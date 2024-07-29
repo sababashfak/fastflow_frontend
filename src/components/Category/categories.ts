@@ -1202,35 +1202,118 @@ export const carpenterSteps: TStep = {
   ],
 };
 
-export const plastererSteps: TStep = {
-  step_name: "What do you need a plasterer to help with?",
-
+const hallwayStairsLanding: TStep = {
+  step_name: "Is this area your hallway, stairs and landing?",
   step_options: [
     {
-      option_name: "Inside the property - plastering",
+      option_name: "Yes",
+    },
+    {
+      option_name: "No",
+    },
+  ],
+};
+
+const plasterWork: TStepOption[] = [
+  {
+    option_name: "A small area (less than one full wall or ceiling)",
+    substeps: hallwayStairsLanding,
+  },
+  {
+    option_name: "Up to 5 walls and / or ceilings",
+    substeps: hallwayStairsLanding,
+  },
+  {
+    option_name: "6 - 10 walls and / or ceilings",
+    substeps: hallwayStairsLanding,
+  },
+  {
+    option_name: "11 - 20 walls and / or ceilings",
+    substeps: hallwayStairsLanding,
+  },
+  {
+    option_name: "More than 20 walls and / or ceilings",
+    substeps: hallwayStairsLanding,
+  },
+];
+
+export const plastererSteps: TStep = {
+  step_name: "What do you need a plasterer to help with?",
+  step_options: [
+    {
+      option_name: "Plastering (indoors)",
       substeps: {
-        step_name: "What does your plastering job involve?",
+        step_name: "What type of plastering do you need?",
         step_options: [
           {
-            option_name: "Skimming",
+            option_name: "Skim only",
+            option_description:
+              "Plastering over existing plaster or over plasterboard",
+            substeps: {
+              step_name: "Roughly how much work is it?",
+              step_options: plasterWork,
+            },
           },
           {
-            option_name: "Plasterboarding & dry lining",
-          },
-          {
-            option_name: "Artexing",
-          },
-          {
-            option_name: "Coving",
-          },
-          {
-            option_name: "Screeding",
+            option_name: "Plasterboard & skim",
+            option_description: "For new stud walls and ceilings",
+            substeps: {
+              step_name: "Roughly how much work is it?",
+              step_options: plasterWork,
+            },
           },
         ],
       },
     },
     {
-      option_name: "Outside the property - rendering",
+      option_name: "Rendering (outdoors)",
+      substeps: {
+        step_name: "What do you need rendered?",
+        step_options: [
+          {
+            option_name: "Exterior of house",
+            substeps: {
+              step_name: "Roughly how large is your rendering job?",
+              step_options: [
+                {
+                  option_name: "Small area (less than one wall)",
+                  option_description:
+                    "e.g. a crack or hole in an external wall",
+                },
+                {
+                  option_name: "1 - 2 exterior walls",
+                },
+                {
+                  option_name: "3 - 4 exterior walls",
+                },
+                {
+                  option_name: "5+ exterior walls",
+                },
+              ],
+            },
+          },
+          {
+            option_name: "Garden wall(s)",
+            substeps: {
+              step_name: "Roughly how large is your rendering job?",
+              step_options: [
+                {
+                  option_name: "Repair a small area",
+                },
+                {
+                  option_name: "Small (up to 10m²)",
+                },
+                {
+                  option_name: "Medium (10 - 30m²)",
+                },
+                {
+                  option_name: "Large (over 30m²)",
+                },
+              ],
+            },
+          },
+        ],
+      },
     },
   ],
 };
@@ -1318,38 +1401,175 @@ export const fencingSteps: TStep = {
   ],
 };
 
+const treeSizes: TStepOption[] = [
+  {
+    option_name: "Small - up to 3m (9 ft)",
+  },
+  {
+    option_name: "Medium - up to 8m (26 ft)",
+  },
+  {
+    option_name: "Larges - over 8m (26 ft)",
+  },
+];
+
 export const treeSurgeonSteps: TStep = {
-  step_name: "What do you need help with?",
+  step_name: "What type of tree surgery service do you require?",
   step_options: [
     {
-      option_name: "Tree felling",
+      option_name: "Trimming or topping",
+      substeps: {
+        step_name: "How many trees are involved?",
+        step_options: [
+          {
+            option_name: "1",
+            substeps: {
+              step_name: "How large is the tree?",
+              step_options: treeSizes,
+            },
+          },
+          {
+            option_name: "2",
+            substeps: {
+              step_name: "What's the height of the tallest tree?",
+              step_description:
+                "Don't worry if you don't know the exact height, we only need a rough estimate",
+              step_options: treeSizes,
+            },
+          },
+          {
+            option_name: "3",
+            substeps: {
+              step_name: "What's the height of the tallest tree?",
+              step_description:
+                "Don't worry if you don't know the exact height, we only need a rough estimate",
+              step_options: treeSizes,
+            },
+          },
+          {
+            option_name: "4 or more",
+            substeps: {
+              step_name: "What's the height of the tallest tree?",
+              step_description:
+                "Don't worry if you don't know the exact height, we only need a rough estimate",
+              step_options: treeSizes,
+            },
+          },
+        ],
+      },
     },
     {
-      option_name: "Tree pruning",
+      option_name: "Cutting down (felling)",
+      substeps: {
+        step_name: "How many trees need to be cut down?",
+        step_options: [
+          {
+            option_name: "1",
+            substeps: {
+              step_name: "How large is the tree?",
+              step_options: treeSizes,
+            },
+          },
+          {
+            option_name: "2",
+            substeps: {
+              step_name: "What's the height of the tallest tree?",
+              step_description:
+                "Don't worry if you don't know the exact height, we only need a rough estimate",
+              step_options: treeSizes,
+            },
+          },
+          {
+            option_name: "3 or more",
+            substeps: {
+              step_name: "What's the height of the tallest tree?",
+              step_description:
+                "Don't worry if you don't know the exact height, we only need a rough estimate",
+              step_options: treeSizes,
+            },
+          },
+        ],
+      },
     },
     {
-      option_name: "Stump grinding",
+      option_name: "Stump removal only",
+      substeps: {
+        step_name: "How many stumps do you need removed?",
+        step_options: [
+          {
+            option_name: "1-2 stumps",
+          },
+          {
+            option_name: "3+ stumps",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Diagnosis / Assessment",
+    },
+    {
+      option_name: "Bushes, or other gardening tasks",
     },
   ],
 };
 
 export const handymanSteps: TStep = {
-  step_name: "What do you need help with?",
+  step_name: "Does your job include electrical works?",
   step_options: [
     {
-      option_name: "General maintenance",
+      option_name: "Yes",
+      substeps: {
+        step_name: "What do you need an electrician’s help with?",
+        step_options: [
+          {
+            option_name: "Rewiring",
+          },
+          {
+            option_name: "Fuseboxes",
+          },
+          {
+            option_name: "Electrical fittings & appliances",
+          },
+          {
+            option_name: "Safety check or certificate",
+          },
+          {
+            option_name: "Electrical faults & repairs",
+          },
+        ],
+      },
     },
     {
-      option_name: "Flat pack furniture assembly",
-    },
-    {
-      option_name: "Hanging pictures & shelves",
-    },
-    {
-      option_name: "Curtain poles & blinds",
-    },
-    {
-      option_name: "TV wall mounting",
+      option_name: "No",
+      substeps: {
+        step_name: "What type of job is it?",
+        step_options: [
+          {
+            option_name: "Fixtures / fittings",
+            option_description:
+              "e.g. handrails, blinds, mirrors, shelves, TVs, etc.",
+          },
+          {
+            option_name: "Furniture assembling",
+          },
+          {
+            option_name: "Shed assembling",
+          },
+          {
+            option_name: "Cleaning / powerwashing",
+          },
+          {
+            option_name: "Carpentry / joinery",
+          },
+          {
+            option_name: "Various small tasks",
+          },
+          {
+            option_name: "Repairs",
+          },
+        ],
+      },
     },
   ],
 };
