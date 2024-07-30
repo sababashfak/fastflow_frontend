@@ -5,6 +5,7 @@ import {
   bricklayingSteps,
   builderSteps,
   carpenterSteps,
+  carpetsFlooringSteps,
   centralHeatingSteps,
   chimneySteps,
   conservatorySteps,
@@ -136,6 +137,11 @@ const categories: TCategory[] = [
     cat_name: "Boiler Repair",
     cat_slug: "boiler-repair",
     steps: boilerRepairSteps,
+  },
+  {
+    cat_name: "Carpets, Lino & Flooring",
+    cat_slug: "carpets-lino-flooring",
+    steps: carpetsFlooringSteps,
   },
   {
     cat_name: "Chimney & Fireplace",

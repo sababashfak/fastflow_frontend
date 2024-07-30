@@ -3536,3 +3536,299 @@ export const windowDoorSteps: TStep = {
     },
   ],
 };
+
+const haveCarpet: TStep = {
+  step_name: "Do you already have the carpet?",
+  step_options: [
+    {
+      option_name: "Yes, I have the carpet",
+    },
+    {
+      option_name: "No, I don't have the carpet",
+    },
+  ],
+};
+
+const carpetRooms: TStepOption[] = [
+  {
+    option_name: "1 room",
+    substeps: haveCarpet,
+  },
+  {
+    option_name: "2 rooms",
+    substeps: haveCarpet,
+  },
+  {
+    option_name: "3 rooms",
+    substeps: haveCarpet,
+  },
+  {
+    option_name: "4 rooms",
+    substeps: haveCarpet,
+  },
+  {
+    option_name: "5+ rooms",
+    substeps: haveCarpet,
+  },
+];
+
+const haveLinoFlooring: TStep = {
+  step_name: "Have you bought the lino flooring already?",
+  step_options: [
+    {
+      option_name: "I have",
+    },
+    {
+      option_name: "I have not - I need help sourcing",
+    },
+  ],
+};
+
+const linoRooms: TStep = {
+  step_name: "How many rooms do you need flooring?",
+  step_description: "A hallway should be counted as 1 room",
+  step_options: [
+    {
+      option_name: "1 room",
+      substeps: haveLinoFlooring,
+    },
+    {
+      option_name: "2 rooms",
+      substeps: haveLinoFlooring,
+    },
+    {
+      option_name: "3 rooms",
+      substeps: haveLinoFlooring,
+    },
+    {
+      option_name: "4 rooms",
+      substeps: haveLinoFlooring,
+    },
+    {
+      option_name: "5+ rooms",
+      substeps: haveLinoFlooring,
+    },
+  ],
+};
+
+const haveFlooring: TStep = {
+  step_name: "Do you have the flooring already?",
+  step_options: [
+    {
+      option_name: "Yes, I have the flooring",
+    },
+    {
+      option_name: "No, I don't have the flooring",
+    },
+  ],
+};
+
+const roomFlooring: TStep = {
+  step_name: "How many rooms need flooring?",
+  step_description: "A hallway should be counted as 1 room",
+  step_options: [
+    {
+      option_name: "1 - 2 rooms",
+      substeps: haveFlooring,
+    },
+    {
+      option_name: "3 - 4 rooms",
+      substeps: haveFlooring,
+    },
+    {
+      option_name: "5+ rooms",
+      substeps: haveFlooring,
+    },
+    {
+      option_name: "Commercial property",
+      substeps: haveFlooring,
+    },
+  ],
+};
+
+const tilesSupply: TStep = {
+  step_name: "Will you supply the tiles?",
+  step_options: [
+    {
+      option_name: "Yes",
+    },
+    {
+      option_name: "No",
+    },
+  ],
+};
+
+const sandingRooms: TStep = {
+  step_name: "How many rooms need sanding / restoring?",
+  step_options: [
+    {
+      option_name: "1 - 2 rooms",
+    },
+    {
+      option_name: "3 - 4 rooms",
+    },
+    {
+      option_name: "5+ rooms",
+    },
+    {
+      option_name: "Commercial property",
+    },
+  ],
+};
+
+export const carpetsFlooringSteps: TStep = {
+  step_name: "What does your flooring job involve?",
+  step_options: [
+    {
+      option_name: "New or replacement flooring",
+      substeps: {
+        step_name: "What kind of flooring do you need?",
+        step_options: [
+          {
+            option_name: "Carpet",
+            substeps: {
+              step_name: "Do you need any staircases carpeting?",
+              step_options: [
+                {
+                  option_name: "Yes",
+                  substeps: {
+                    step_name:
+                      "How many rooms do you need carpeting in addition to the staircase?",
+                    step_options: [
+                      {
+                        option_name: "None",
+                        substeps: haveCarpet,
+                      },
+                      ...carpetRooms,
+                    ],
+                  },
+                },
+                {
+                  option_name: "No",
+                  substeps: {
+                    step_name: "How many rooms do you need carpeting?",
+                    step_description: "A hallway should be counted as 1 room",
+                    step_options: carpetRooms,
+                  },
+                },
+              ],
+            },
+          },
+          {
+            option_name: "Linoleum (vinyl roll)",
+            substeps: linoRooms,
+          },
+          {
+            option_name: "Laminate",
+            substeps: roomFlooring,
+          },
+          {
+            option_name: "Luxury vinyl tile (LVT) ",
+            substeps: roomFlooring,
+          },
+          {
+            option_name: "Tiled",
+            substeps: {
+              step_name: "How many square metres need tiling?",
+              step_description:
+                "We don't need an exact size, but please provide your best estimate...",
+              step_options: [
+                {
+                  option_name: "Less than 2m²",
+                  substeps: tilesSupply,
+                },
+                {
+                  option_name: "2 - 14m²",
+                  substeps: tilesSupply,
+                },
+                {
+                  option_name: "15 - 30m²",
+                  substeps: tilesSupply,
+                },
+                {
+                  option_name: "31 - 50m²",
+                  substeps: tilesSupply,
+                },
+                {
+                  option_name: "over 50m²",
+                  substeps: tilesSupply,
+                },
+                {
+                  option_name: "Commercial or project",
+                  option_description:
+                    "e.g. involves multiple large rooms or properties",
+                  substeps: tilesSupply,
+                },
+                {
+                  option_name: "I don't know",
+                  substeps: tilesSupply,
+                },
+              ],
+            },
+          },
+          {
+            option_name: "Engineered",
+            substeps: roomFlooring,
+          },
+          {
+            option_name: "Solid wood",
+            substeps: roomFlooring,
+          },
+          {
+            option_name: "Parquet",
+            substeps: roomFlooring,
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Sanding / Restoration",
+      substeps: {
+        step_name: "What kind of flooring do you need sanded / restored?",
+        step_options: [
+          {
+            option_name: "Engineered",
+            substeps: sandingRooms,
+          },
+          {
+            option_name: "Solid wood",
+            substeps: sandingRooms,
+          },
+          {
+            option_name: "Parquet",
+            substeps: sandingRooms,
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Repair / Adjustment",
+      substeps: {
+        step_name: "What kind of flooring do you need repaired?",
+        step_options: [
+          {
+            option_name: "Carpet",
+          },
+          {
+            option_name: "Linoleum (vinyl roll)",
+          },
+          {
+            option_name: "Laminate",
+          },
+          {
+            option_name: "Tiled",
+          },
+          {
+            option_name: "Engineered",
+          },
+          {
+            option_name: "Solid wood",
+          },
+          {
+            option_name: "Parquet",
+          },
+        ],
+      },
+    },
+  ],
+};
