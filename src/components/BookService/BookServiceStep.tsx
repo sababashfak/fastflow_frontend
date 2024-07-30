@@ -149,16 +149,22 @@ const BookServiceStep: React.FC<BookServiceStepProps> = ({
           )}
         </div>
       </div>
-      {currentStep > stepIndex && selectedOption?.substeps && (
-        <BookServiceStep
-          steps={selectedOption.substeps}
-          currentStep={currentStep}
-          stepIndex={stepIndex + 1}
-          formData={formData}
-          handleFormDataSet={handleFormDataSet}
-          setIsLastStep={setIsLastStep}
-        />
-      )}
+      {currentStep > stepIndex &&
+        ((!isCheckbox && selectedOption?.substeps) ||
+          (isCheckbox && selectedOptions[0]?.substeps)) && (
+          <BookServiceStep
+            steps={
+              (!isCheckbox
+                ? selectedOption?.substeps
+                : selectedOptions[0]?.substeps) as TStep
+            }
+            currentStep={currentStep}
+            stepIndex={stepIndex + 1}
+            formData={formData}
+            handleFormDataSet={handleFormDataSet}
+            setIsLastStep={setIsLastStep}
+          />
+        )}
     </>
   );
 };

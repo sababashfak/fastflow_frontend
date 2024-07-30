@@ -2877,6 +2877,25 @@ export const loftConversionsteps: TStep = {
             option_name: "Boarding plus additional work",
             option_description:
               "Making loft accessible including additional work such as a velux, painting & decorating, fixed staircase etc.",
+            substeps: {
+              step_name: "What extra work do you need doing in your loft?",
+              step_type: "checkbox",
+              step_options: [
+                {
+                  option_name: "Fixed staircase",
+                },
+                {
+                  option_name:
+                    "Finishing work (plastering, painting & decorating)",
+                },
+                {
+                  option_name: "Electrics",
+                },
+                {
+                  option_name: "Velux windows",
+                },
+              ],
+            },
           },
         ],
       },
@@ -2946,17 +2965,48 @@ export const newBuildSteps: TStep = {
   ],
 };
 
+const refurbishmentWorks: TStep = {
+  step_name: "Select all the works that are required for your job:",
+  step_type: "checkbox",
+  step_options: [
+    {
+      option_name: "Electrics",
+    },
+    {
+      option_name: "Central heating",
+    },
+    {
+      option_name: "Plumbing  ",
+    },
+    {
+      option_name: "Painting & decorating",
+    },
+    {
+      option_name: "Windows & doors",
+    },
+    {
+      option_name: "Flooring",
+    },
+    {
+      option_name: "Other",
+    },
+  ],
+};
+
 const refurbishmentProperty: TStep = {
   step_name: "Do you own the property?",
   step_options: [
     {
       option_name: "Yes",
+      substeps: refurbishmentWorks,
     },
     {
       option_name: "I will - purchase in progress",
+      substeps: refurbishmentWorks,
     },
     {
       option_name: "No",
+      substeps: refurbishmentWorks,
     },
   ],
 };
@@ -2981,63 +3031,75 @@ const refurbishType: TStep = {
 };
 
 export const refurbishmentSteps: TStep = {
-  step_name:
-    "Does your job involve changing the purpose or structure of a room?",
+  step_name: "Please make sure you have read and understood the following:",
   step_description:
-    "e.g. converting a garage or removing a wall to combine rooms",
+    "This trade is for large jobs that require management and oversight. If you require multiple jobs that cover various trades, please post these separately in the appropriate trade categories.",
+  step_type: "checkbox",
   step_options: [
     {
-      option_name: "Yes",
+      option_name: "I understand",
       substeps: {
-        step_name: "How extensive is your conversion job?",
-        step_options: [
-          {
-            option_name: "Single room conversion",
-            option_description:
-              "e.g. join 2 rooms together, install necessary utilities",
-            substeps: refurbishmentProperty,
-          },
-          {
-            option_name: "Small garage / outbuilding conversion",
-            option_description:
-              "e.g. convert small outbuilding to living space",
-            substeps: refurbishmentProperty,
-          },
-          {
-            option_name: "Multiple rooms or large outbuilding",
-            option_description:
-              "e.g. convert a large detached garage into a self sufficient flat",
-            substeps: refurbishmentProperty,
-          },
-          {
-            option_name: "Whole property conversion",
-            option_description:
-              "e.g. major conversion works to one or more property, including important structural changes",
-            substeps: refurbishmentProperty,
-          },
-        ],
-      },
-    },
-    {
-      option_name: "No",
-      substeps: {
-        step_name: "Do you own the property?",
+        step_name:
+          "Does your job involve changing the purpose or structure of a room?",
+        step_description:
+          "e.g. converting a garage or removing a wall to combine rooms",
         step_options: [
           {
             option_name: "Yes",
-            substeps: refurbishType,
+            substeps: {
+              step_name: "How extensive is your conversion job?",
+              step_options: [
+                {
+                  option_name: "Single room conversion",
+                  option_description:
+                    "e.g. join 2 rooms together, install necessary utilities",
+                  substeps: refurbishmentProperty,
+                },
+                {
+                  option_name: "Small garage / outbuilding conversion",
+                  option_description:
+                    "e.g. convert small outbuilding to living space",
+                  substeps: refurbishmentProperty,
+                },
+                {
+                  option_name: "Multiple rooms or large outbuilding",
+                  option_description:
+                    "e.g. convert a large detached garage into a self sufficient flat",
+                  substeps: refurbishmentProperty,
+                },
+                {
+                  option_name: "Whole property conversion",
+                  option_description:
+                    "e.g. major conversion works to one or more property, including important structural changes",
+                  substeps: refurbishmentProperty,
+                },
+              ],
+            },
           },
           {
-            option_name: "I will - purchase in progress",
-            substeps: refurbishType,
-          },
-          {
-            option_name: "No - I'm posting on behalf of the property owner",
-            substeps: refurbishType,
-          },
-          {
-            option_name: "It's a commercial property",
-            substeps: refurbishType,
+            option_name: "No",
+            substeps: {
+              step_name: "Do you own the property?",
+              step_options: [
+                {
+                  option_name: "Yes",
+                  substeps: refurbishType,
+                },
+                {
+                  option_name: "I will - purchase in progress",
+                  substeps: refurbishType,
+                },
+                {
+                  option_name:
+                    "No - I'm posting on behalf of the property owner",
+                  substeps: refurbishType,
+                },
+                {
+                  option_name: "It's a commercial property",
+                  substeps: refurbishType,
+                },
+              ],
+            },
           },
         ],
       },
@@ -3357,7 +3419,27 @@ const doorReplacing: TStep = {
     },
     {
       option_name: "3 or more",
-      // checkbox
+      substeps: {
+        step_name: "What type of doors need fitting?",
+        step_type: "checkbox",
+        step_options: [
+          {
+            option_name: "Single door (standard)",
+          },
+          {
+            option_name: "Double door",
+          },
+          {
+            option_name: "Bi-fold door",
+          },
+          {
+            option_name: "Sliding door",
+          },
+          {
+            option_name: "Other",
+          },
+        ],
+      },
     },
   ],
 };
