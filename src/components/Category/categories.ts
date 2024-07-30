@@ -2335,3 +2335,243 @@ export const dampProofingSteps: TStep = {
     },
   ],
 };
+
+const fasciasSides: TStep = {
+  step_name: "How many sides of the property are involved?",
+  step_options: [
+    {
+      option_name: "1",
+    },
+    {
+      option_name: "2",
+    },
+    {
+      option_name: "3",
+    },
+    {
+      option_name: "4+",
+    },
+    {
+      option_name: "a garage / outbuilding",
+    },
+  ],
+};
+
+const fasciasIROptions: TStepOption[] = [
+  {
+    option_name: "Install / replace",
+    substeps: fasciasSides,
+  },
+  {
+    option_name: "Repair",
+    substeps: {
+      step_name: "Roughly how large is the repair?",
+      step_options: [
+        {
+          option_name: "Single isolated area",
+        },
+        {
+          option_name: "Multiple areas of the property",
+        },
+        {
+          option_name: "I’m not sure",
+        },
+      ],
+    },
+  },
+];
+
+export const fasciasSoffitsSteps: TStep = {
+  step_name: "What does your job involve?",
+  step_options: [
+    {
+      option_name: "Guttering only",
+      substeps: {
+        step_name: "What guttering work do you require?",
+        step_options: [
+          {
+            option_name: "Install / replace",
+            substeps: fasciasSides,
+          },
+          {
+            option_name: "Repair",
+            option_description: "e.g. leaks",
+          },
+          {
+            option_name: "Cleaning / blockages",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Fascias and/or soffits only",
+      substeps: {
+        step_name:
+          "What are you looking to have done to your fascias & soffits?",
+        step_options: fasciasIROptions,
+      },
+    },
+    {
+      option_name: "Both",
+      substeps: {
+        step_name:
+          "What are you looking to have done to your fascias, soffits & gutter?",
+        step_options: fasciasIROptions,
+      },
+    },
+  ],
+};
+
+const domesticOrCommercial: TStep = {
+  step_name: "Is this for a domestic or commercial property?",
+  step_options: [
+    {
+      option_name: "Domesitc property",
+    },
+    {
+      option_name: "Commercial property",
+    },
+  ],
+};
+
+const gasWorkOptions: TStepOption[] = [
+  {
+    option_name: "Yes",
+    substeps: domesticOrCommercial,
+  },
+  {
+    option_name: "No",
+    substeps: domesticOrCommercial,
+  },
+];
+
+export const gasWorkSteps: TStep = {
+  step_name: "What does your gas job involve?",
+  step_options: [
+    {
+      option_name: "Gas safety check",
+      substeps: {
+        step_name: "What do you need certified?",
+        step_options: [
+          {
+            option_name: "Boiler",
+            substeps: {
+              step_name: "Would you also like the boiler serviced?",
+              step_options: gasWorkOptions,
+            },
+          },
+          {
+            option_name: "Single appliance",
+            substeps: {
+              step_name: "Would you also like the appliance serviced?",
+              step_options: gasWorkOptions,
+            },
+          },
+          {
+            option_name: "Multiple appliances",
+            substeps: {
+              step_name: "Would you also like the appliances serviced?",
+              step_options: gasWorkOptions,
+            },
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Service boiler or appliance",
+      substeps: {
+        step_name: "What do you need serviced?",
+        step_options: [
+          {
+            option_name: "Boiler",
+            substeps: {
+              step_name: "Would you also like the boiler certified?",
+              step_options: gasWorkOptions,
+            },
+          },
+          {
+            option_name: "Single appliance",
+            substeps: {
+              step_name: "Would you also like the appliance certified?",
+              step_options: gasWorkOptions,
+            },
+          },
+          {
+            option_name: "Multiple appliances",
+            substeps: {
+              step_name: "Would you also like the appliances certified?",
+              step_options: gasWorkOptions,
+            },
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Install or replace boiler or appliance",
+      substeps: {
+        step_name:
+          "What kind of appliance are you looking to have installed or replaced?",
+        step_options: [
+          {
+            option_name: "Gas boiler",
+            substeps: domesticOrCommercial,
+          },
+          {
+            option_name: "Gas hob or oven",
+            substeps: domesticOrCommercial,
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Move or remove boiler or appliance",
+      substeps: {
+        step_name: "Do you want to remove a gas boiler?",
+        step_options: [
+          {
+            option_name: "Yes",
+            substeps: domesticOrCommercial,
+          },
+          {
+            option_name: "No",
+            substeps: domesticOrCommercial,
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Pipework only",
+      substeps: {
+        step_name: "What needs to be changed with the pipework?",
+        step_options: [
+          {
+            option_name: "Disconnect or cap pipework",
+          },
+          {
+            option_name: "Install or alter pipework",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Problem or repair",
+      substeps: {
+        step_name: "What appliance needs repairing?",
+        step_options: [
+          {
+            option_name: "Boiler",
+            substeps: domesticOrCommercial,
+          },
+          {
+            option_name: "Gas hob or oven",
+            substeps: domesticOrCommercial,
+          },
+          {
+            option_name: "Gas fireplace",
+            substeps: domesticOrCommercial,
+          },
+        ],
+      },
+    },
+  ],
+};

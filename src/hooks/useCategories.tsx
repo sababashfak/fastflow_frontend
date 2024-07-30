@@ -11,8 +11,10 @@ import {
   dampProofingSteps,
   drivewaysPatiosSteps,
   electricianSteps,
+  fasciasSoffitsSteps,
   fencingSteps,
   gardenerSteps,
+  gasWorkSteps,
   handymanSteps,
   landscaperSteps,
   locksmithSteps,
@@ -132,14 +134,24 @@ const categories: TCategory[] = [
     steps: chimneySteps,
   },
   {
-    cat_name: "Conservatories ",
+    cat_name: "Conservatories",
     cat_slug: "conservatories",
     steps: conservatorySteps,
   },
   {
-    cat_name: "Damp Proofing ",
+    cat_name: "Damp Proofing",
     cat_slug: "damp-proofing",
     steps: dampProofingSteps,
+  },
+  {
+    cat_name: "Fascias, Soffits & Guttering",
+    cat_slug: "fascias-soffits-guttering",
+    steps: fasciasSoffitsSteps,
+  },
+  {
+    cat_name: "Gas Works",
+    cat_slug: "gas-works",
+    steps: gasWorkSteps,
   },
 ];
 
