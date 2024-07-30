@@ -2575,3 +2575,206 @@ export const gasWorkSteps: TStep = {
     },
   ],
 };
+
+export const groundworkSteps: TStep = {
+  step_name: "What type of job is it?",
+  step_options: [
+    {
+      option_name: "Foundations for a structure to be built",
+      option_description:
+        "e.g. Foundations for extension, new build, outbuilding or shed",
+      substeps: {
+        step_name: "What do you want foundations for?",
+        step_options: [
+          {
+            option_name: "New house",
+          },
+          {
+            option_name: "House extension",
+          },
+          {
+            option_name: "Outbuilding or garage",
+          },
+          {
+            option_name: "Shed",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Drainage & pipework",
+      option_description:
+        "e.g. digging trenches and laying new pipes or drains",
+    },
+    {
+      option_name: "General garden earthworks",
+      option_description:
+        "e.g. level lawns, excavate for a pond or pool, dig grave, etc.",
+    },
+  ],
+};
+
+export const insulationSteps: TStep = {
+  step_name: "What type of insulation do you want?",
+  step_options: [
+    {
+      option_name: "Loft / roof insulation",
+    },
+    {
+      option_name: "Wall insulation",
+      substeps: {
+        step_name: "How many walls need insulating?",
+        step_options: [
+          {
+            option_name: "1 wall",
+          },
+          {
+            option_name: "Several walls",
+          },
+          {
+            option_name: "Whole house",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Floor insulation",
+      substeps: {
+        step_name: "How many rooms need insulating?",
+        step_options: [
+          {
+            option_name: "1 - 2 rooms",
+          },
+          {
+            option_name: "3 - 4 rooms",
+          },
+          {
+            option_name: "5+ rooms",
+          },
+        ],
+      },
+    },
+  ],
+};
+
+const kitchenStructureWork: TStep = {
+  step_name: "Do you require any structural work (e.g. removing walls)?",
+  step_options: [
+    {
+      option_name: "Yes",
+      substeps: {
+        step_name: "Do you own the property?",
+        step_options: [
+          {
+            option_name: "Yes",
+          },
+          {
+            option_name: "I will - purchase in progress",
+          },
+          {
+            option_name: "No - I'm posting on behalf of the property owner",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "No",
+    },
+  ],
+};
+
+const purchasedKitchen: TStep = {
+  step_name: "Have you purchased a kitchen already?",
+  step_options: [
+    {
+      option_name: "Yes - purchased everything already",
+      substeps: kitchenStructureWork,
+    },
+    {
+      option_name: "No - nothing purchased yet",
+      substeps: kitchenStructureWork,
+    },
+  ],
+};
+
+export const kitchenFitiingSteps: TStep = {
+  step_name: "What type of kitchen fitting service do you require?",
+  step_options: [
+    {
+      option_name: "New kitchen installation",
+      substeps: {
+        step_name: "How big is your kitchen project?",
+        step_options: [
+          {
+            option_name: "Extensive kitchen refurb",
+            option_description:
+              "Including new tiling, lighting, flooring, or plumbing",
+            substeps: purchasedKitchen,
+          },
+          {
+            option_name: "Standard kitchen refit",
+            option_description:
+              "Upgrading units, worktops, sink without major layout changes",
+            substeps: purchasedKitchen,
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Worktop installation",
+      substeps: {
+        step_name: "What worktop material would you like?",
+        step_options: [
+          {
+            option_name: "Natural stone",
+            option_description: "e.g. granite or marble",
+          },
+          {
+            option_name: "Composite",
+            option_description: "e.g. quartz or corian",
+          },
+          {
+            option_name: "Solid wood",
+            option_description: "e.g. oak, walnut, beech, bamboo",
+          },
+          {
+            option_name: "Laminate",
+            option_description: "e.g. wood, stone effect",
+          },
+          {
+            option_name: "Not sure - need help deciding",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Cabinet door refurbishment / replacement",
+    },
+    {
+      option_name: "Fit appliance (sink, oven, dishwasher, etc.)",
+      substeps: {
+        step_name: "What type of appliance do you require fitting?",
+        step_options: [
+          {
+            option_name: "Gas / dual-fuel cooker / oven",
+          },
+          {
+            option_name: "Electric cooker / oven",
+          },
+          {
+            option_name: "Washing machine",
+          },
+          {
+            option_name: "Dishwasher",
+          },
+          {
+            option_name: "Sink",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Minor repair",
+    },
+  ],
+};

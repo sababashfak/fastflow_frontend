@@ -15,7 +15,10 @@ import {
   fencingSteps,
   gardenerSteps,
   gasWorkSteps,
+  groundworkSteps,
   handymanSteps,
+  insulationSteps,
+  kitchenFitiingSteps,
   landscaperSteps,
   locksmithSteps,
   painterSteps,
@@ -152,6 +155,21 @@ const categories: TCategory[] = [
     cat_name: "Gas Works",
     cat_slug: "gas-works",
     steps: gasWorkSteps,
+  },
+  {
+    cat_name: "Groundwork & Foundations",
+    cat_slug: "groundwork-foundations",
+    steps: groundworkSteps,
+  },
+  {
+    cat_name: "Insulation",
+    cat_slug: "insulation",
+    steps: insulationSteps,
+  },
+  {
+    cat_name: "Kitchen Fitting",
+    cat_slug: "kitchen-fitting",
+    steps: kitchenFitiingSteps,
   },
 ];
 
