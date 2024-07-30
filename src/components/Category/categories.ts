@@ -3832,3 +3832,130 @@ export const carpetsFlooringSteps: TStep = {
     },
   ],
 };
+
+const hazardousMaterials: TStep = {
+  step_name: "Are there any hazardous materials that you know of?",
+  step_description:
+    "e.g. Asbestos, white goods, mattress, CRT TV or monitor, fluorescent tubes, tyres, oil, petrol, diesel, or paint",
+  step_options: [
+    {
+      option_name: "Yes",
+      substeps: {
+        step_name: "Select the hazardous materials that you're aware of:",
+        step_type: "checkbox",
+        step_options: [
+          {
+            option_name: "Asbestos",
+          },
+          {
+            option_name: "White goods",
+          },
+          {
+            option_name: "Mattress",
+          },
+          {
+            option_name: "CRT TV / Monitor",
+          },
+          {
+            option_name: "Fluorescent tubes",
+          },
+          {
+            option_name: "Tyres",
+          },
+          {
+            option_name: "Oil, petrol, diesel or paint",
+          },
+          {
+            option_name: "Other",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "No",
+    },
+    {
+      option_name: "I am not sure",
+    },
+  ],
+};
+
+export const demolitionSteps: TStep = {
+  step_name: "What type of service do you require?",
+  step_options: [
+    {
+      option_name: "Waste removal only",
+      option_description:
+        "Remove waste from property, including hazardous materials",
+      substeps: {
+        step_name: "How much waste do you need clearing?",
+        step_options: [
+          {
+            option_name: "Small van or car load",
+            substeps: hazardousMaterials,
+          },
+          {
+            option_name: "Medium van load",
+            substeps: hazardousMaterials,
+          },
+          {
+            option_name: "Large van load",
+            substeps: hazardousMaterials,
+          },
+          {
+            option_name: "Full site clearance or more",
+            substeps: hazardousMaterials,
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Building / structure demolition",
+      option_description: "Knock down and remove a whole structure",
+      substeps: {
+        step_name:
+          "Roughly, how large is the structure that needs demolishing?",
+        step_options: [
+          {
+            option_name: "Small",
+            option_description: "e.g. shed or porch",
+            substeps: hazardousMaterials,
+          },
+          {
+            option_name: "Medium",
+            option_description: "e.g. rip out a kitchen, bathroom or similar",
+            substeps: hazardousMaterials,
+          },
+          {
+            option_name: "Large",
+            option_description: "e.g. outbuilding or garage",
+            substeps: hazardousMaterials,
+          },
+          {
+            option_name: "X-Large",
+            option_description: "e.g. a house or multiple properties",
+            substeps: hazardousMaterials,
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Knock down a wall",
+      option_description: "Knock down and remove walls",
+      substeps: {
+        step_name: "What type of wall do you want to remove?",
+        step_options: [
+          {
+            option_name: "Stud wall",
+          },
+          {
+            option_name: "Non-load bearing wall",
+          },
+          {
+            option_name: "Load bearing wall",
+          },
+        ],
+      },
+    },
+  ],
+};

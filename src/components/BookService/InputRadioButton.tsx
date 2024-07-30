@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { IoMdCheckmark } from "react-icons/io";
 
 type InputButtonProps = {
   option: {
@@ -7,12 +8,14 @@ type InputButtonProps = {
   };
   onOptionSelect: (value?: string) => void;
   isChecked: boolean;
+  isCheckbox?: boolean;
 };
 
 const InputRadioButton = ({
   option,
   onOptionSelect,
   isChecked,
+  isCheckbox,
 }: InputButtonProps) => {
   return (
     <label
@@ -32,13 +35,18 @@ const InputRadioButton = ({
       </div>
       <span
         className={cn(
-          "block size-6 rounded-full border border-gray-300",
-          isChecked && "border-8 border-gray-700",
+          "flex size-6 items-center justify-center rounded-[4px] border border-gray-300",
+          !isCheckbox && "rounded-full",
+          isChecked && !isCheckbox && "border-8 border-gray-700",
+          isChecked && isCheckbox && "border-gray-800 bg-gray-800",
         )}
-      ></span>
+      >
+        {isCheckbox && isChecked && (
+          <IoMdCheckmark className="size-4 text-white" />
+        )}
+      </span>
       <input
-        type="radio"
-        name="radio"
+        type={isCheckbox ? "checkbox" : "radio"}
         value={option.option_name}
         checked={isChecked}
         onChange={(e) => onOptionSelect(e.target.value)}

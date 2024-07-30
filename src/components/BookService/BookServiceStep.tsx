@@ -26,10 +26,37 @@ const BookServiceStep: React.FC<BookServiceStepProps> = ({
   handleFormDataSet,
   setIsLastStep,
 }) => {
+  const isCheckbox = steps.step_type === "checkbox";
   const [isOther, setIsOther] = useState(false);
   const [selectedOption, setSelectedOption] = useState<TStepOption | null>(
     null,
   );
+  const [selectedOptions, setSelectedOptions] = useState<TStepOption[]>([]);
+
+  const handleOptionSelect = (option: TStepOption) => {
+    if (!isCheckbox) {
+      setSelectedOption(option);
+    }
+
+    if (isCheckbox) {
+      const isChecked = selectedOptions.some(
+        (selectedOption) => selectedOption.option_name === option.option_name,
+      );
+
+      if (isChecked) {
+        setSelectedOptions((prev) =>
+          prev.filter(
+            (selectedOption) =>
+              selectedOption.option_name !== option.option_name,
+          ),
+        );
+      } else {
+        setSelectedOptions((prev) => [...prev, option]);
+      }
+    }
+
+    setIsOther(false);
+  };
 
   useEffect(() => {
     handleFormDataSet(steps.step_name, selectedOption?.option_name || "");
@@ -41,6 +68,21 @@ const BookServiceStep: React.FC<BookServiceStepProps> = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedOption?.option_name]);
+
+  useEffect(() => {
+    const selectedOptionsName = selectedOptions.map(
+      (selectedOption) => selectedOption.option_name,
+    );
+
+    handleFormDataSet(steps.step_name, selectedOptionsName.join(", "));
+
+    if (selectedOptions.length > 0 && !selectedOptions[0].substeps) {
+      setIsLastStep(true);
+    } else {
+      setIsLastStep(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedOptions]);
 
   return (
     <>
@@ -61,8 +103,12 @@ const BookServiceStep: React.FC<BookServiceStepProps> = ({
         </div>
         <div className="space-y-3">
           {steps.step_options?.map((option, index) => {
-            const isChecked =
-              selectedOption?.option_name === option.option_name;
+            const isChecked = !isCheckbox
+              ? selectedOption?.option_name === option.option_name
+              : selectedOptions.some(
+                  (selectedOption) =>
+                    selectedOption.option_name === option.option_name,
+                );
 
             return (
               <InputRadioButton
@@ -72,25 +118,25 @@ const BookServiceStep: React.FC<BookServiceStepProps> = ({
                   option_description: option.option_description,
                 }}
                 isChecked={isChecked}
-                onOptionSelect={() => {
-                  setSelectedOption(option);
-                  setIsOther(false);
-                }}
+                onOptionSelect={() => handleOptionSelect(option)}
+                isCheckbox={isCheckbox}
               />
             );
           })}
-          <InputRadioButton
-            option={{ option_name: "Other" }}
-            onOptionSelect={() => {
-              setIsOther(true);
-              setSelectedOption({
-                option_name: "",
-                option_description: "",
-              });
-            }}
-            isChecked={isOther}
-          />
-          {isOther && (
+          {steps.step_type !== "checkbox" && (
+            <InputRadioButton
+              option={{ option_name: "Other" }}
+              onOptionSelect={() => {
+                setIsOther(true);
+                setSelectedOption({
+                  option_name: "",
+                  option_description: "",
+                });
+              }}
+              isChecked={isOther}
+            />
+          )}
+          {isOther && steps.step_type !== "checkbox" && (
             <Input
               placeholder="Please specify here"
               onChange={(e) => {

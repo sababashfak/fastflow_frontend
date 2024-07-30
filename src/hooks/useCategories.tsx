@@ -10,6 +10,7 @@ import {
   chimneySteps,
   conservatorySteps,
   dampProofingSteps,
+  demolitionSteps,
   drivewaysPatiosSteps,
   electricianSteps,
   fasciasSoffitsSteps,
@@ -157,6 +158,11 @@ const categories: TCategory[] = [
     cat_name: "Damp Proofing",
     cat_slug: "damp-proofing",
     steps: dampProofingSteps,
+  },
+  {
+    cat_name: "Demolition & Clearance",
+    cat_slug: "demolition-clearance",
+    steps: demolitionSteps,
   },
   {
     cat_name: "Fascias, Soffits & Guttering",
