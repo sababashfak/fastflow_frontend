@@ -3164,3 +3164,375 @@ export const securitySystemSteps: TStep = {
     },
   ],
 };
+
+const stoneworkSize: TStep = {
+  step_name: "How large is the job?",
+  step_options: [
+    {
+      option_name: "Small",
+      option_description: "E.g. garden walls, chimney, section of wall, etc.",
+    },
+    {
+      option_name: "Medium",
+      option_description:
+        "E.g. single wall, multiple areas, garage or outbuilding, etc.",
+    },
+    {
+      option_name: "Large",
+      option_description: "Multiple walls",
+    },
+    {
+      option_name: "X-large",
+      option_description: "Whole property",
+    },
+  ],
+};
+
+const stoneworkType: TStep = {
+  step_name: "What type of stonework do you want?",
+  step_options: [
+    {
+      option_name: "Ashlar",
+      option_description: "Any type of finely dressed, shaped stone",
+      substeps: stoneworkSize,
+    },
+    {
+      option_name: "Random rubble",
+      option_description:
+        "Irregular shaped, non-dressed stone, built with mortar",
+      substeps: stoneworkSize,
+    },
+    {
+      option_name: "Dry stone",
+      option_description:
+        "Irregular shaped stone boundary walls, built without mortar",
+      substeps: stoneworkSize,
+    },
+  ],
+};
+
+export const stonemasonrySteps: TStep = {
+  step_name: "What type of masonry service do you require?",
+  step_options: [
+    {
+      option_name: "Building",
+      substeps: stoneworkType,
+    },
+    {
+      option_name: "Repairing",
+      substeps: stoneworkType,
+    },
+    {
+      option_name: "Repointing",
+      substeps: stoneworkType,
+    },
+  ],
+};
+
+const newWindowReplacing: TStep = {
+  step_name: "How many windows need replacing?",
+  step_options: [
+    {
+      option_name: "1 - 2",
+    },
+    {
+      option_name: "3 - 5",
+    },
+    {
+      option_name: "6 - 9",
+    },
+    {
+      option_name: "10 or more",
+    },
+  ],
+};
+
+const doorHanging: TStep = {
+  step_name: "How many doors do you need hanging?",
+  step_options: [
+    {
+      option_name: "A single door",
+    },
+    {
+      option_name: "2-4 doors",
+    },
+    {
+      option_name: "5 or more doors",
+    },
+  ],
+};
+
+const typeOfDoor: TStep = {
+  step_name: "What type of door(s) do you need fitted?",
+  step_options: [
+    {
+      option_name: "Standard door(s)",
+      option_description: "E.g. hollow core",
+    },
+    {
+      option_name: "Solid wood or glazed door(s)",
+    },
+    {
+      option_name: "Fire rated door(s)",
+    },
+    {
+      option_name: "A combination of different types of doors",
+    },
+  ],
+};
+
+const doorSupply: TStep = {
+  step_name: "Who is supplying the door(s)?",
+  step_options: [
+    {
+      option_name: "I am supplying the door(s)",
+      substeps: {
+        step_name: "How many new doors do you need fitted?",
+        step_options: [
+          {
+            option_name: "1",
+            substeps: typeOfDoor,
+          },
+          {
+            option_name: "2",
+            substeps: typeOfDoor,
+          },
+          {
+            option_name: "3",
+            substeps: typeOfDoor,
+          },
+          {
+            option_name: "4",
+            substeps: typeOfDoor,
+          },
+          {
+            option_name: "5",
+            substeps: typeOfDoor,
+          },
+          {
+            option_name: "6",
+            substeps: typeOfDoor,
+          },
+          {
+            option_name: "7",
+            substeps: typeOfDoor,
+          },
+          {
+            option_name: "8",
+            substeps: typeOfDoor,
+          },
+          {
+            option_name: "More than 8",
+            substeps: typeOfDoor,
+          },
+        ],
+      },
+    },
+    {
+      option_name: "I would like the tradesperson to supply the door",
+      substeps: doorHanging,
+    },
+  ],
+};
+
+const doorReplacing: TStep = {
+  step_name: "How many doors need replacing?",
+  step_options: [
+    {
+      option_name: "1",
+    },
+    {
+      option_name: "2",
+      substeps: {
+        step_name: "A single double door, or two separate doors?",
+        step_options: [
+          {
+            option_name: "Double door",
+          },
+          {
+            option_name: "2 single doorss",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "3 or more",
+      // checkbox
+    },
+  ],
+};
+
+const windowReplacing: TStep = {
+  step_name: "How many windows need replacing?",
+  step_options: [
+    {
+      option_name: "1 - 2",
+      substeps: doorReplacing,
+    },
+    {
+      option_name: "3 - 5",
+      substeps: doorReplacing,
+    },
+    {
+      option_name: "6 - 9",
+      substeps: doorReplacing,
+    },
+    {
+      option_name: "10 or more",
+      substeps: doorReplacing,
+    },
+  ],
+};
+
+const kindOfRepair: TStep = {
+  step_name: "What kind of repair are you looking for?",
+  step_options: [
+    {
+      option_name: "Single window or door",
+    },
+    {
+      option_name: "Several windows or doors",
+    },
+  ],
+};
+
+export const windowDoorSteps: TStep = {
+  step_name: "What service do you require?",
+  step_options: [
+    {
+      option_name: "New windows",
+      substeps: {
+        step_name: "What kind of windows do you need?",
+        step_options: [
+          {
+            option_name: "Wooden",
+            substeps: newWindowReplacing,
+          },
+          {
+            option_name: "uPVC",
+            substeps: newWindowReplacing,
+          },
+          {
+            option_name: "Aluminium",
+            substeps: newWindowReplacing,
+          },
+        ],
+      },
+    },
+    {
+      option_name: "New doors (internal or external)",
+      substeps: {
+        step_name: "Are these internal or external doors?",
+        step_options: [
+          {
+            option_name: "Internal doors",
+            substeps: {
+              step_name: "What type of doors need fitting?",
+              step_options: [
+                {
+                  option_name: "Single door (standard)",
+                  substeps: doorSupply,
+                },
+                {
+                  option_name: "Double door",
+                  substeps: doorSupply,
+                },
+                {
+                  option_name: "Bi-fold door",
+                  substeps: doorHanging,
+                },
+                {
+                  option_name: "Sliding door",
+                  option_description:
+                    "e.g. Bypass doors, pocket doors, barn doors, etc.",
+                  substeps: doorHanging,
+                },
+                {
+                  option_name: "More than one type of door",
+                  option_description:
+                    "You can provide more details on the next screen",
+                },
+              ],
+            },
+          },
+          {
+            option_name: "External doors",
+            substeps: {
+              step_name: "What kind of doors do you need?",
+              step_options: [
+                {
+                  option_name: "Wooden",
+                  substeps: doorReplacing,
+                },
+                {
+                  option_name: "uPVC",
+                  substeps: doorReplacing,
+                },
+                {
+                  option_name: "Aluminium",
+                  substeps: doorReplacing,
+                },
+                {
+                  option_name: "Multiple kinds",
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+    {
+      option_name: "New windows and external doors",
+      substeps: {
+        step_name: "What kind of windows do you need?",
+        step_options: [
+          {
+            option_name: "Wooden",
+            substeps: windowReplacing,
+          },
+          {
+            option_name: "uPVC",
+            substeps: windowReplacing,
+          },
+          {
+            option_name: "Aluminium",
+            substeps: windowReplacing,
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Replace glass",
+      substeps: {
+        step_name: "How many panes of glass need replacing?",
+        step_options: [
+          {
+            option_name: "1",
+          },
+          {
+            option_name: "2 - 3",
+          },
+          {
+            option_name: "4 or more",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Repair",
+      substeps: {
+        step_name: "What type of windows / doors need repair?",
+        step_options: [
+          {
+            option_name: "Wooden",
+            substeps: kindOfRepair,
+          },
+          {
+            option_name: "uPVC or metal",
+            substeps: kindOfRepair,
+          },
+        ],
+      },
+    },
+  ],
+};

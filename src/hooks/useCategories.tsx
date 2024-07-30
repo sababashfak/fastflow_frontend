@@ -29,8 +29,10 @@ import {
   refurbishmentSteps,
   rooferSteps,
   securitySystemSteps,
+  stonemasonrySteps,
   tilerSteps,
   treeSurgeonSteps,
+  windowDoorSteps,
 } from "@/components/Category/categories";
 import { TCategory } from "@/interfaces/categories";
 
@@ -194,6 +196,16 @@ const categories: TCategory[] = [
     cat_name: "Security Systems",
     cat_slug: "security-systems",
     steps: securitySystemSteps,
+  },
+  {
+    cat_name: "Stonemasonry",
+    cat_slug: "stonemasonry",
+    steps: stonemasonrySteps,
+  },
+  {
+    cat_name: "Windows & Door Fitting",
+    cat_slug: "windows-door-fitting",
+    steps: windowDoorSteps,
   },
 ];
 
