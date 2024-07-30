@@ -21,10 +21,14 @@ import {
   kitchenFitiingSteps,
   landscaperSteps,
   locksmithSteps,
+  loftConversionsteps,
+  newBuildSteps,
   painterSteps,
   plastererSteps,
   plumberSteps,
+  refurbishmentSteps,
   rooferSteps,
+  securitySystemSteps,
   tilerSteps,
   treeSurgeonSteps,
 } from "@/components/Category/categories";
@@ -170,6 +174,26 @@ const categories: TCategory[] = [
     cat_name: "Kitchen Fitting",
     cat_slug: "kitchen-fitting",
     steps: kitchenFitiingSteps,
+  },
+  {
+    cat_name: "Loft Conversion",
+    cat_slug: "loft-conversion",
+    steps: loftConversionsteps,
+  },
+  {
+    cat_name: "New Build",
+    cat_slug: "new-build",
+    steps: newBuildSteps,
+  },
+  {
+    cat_name: "Restoration & Refurbishment",
+    cat_slug: "restoration-refurbishment",
+    steps: refurbishmentSteps,
+  },
+  {
+    cat_name: "Security Systems",
+    cat_slug: "security-systems",
+    steps: securitySystemSteps,
   },
 ];
 

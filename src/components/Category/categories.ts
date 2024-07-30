@@ -2778,3 +2778,389 @@ export const kitchenFitiingSteps: TStep = {
     },
   ],
 };
+
+const loftPropertyOnwerShip: TStep = {
+  step_name: "Do you own the property?",
+  step_options: [
+    {
+      option_name: "Yes",
+      substeps: {
+        step_name: "Have you had any plans drawn up?",
+        step_options: [
+          {
+            option_name: "Yes I have plans",
+          },
+          {
+            option_name: "Plans are being drawn up",
+          },
+          {
+            option_name: "No plans have been drawn up",
+            substeps: {
+              step_name: "Your builder will probably require plans",
+              step_description:
+                "Loft conversions typically require building regulations, so we recommend you talk to an architect first to ensure your project meets any relevant regulatory requirements.",
+              step_options: [
+                {
+                  option_name: "Okay - send my job to architects",
+                },
+                {
+                  option_name: "Continue posting this job without plans",
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+    {
+      option_name: "I will - purchase in the progress",
+    },
+    {
+      option_name: "No",
+    },
+  ],
+};
+
+const loftHouseType: TStep = {
+  step_name: "What type of house is the loft conversion for?",
+  step_options: [
+    {
+      option_name: "Detached",
+      substeps: loftPropertyOnwerShip,
+    },
+    {
+      option_name: "Semi-detached",
+      substeps: loftPropertyOnwerShip,
+    },
+    {
+      option_name: "Terraced",
+      substeps: loftPropertyOnwerShip,
+    },
+    {
+      option_name: "End of Terrace",
+      substeps: loftPropertyOnwerShip,
+    },
+    {
+      option_name: "Bungalow",
+      substeps: loftPropertyOnwerShip,
+    },
+  ],
+};
+
+export const loftConversionsteps: TStep = {
+  step_name: "What type of loft conversion do you want?",
+  step_options: [
+    {
+      option_name: "Loft conversion with structural changes",
+      option_description:
+        "Requires a change to the roof structure, e.g. dormers, hip-to-gable, etc.",
+      substeps: loftHouseType,
+    },
+    {
+      option_name: "Loft conversion (no structural changes)",
+      option_description: "No alterations to the roof shape or structure.",
+      substeps: loftHouseType,
+    },
+    {
+      option_name: "Loft conversion for storage purposes",
+      option_description:
+        "Creating an accessible space by boarding, decorating etc.",
+      substeps: {
+        step_name: "What do you need doing in your loft?",
+        step_options: [
+          {
+            option_name: "Board out loft",
+            option_description:
+              "Board out and pull down ladder; making loft accessible and suitable for storage.",
+          },
+          {
+            option_name: "Boarding plus additional work",
+            option_description:
+              "Making loft accessible including additional work such as a velux, painting & decorating, fixed staircase etc.",
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Fit a skylight",
+      option_description:
+        "Add one or more windows to the roof, e.g. velux windows.",
+    },
+  ],
+};
+
+const newBuildBudget: TStep = {
+  step_name: "Roughly what is the budget?",
+  step_options: [
+    {
+      option_name: "Less than £200k",
+    },
+    {
+      option_name: "£200k - £500k",
+    },
+    {
+      option_name: "£500k - £1m",
+    },
+    {
+      option_name: "More than £1m",
+    },
+    {
+      option_name: "I don't know at this stage",
+    },
+  ],
+};
+
+const planningPermission: TStep = {
+  step_name: "Do you have planning permission?",
+  step_options: [
+    {
+      option_name: "Yes",
+      substeps: newBuildBudget,
+    },
+    {
+      option_name: "In progress",
+      substeps: newBuildBudget,
+    },
+    {
+      option_name: "Not applied for yet",
+      substeps: newBuildBudget,
+    },
+  ],
+};
+
+export const newBuildSteps: TStep = {
+  step_name: "Do you own the land you plan to build on?",
+  step_options: [
+    {
+      option_name: "Yes",
+      substeps: planningPermission,
+    },
+    {
+      option_name: "I will - purchase in progress",
+      substeps: planningPermission,
+    },
+    {
+      option_name: "No",
+      substeps: planningPermission,
+    },
+  ],
+};
+
+const refurbishmentProperty: TStep = {
+  step_name: "Do you own the property?",
+  step_options: [
+    {
+      option_name: "Yes",
+    },
+    {
+      option_name: "I will - purchase in progress",
+    },
+    {
+      option_name: "No",
+    },
+  ],
+};
+
+const refurbishType: TStep = {
+  step_name: "What type of job is it?",
+  step_options: [
+    {
+      option_name: "Small refurbishment",
+      option_description: "e.g. no more than one room needs refurbing",
+    },
+    {
+      option_name: "Large refurbishment",
+      option_description:
+        "e.g. more than one room or multiple jobs throughout property",
+    },
+    {
+      option_name: "Full refurbishment",
+      option_description: "e.g. whole house needs refurbishing",
+    },
+  ],
+};
+
+export const refurbishmentSteps: TStep = {
+  step_name:
+    "Does your job involve changing the purpose or structure of a room?",
+  step_description:
+    "e.g. converting a garage or removing a wall to combine rooms",
+  step_options: [
+    {
+      option_name: "Yes",
+      substeps: {
+        step_name: "How extensive is your conversion job?",
+        step_options: [
+          {
+            option_name: "Single room conversion",
+            option_description:
+              "e.g. join 2 rooms together, install necessary utilities",
+            substeps: refurbishmentProperty,
+          },
+          {
+            option_name: "Small garage / outbuilding conversion",
+            option_description:
+              "e.g. convert small outbuilding to living space",
+            substeps: refurbishmentProperty,
+          },
+          {
+            option_name: "Multiple rooms or large outbuilding",
+            option_description:
+              "e.g. convert a large detached garage into a self sufficient flat",
+            substeps: refurbishmentProperty,
+          },
+          {
+            option_name: "Whole property conversion",
+            option_description:
+              "e.g. major conversion works to one or more property, including important structural changes",
+            substeps: refurbishmentProperty,
+          },
+        ],
+      },
+    },
+    {
+      option_name: "No",
+      substeps: {
+        step_name: "Do you own the property?",
+        step_options: [
+          {
+            option_name: "Yes",
+            substeps: refurbishType,
+          },
+          {
+            option_name: "I will - purchase in progress",
+            substeps: refurbishType,
+          },
+          {
+            option_name: "No - I'm posting on behalf of the property owner",
+            substeps: refurbishType,
+          },
+          {
+            option_name: "It's a commercial property",
+            substeps: refurbishType,
+          },
+        ],
+      },
+    },
+  ],
+};
+
+const typeOfProperty: TStep = {
+  step_name: "What type of property is the system for?",
+  step_options: [
+    {
+      option_name: "Residential home",
+    },
+    {
+      option_name: "Commercial property",
+    },
+  ],
+};
+
+const systemPurchased: TStep = {
+  step_name: "Have you purchased the system already?",
+  step_options: [
+    {
+      option_name: "Already purchased, installation only",
+      substeps: typeOfProperty,
+    },
+    {
+      option_name: "I know what I want, need the installer to buy",
+      substeps: typeOfProperty,
+    },
+    {
+      option_name: "No, I need help deciding",
+      substeps: typeOfProperty,
+    },
+  ],
+};
+
+export const securitySystemSteps: TStep = {
+  step_name: "What type of security system?",
+  step_options: [
+    {
+      option_name: "Security alarm system",
+      substeps: {
+        step_name: "What service do you require?",
+        step_options: [
+          {
+            option_name: "Installation",
+            substeps: {
+              step_name: "What type of security system?",
+              step_options: [
+                {
+                  option_name: "Wired",
+                  substeps: systemPurchased,
+                },
+                {
+                  option_name: "Wireless",
+                  substeps: systemPurchased,
+                },
+                {
+                  option_name: "I'm not sure",
+                  substeps: systemPurchased,
+                },
+              ],
+            },
+          },
+          {
+            option_name: "Servicing / repair",
+            substeps: typeOfProperty,
+          },
+          {
+            option_name: "Removal",
+            substeps: typeOfProperty,
+          },
+        ],
+      },
+    },
+    {
+      option_name: "CCTV / Smart camera",
+      substeps: {
+        step_name: "What type of security camera service do you require?",
+        step_options: [
+          {
+            option_name: "Installation",
+            substeps: {
+              step_name: "What type of camera system?",
+              step_options: [
+                {
+                  option_name: "Wired",
+                  substeps: systemPurchased,
+                },
+                {
+                  option_name: "Wireless",
+                  substeps: systemPurchased,
+                },
+                {
+                  option_name: "I'm not sure",
+                  substeps: systemPurchased,
+                },
+              ],
+            },
+          },
+          {
+            option_name: "Servicing / repair",
+            substeps: typeOfProperty,
+          },
+          {
+            option_name: "Removal",
+            substeps: typeOfProperty,
+          },
+        ],
+      },
+    },
+    {
+      option_name: "Entry system",
+    },
+    {
+      option_name: "Smoke alarms",
+    },
+    {
+      option_name: "Security lights",
+    },
+    {
+      option_name: "Locks",
+    },
+  ],
+};
