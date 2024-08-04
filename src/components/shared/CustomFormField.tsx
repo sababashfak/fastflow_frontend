@@ -11,7 +11,7 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 
 type CustomFormFieldProps = {
-  label: string;
+  label?: string;
   name: string;
   placeholder: string;
   formControl: Control<any>;
