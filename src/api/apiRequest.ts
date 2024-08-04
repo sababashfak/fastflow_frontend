@@ -1,15 +1,14 @@
 import { AxiosError } from "axios";
 
-const catchError = async (cb: any) => {
+const apiRequest = async <T>(request: () => Promise<T>): Promise<T | any> => {
   try {
-    return await cb();
+    return await request();
   } catch (error) {
     if (error instanceof AxiosError) {
       return error.response?.data;
-    } else {
-      throw error;
     }
+    throw error;
   }
 };
 
-export default catchError;
+export default apiRequest;

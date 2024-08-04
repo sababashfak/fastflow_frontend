@@ -1,12 +1,17 @@
 import { create } from "zustand";
+import { TUser } from "./interfaces/user";
 
-const useStore = create((set) => {
+export interface TStore {
+  isLoggedIn: boolean;
+  user: TUser | null;
+  setUser: (user: TStore["user"]) => void;
+}
+
+const useStore = create<TStore>((set) => {
   return {
     isLoggedIn: false,
     user: null,
-    isFirstVisit: true,
-    setFirstVisit: () => set({ isFirstVisit: false }),
-    setUser: (user) => {
+    setUser: (user: TUser | null) => {
       if (user) {
         set({ user, isLoggedIn: true });
       } else {
