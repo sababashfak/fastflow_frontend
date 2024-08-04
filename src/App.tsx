@@ -4,7 +4,9 @@ import Layout from "./components/shared/Layout";
 import { Toaster } from "./components/ui/sonner";
 import BookService from "./pages/BookService";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
+import Signup from "./pages/Signup";
 import UnderConstruction from "./pages/UnderConstruction";
 
 const App = () => {
@@ -21,7 +23,8 @@ const App = () => {
             <Route path="projects" element={<UnderConstruction />} />
             <Route path="blog" element={<UnderConstruction />} />
             <Route path="contact" element={<UnderConstruction />} />
-            <Route path="login" element={<UnderConstruction />} />
+            <Route path="login" element={<Login />} />
+            <Route path="signup" element={<Signup />} />
             <Route path="privacy-policy" element={<UnderConstruction />} />
             <Route path="terms-of-use" element={<UnderConstruction />} />
             <Route path="*" element={<PageNotFound />} />
