@@ -14,7 +14,6 @@ type CustomFormFieldProps = {
   label: string;
   name: string;
   placeholder: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   formControl: Control<any>;
   inputType?: string;
   disabled?: boolean;

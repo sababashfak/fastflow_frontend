@@ -99,18 +99,20 @@ const Login = () => {
             label="Email Address"
             placeholder="Enter your email"
             formControl={form.control}
-            disabled={false}
+            disabled={loginMutation.isPending}
           />
           <CustomFormField
             name="password"
             label="Password"
             placeholder="Enter your password"
+            inputType="password"
             formControl={form.control}
-            disabled={false}
+            disabled={loginMutation.isPending}
           />
           <Button
             className="w-full bg-secondary py-6 hover:bg-secondary/90"
             type="submit"
+            disabled={loginMutation.isPending}
           >
             Log in
           </Button>
