@@ -20,9 +20,15 @@ const AuthLayout: React.FC<PropsWithChildren> = ({ children }) => {
   }
 
   return (
-    <main className="bg-gray-50">
+    <main className="bg-[url(/auth-bg.jpg)] bg-cover bg-fixed bg-center bg-no-repeat">
       <ScrollToTop />
-      <div className="container">{children}</div>
+      <div className="w-full bg-black/40 py-16 sm:py-20">
+        <div className="container flex justify-center">
+          <div className="w-full max-w-lg rounded-md bg-white p-5 sm:p-7">
+            {children}
+          </div>
+        </div>
+      </div>
     </main>
   );
 };
