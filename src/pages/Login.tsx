@@ -1,3 +1,4 @@
+import { login } from "@/api/auth";
 import AuthLayout from "@/components/Auth/AuthLayout";
 import CustomFormField from "@/components/shared/CustomFormField";
 import { Button } from "@/components/ui/button";
@@ -5,8 +6,10 @@ import { Form } from "@/components/ui/form";
 import { LoginUser } from "@/interfaces/user";
 import useStore from "@/store";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const loginSchema = z.object({
@@ -38,8 +41,41 @@ const Login = () => {
     },
   });
 
+  const queryClient = useQueryClient();
+
+  const loginMutation = useMutation({
+    mutationFn: login,
+    onSuccess: (result) => {
+      if (result.success) {
+        toast.success("Logged in successfully!", {
+          description: "Redirecting to dashboard...",
+        });
+
+        form.reset();
+        setUser(result.data?.user);
+
+        localStorage.setItem("token", result.data?.token);
+
+        queryClient.invalidateQueries({
+          queryKey: ["user", "me"],
+        });
+
+        return navigate(`/dashboard/${result.data?.user.role}`);
+      } else if (result.data?.user?._id) {
+        return toast.error("Account not verified!", {
+          description: "We have sent you an email to verify your account.",
+        });
+      } else {
+        toast.error("Login failed!", {
+          description:
+            result.message || "Something went wrong. Please try again.",
+        });
+      }
+    },
+  });
+
   const handleLogin = (data: LoginUser) => {
-    console.log(data);
+    loginMutation.mutate(data);
   };
 
   return (
