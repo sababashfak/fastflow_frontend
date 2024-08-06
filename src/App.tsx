@@ -3,6 +3,7 @@ import "./App.css";
 import Layout from "./components/shared/Layout";
 import { Toaster } from "./components/ui/sonner";
 import BookService from "./pages/BookService";
+import Dashboard from "./pages/Dashboard";
 import ForgotPassword from "./pages/ForgotPassword";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -38,6 +39,10 @@ const App = () => {
             <Route path="terms-of-use" element={<UnderConstruction />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
+          <Route
+            path="dashboard/admin"
+            element={<Dashboard allowedRoles={["admin"]} />}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </>
