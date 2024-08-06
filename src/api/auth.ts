@@ -40,7 +40,7 @@ export const resendVerificationEmail = async (email: string) => {
 export const changePassword = async (passwordData: ChangePassword) => {
   return apiRequest(() =>
     authAxios
-      .patch("/users/change-password", passwordData)
+      .patch("/users/update-password", passwordData)
       .then((res) => res.data),
   );
 };

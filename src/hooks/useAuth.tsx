@@ -7,6 +7,7 @@ import { useEffect } from "react";
 const useAuth = () => {
   const user = useStore((state) => state.user);
   const setUser = useStore((state) => state.setUser);
+  const token = localStorage.getItem("token");
 
   const userQuery = useQuery({
     queryKey: ["user", "me"],
@@ -18,14 +19,15 @@ const useAuth = () => {
 
   useEffect(() => {
     const apiData = userQuery.data;
-    if (!apiData) return;
+    if (!apiData || !token) {
+      return setUser(null);
+    }
 
     if (apiData.success && apiData.data?.user) {
       setUser(apiData.data.user as TUser);
     }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userQuery.data]);
+  }, [userQuery.data, token]);
 
   return {
     user,

@@ -1,7 +1,10 @@
+import useAuth from "@/hooks/useAuth";
 import { IoMdCall, IoMdMail, IoMdPerson } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 const NavbarTop = () => {
+  const { user, isFetching } = useAuth();
+
   return (
     <div className="fixed left-0 top-0 z-[999] hidden w-full bg-dark md:block">
       <div className="container">
@@ -30,10 +33,14 @@ const NavbarTop = () => {
             <div className="flex items-center gap-2.5">
               <IoMdPerson className="text-primary" />
               <Link
-                to="/login"
+                to={
+                  isFetching || !user?._id
+                    ? "/login"
+                    : `/dashboard/${user?.role}`
+                }
                 className="text-[11px] font-medium uppercase text-[#fffc] duration-300 hover:text-primary"
               >
-                Login
+                {isFetching || !user?._id ? "Login" : "Dashboard"}
               </Link>
             </div>
             <Link

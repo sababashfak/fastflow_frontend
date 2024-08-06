@@ -32,7 +32,7 @@ const Dashboard: React.FC<DashboardProps> = ({ allowedRoles }) => {
   }
 
   return (
-    <main className="bg-light-bg grid h-screen grid-cols-1 lg:grid-cols-[280px_1fr]">
+    <main className="grid h-screen grid-cols-1 bg-gray-200 lg:grid-cols-[280px_1fr]">
       <DashboardSidebar
         isSidebarOpen={isSidebarOpen}
         closeSidebar={closeSidebar}
