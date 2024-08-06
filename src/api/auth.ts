@@ -1,8 +1,8 @@
 import {
   ChangePassword,
   LoginUser,
-  ResetPassword,
   SignupUser,
+  TResetPassword,
 } from "@/interfaces/user";
 import authAxios from "@/lib/authAxios";
 import apiRequest from "./apiRequest";
@@ -53,7 +53,7 @@ export const forgotPassword = async (email: string) => {
 
 export const resetPassword = async (
   resetToken: string,
-  passwordData: ResetPassword,
+  passwordData: TResetPassword,
 ) => {
   return apiRequest(() =>
     authAxios

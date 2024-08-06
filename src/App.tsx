@@ -7,6 +7,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
+import ResetPassword from "./pages/ResetPassword";
 import Signup from "./pages/Signup";
 import UnderConstruction from "./pages/UnderConstruction";
 import VerifyEmail from "./pages/VerifyEmail";
@@ -29,6 +30,10 @@ const App = () => {
             <Route path="signup" element={<Signup />} />
             <Route path="verify-email" element={<VerifyEmail />} />
             <Route path="forgot-password" element={<ForgotPassword />} />
+            <Route
+              path="reset-password/:resetToken"
+              element={<ResetPassword />}
+            />
             <Route path="privacy-policy" element={<UnderConstruction />} />
             <Route path="terms-of-use" element={<UnderConstruction />} />
             <Route path="*" element={<PageNotFound />} />
