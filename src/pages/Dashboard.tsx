@@ -4,13 +4,17 @@ import useAuth from "@/hooks/useAuth";
 import { useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
+export interface SidebarContext {
+  openSidebar: () => void;
+}
+
 type DashboardProps = {
   allowedRoles: string[];
 };
 
 const Dashboard: React.FC<DashboardProps> = ({ allowedRoles }) => {
   const { isFetching, user } = useAuth();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const openSidebar = () => setIsSidebarOpen(true);
   const closeSidebar = () => setIsSidebarOpen(false);
@@ -31,11 +35,10 @@ const Dashboard: React.FC<DashboardProps> = ({ allowedRoles }) => {
     <main className="bg-light-bg grid h-screen grid-cols-1 lg:grid-cols-[280px_1fr]">
       <DashboardSidebar
         isSidebarOpen={isSidebarOpen}
-        openSidebar={openSidebar}
         closeSidebar={closeSidebar}
       />
       <div className="h-full w-full overflow-hidden">
-        <Outlet context={[isSidebarOpen, openSidebar, closeSidebar]} />
+        <Outlet context={{ openSidebar } satisfies SidebarContext} />
       </div>
     </main>
   );

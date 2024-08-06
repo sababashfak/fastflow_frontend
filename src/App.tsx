@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import DashBlog from "./components/Dashboard/Blog/DashBlog";
+import Profile from "./components/Dashboard/Profile/Profile";
 import Layout from "./components/shared/Layout";
 import { Toaster } from "./components/ui/sonner";
 import BookService from "./pages/BookService";
@@ -43,6 +45,8 @@ const App = () => {
             path="dashboard/admin"
             element={<Dashboard allowedRoles={["admin"]} />}
           >
+            <Route path="blog" element={<DashBlog />} />
+            <Route path="profile" element={<Profile />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>

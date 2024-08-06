@@ -10,7 +10,6 @@ import MenuLink from "./MenuLink";
 
 type SidebarProps = {
   isSidebarOpen: boolean;
-  openSidebar: () => void;
   closeSidebar: () => void;
 };
 
@@ -24,7 +23,8 @@ const DashboardSidebar: React.FC<SidebarProps> = ({
 
   useEffect(() => {
     closeSidebar();
-  }, [closeSidebar, location.pathname]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname]);
 
   return (
     <div
