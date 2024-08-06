@@ -28,3 +28,9 @@ export interface TResetPassword {
   password: string;
   confirmPassword: string;
 }
+
+export interface UpdateUser {
+  name: string;
+  email: string;
+  avatar: string;
+}

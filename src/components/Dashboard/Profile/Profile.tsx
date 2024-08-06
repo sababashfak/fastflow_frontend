@@ -1,5 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import DashboardHeader from "../shared/DashboardHeader";
+import ProfileAccountForm from "./ProfileAccountForm";
 import ProfilePasswordForm from "./ProfilePasswordForm";
 
 const Profile = () => {
@@ -21,7 +22,7 @@ const Profile = () => {
               </TabsTrigger>
             </TabsList>
             <TabsContent value="account">
-              {/* <ProfileAccountForm /> */}
+              <ProfileAccountForm />
             </TabsContent>
             <TabsContent value="password">
               <ProfilePasswordForm />

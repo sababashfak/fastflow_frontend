@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import DashBlog from "./components/Dashboard/Blog/DashBlog";
 import Profile from "./components/Dashboard/Profile/Profile";
@@ -45,6 +45,7 @@ const App = () => {
             path="dashboard/admin"
             element={<Dashboard allowedRoles={["admin"]} />}
           >
+            <Route path="" element={<Navigate to="profile" replace />} />
             <Route path="blog" element={<DashBlog />} />
             <Route path="profile" element={<Profile />} />
             <Route path="*" element={<PageNotFound />} />

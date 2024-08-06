@@ -3,6 +3,7 @@ import {
   LoginUser,
   SignupUser,
   TResetPassword,
+  UpdateUser,
 } from "@/interfaces/user";
 import authAxios from "@/lib/authAxios";
 import apiRequest from "./apiRequest";
@@ -59,5 +60,11 @@ export const resetPassword = async (
     authAxios
       .patch(`/users/reset-password/${resetToken}`, passwordData)
       .then((res) => res.data),
+  );
+};
+
+export const updateAccount = async (userData: UpdateUser) => {
+  return apiRequest(() =>
+    authAxios.patch("/users", userData).then((res) => res.data),
   );
 };
