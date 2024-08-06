@@ -2,13 +2,14 @@ import useAuth from "@/hooks/useAuth";
 import { PropsWithChildren } from "react";
 import { Navigate } from "react-router-dom";
 import { toast } from "sonner";
+import FullpageLoader from "../shared/FullpageLoader";
 import ScrollToTop from "../shared/ScrollToTop";
 
 const AuthLayout: React.FC<PropsWithChildren> = ({ children }) => {
   const { user, isFetching } = useAuth();
 
   if (isFetching) {
-    return <div>Loading...</div>;
+    return <FullpageLoader message="Checking authentication..." />;
   }
 
   if (!isFetching && user) {

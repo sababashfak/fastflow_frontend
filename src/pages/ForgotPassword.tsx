@@ -1,5 +1,6 @@
 import { forgotPassword } from "@/api/auth";
 import CustomFormField from "@/components/shared/CustomFormField";
+import FullpageLoader from "@/components/shared/FullpageLoader";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import useAuth from "@/hooks/useAuth";
@@ -46,7 +47,7 @@ const ForgotPassword = () => {
   };
 
   if (isFetching) {
-    return <div>Loading...</div>;
+    return <FullpageLoader />;
   }
 
   if (!isFetching && user?._id) {
