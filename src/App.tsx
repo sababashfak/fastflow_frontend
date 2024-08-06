@@ -42,7 +42,9 @@ const App = () => {
           <Route
             path="dashboard/admin"
             element={<Dashboard allowedRoles={["admin"]} />}
-          ></Route>
+          >
+            <Route path="*" element={<PageNotFound />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
