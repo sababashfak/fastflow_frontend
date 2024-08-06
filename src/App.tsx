@@ -1,7 +1,9 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import DashBlog from "./components/Dashboard/Blog/DashBlog";
+import NewBlog from "./components/Dashboard/Blog/NewBlog";
 import Profile from "./components/Dashboard/Profile/Profile";
+import DashNotFound from "./components/Dashboard/shared/DashNotFound";
 import Layout from "./components/shared/Layout";
 import { Toaster } from "./components/ui/sonner";
 import BookService from "./pages/BookService";
@@ -45,10 +47,11 @@ const App = () => {
             path="dashboard/admin"
             element={<Dashboard allowedRoles={["admin"]} />}
           >
-            <Route path="" element={<Navigate to="profile" replace />} />
+            <Route path="" element={<Navigate to="blog" replace />} />
             <Route path="blog" element={<DashBlog />} />
+            <Route path="blog/new" element={<NewBlog />} />
             <Route path="profile" element={<Profile />} />
-            <Route path="*" element={<PageNotFound />} />
+            <Route path="*" element={<DashNotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>
