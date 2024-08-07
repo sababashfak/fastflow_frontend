@@ -1,6 +1,7 @@
-import { uploadMultiple } from "@/api/upload";
+import { createBooking } from "@/api/booking";
 import { TCategory } from "@/interfaces/categories";
 import { cn } from "@/lib/utils";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { toast } from "sonner";
 import BookServiceInpImage from "./BookServiceInpImage";
@@ -51,15 +52,34 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
     });
   };
 
-  // const bookingMutation = useMutation({
-  //   mutationFn: () => {},
+  const queryClient = useQueryClient();
 
-  // })
+  const bookingMutation = useMutation({
+    mutationFn: (data: any) => createBooking(photos, data),
+    onSuccess: (result) => {
+      if (!result.success) {
+        return toast.error(result.message || "Service booking failed!");
+      }
+
+      toast.success("Service booked successfully!");
+
+      queryClient.invalidateQueries({
+        queryKey: ["bookings"],
+      });
+
+      setCategory(undefined);
+      setCurrentStep(0);
+      setFormData([]);
+      setDescription("");
+      setPhotos([]);
+      setIsLastStep(false);
+      setIsDescription(false);
+      setIsPhotoUpload(false);
+    },
+  });
 
   const handleBooking = async (data: any) => {
-    const result = await uploadMultiple(data.photos);
-
-    console.log(result);
+    bookingMutation.mutate(data);
   };
 
   const handleContinue = () => {
@@ -76,12 +96,9 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
         category: category?.cat_name,
         qnas: formData,
         description,
-        photos,
       };
 
-      handleBooking(data);
-
-      return toast.success("Service booked successfully");
+      return handleBooking(data);
     }
 
     if (isLastStep && !isDescription) {
