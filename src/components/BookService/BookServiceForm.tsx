@@ -29,7 +29,7 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
   const [isPhotoUpload, setIsPhotoUpload] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData[]>([]);
   const [description, setDescription] = useState<string>("");
-  const [photos, setPhotos] = useState<string[] | null>(null);
+  const [photos, setPhotos] = useState<File[]>([]);
   const steps = category?.steps;
 
   const handleCategoryChange = (slug: string) => {
@@ -60,14 +60,14 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
         return toast.error("Please upload at least one photo");
       }
 
-      console.log("Category: ", category?.cat_name, "FormData: ", [
-        ...formData,
-        { question: "Description", answer: description },
-        {
-          question: "Photos",
-          answer: photos,
-        },
-      ]);
+      const data = {
+        category: category?.cat_name,
+        qnas: formData,
+        description,
+        photos,
+      }; // This is the data that will be sent to the server
+
+      console.log(data);
 
       return toast.success("Service booked successfully");
     }
@@ -99,7 +99,7 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
     }
 
     if (isPhotoUpload) {
-      setPhotos(null);
+      setPhotos([]);
       return setIsPhotoUpload(false);
     }
 
@@ -164,7 +164,7 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
             />
           )}
           {isLastStep && isPhotoUpload && (
-            <BookServiceInpImage photos={photos} setPhotos={setPhotos} />
+            <BookServiceInpImage setPhotos={setPhotos} />
           )}
         </div>
         <div className="mt-5 flex items-center gap-3 sm:mt-7">

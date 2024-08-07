@@ -1,3 +1,4 @@
+import { MdConstruction } from "react-icons/md";
 import { RiArticleLine } from "react-icons/ri";
 
 export type TSidebarItem = {
@@ -15,12 +16,23 @@ type SidebarItemsProps = {
 const sidebarItems: SidebarItemsProps = {
   admin: [
     {
+      title: "Bookings",
+      path: "bookings",
+      icon: <MdConstruction />,
+    },
+    {
       title: "Blog",
       path: "blog",
       icon: <RiArticleLine />,
     },
   ],
-  user: [],
+  user: [
+    {
+      title: "Bookings",
+      path: "bookings",
+      icon: <MdConstruction />,
+    },
+  ],
 };
 
 const useSidebarItems = (role: UserRole | undefined) => {

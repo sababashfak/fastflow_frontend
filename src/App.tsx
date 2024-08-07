@@ -3,6 +3,7 @@ import "./App.css";
 import DashBlog from "./components/Dashboard/Blog/DashBlog";
 import NewBlog from "./components/Dashboard/Blog/NewBlog";
 import UpdateBlog from "./components/Dashboard/Blog/UpdateBlog";
+import DashBookings from "./components/Dashboard/Booking/DashBookings";
 import Profile from "./components/Dashboard/Profile/Profile";
 import DashNotFound from "./components/Dashboard/shared/DashNotFound";
 import Layout from "./components/shared/Layout";
@@ -49,10 +50,20 @@ const App = () => {
             path="dashboard/admin"
             element={<Dashboard allowedRoles={["admin"]} />}
           >
-            <Route path="" element={<Navigate to="blog" replace />} />
+            <Route path="" element={<Navigate to="bookings" replace />} />
+            <Route path="bookings" element={<DashBookings />} />
             <Route path="blog" element={<DashBlog />} />
             <Route path="blog/new" element={<NewBlog />} />
             <Route path="blog/edit/:blogId" element={<UpdateBlog />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="*" element={<DashNotFound />} />
+          </Route>
+          <Route
+            path="dashboard/user"
+            element={<Dashboard allowedRoles={["user"]} />}
+          >
+            <Route path="" element={<Navigate to="bookings" replace />} />
+            <Route path="bookings" element={<DashBookings />} />
             <Route path="profile" element={<Profile />} />
             <Route path="*" element={<DashNotFound />} />
           </Route>
