@@ -59,7 +59,7 @@ const Blog = () => {
             </div>
           )}
           {!blogsQuery.isFetching && blogs.length !== 0 && (
-            <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] justify-center gap-6 lg:grid-cols-3">
               {blogs.map((blog: TBlog) => (
                 <BlogCard key={blog._id} blog={blog} />
               ))}

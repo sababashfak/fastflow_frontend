@@ -29,7 +29,7 @@ const DashboardSidebar: React.FC<SidebarProps> = ({
   return (
     <div
       className={cn(
-        "group invisible fixed left-0 top-0 z-50 h-full w-full bg-black/10 opacity-0 backdrop-blur-[2px] duration-300 lg:visible lg:static lg:opacity-100 [&.active]:visible [&.active]:opacity-100 [&.active]:duration-100",
+        "group invisible fixed left-0 top-0 z-[50] h-full w-full bg-black/10 opacity-0 backdrop-blur-[2px] duration-300 lg:visible lg:static lg:opacity-100 [&.active]:visible [&.active]:opacity-100 [&.active]:duration-100",
         isSidebarOpen && "active",
       )}
       onClick={(e) => {
