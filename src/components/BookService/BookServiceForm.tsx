@@ -1,3 +1,4 @@
+import { uploadMultiple } from "@/api/upload";
 import { TCategory } from "@/interfaces/categories";
 import { cn } from "@/lib/utils";
 import React, { useState } from "react";
@@ -50,6 +51,17 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
     });
   };
 
+  // const bookingMutation = useMutation({
+  //   mutationFn: () => {},
+
+  // })
+
+  const handleBooking = async (data: any) => {
+    const result = await uploadMultiple(data.photos);
+
+    console.log(result);
+  };
+
   const handleContinue = () => {
     if (!category) {
       return toast.error("Please select a category");
@@ -65,9 +77,9 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
         qnas: formData,
         description,
         photos,
-      }; // This is the data that will be sent to the server
+      };
 
-      console.log(data);
+      handleBooking(data);
 
       return toast.success("Service booked successfully");
     }
