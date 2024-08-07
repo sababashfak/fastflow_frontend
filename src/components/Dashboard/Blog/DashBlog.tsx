@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import DashboardHeader from "../shared/DashboardHeader";
+import DashBlogsTable from "./DashBlogsTable";
 
 const DashBlog = () => {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ const DashBlog = () => {
               Add Blog
             </Button>
           </div>
-          {/* <DashBlogsTable blogs={blogs} isFetching={blogsQuery.isFetching} /> */}
+          <DashBlogsTable blogs={blogs} isFetching={blogsQuery.isFetching} />
         </div>
       </div>
     </div>
