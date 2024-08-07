@@ -3,6 +3,7 @@ import "./App.css";
 import DashBlog from "./components/Dashboard/Blog/DashBlog";
 import NewBlog from "./components/Dashboard/Blog/NewBlog";
 import UpdateBlog from "./components/Dashboard/Blog/UpdateBlog";
+import DashBookingDetails from "./components/Dashboard/Booking/DashBookingDetails";
 import DashBookings from "./components/Dashboard/Booking/DashBookings";
 import Profile from "./components/Dashboard/Profile/Profile";
 import DashNotFound from "./components/Dashboard/shared/DashNotFound";
@@ -52,6 +53,10 @@ const App = () => {
           >
             <Route path="" element={<Navigate to="bookings" replace />} />
             <Route path="bookings" element={<DashBookings />} />
+            <Route
+              path="bookings/:bookingId"
+              element={<DashBookingDetails />}
+            />
             <Route path="blog" element={<DashBlog />} />
             <Route path="blog/new" element={<NewBlog />} />
             <Route path="blog/edit/:blogId" element={<UpdateBlog />} />
@@ -64,6 +69,10 @@ const App = () => {
           >
             <Route path="" element={<Navigate to="bookings" replace />} />
             <Route path="bookings" element={<DashBookings />} />
+            <Route
+              path="bookings/:bookingId"
+              element={<DashBookingDetails />}
+            />
             <Route path="profile" element={<Profile />} />
             <Route path="*" element={<DashNotFound />} />
           </Route>

@@ -24,3 +24,9 @@ export const getBookings = async (query: any) => {
     authAxios.get("/bookings", { params: query }).then((res) => res.data),
   );
 };
+
+export const getBookingById = async (bookingId: string) => {
+  return apiRequest(() =>
+    authAxios.get(`/bookings/${bookingId}`).then((res) => res.data),
+  );
+};
