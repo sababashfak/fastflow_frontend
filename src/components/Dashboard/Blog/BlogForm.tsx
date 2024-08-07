@@ -6,6 +6,7 @@ import { ChevronLeft } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import BlogFormFields from "./BlogFormFields";
 
 type BlogFormProps = {
   blog?: TBlog | null;
@@ -126,21 +127,21 @@ const BlogForm: React.FC<BlogFormProps> = ({ blog = null }) => {
               </Button>
             </div>
           </div>
-          {/* <BlogFormFields
-        tags={tags}
-        setTags={setTags}
-        categories={categories}
-        setCategories={setCategories}
-        title={title}
-        setTitle={setTitle}
-        content={content}
-        setContent={setContent}
-        featuredImage={featuredImage}
-        setFeaturedImage={setFeaturedImage}
-        isUploading={isUploading}
-        setIsUploading={setIsUploading}
-        isUpdate={!!blog._id}
-      /> */}
+          <BlogFormFields
+            tags={tags}
+            setTags={setTags}
+            categories={categories}
+            setCategories={setCategories}
+            title={title}
+            setTitle={setTitle}
+            content={content}
+            setContent={setContent}
+            featuredImage={featuredImage}
+            setFeaturedImage={setFeaturedImage}
+            isUploading={isUploading}
+            setIsUploading={setIsUploading}
+            isUpdate={!!blog?._id}
+          />
         </form>
       </>
     </div>
