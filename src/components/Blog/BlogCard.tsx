@@ -13,19 +13,22 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
   const month = date.toLocaleString("default", { month: "short" });
   const day = date.getDate();
 
+  const displayImage =
+    import.meta.env.VITE_BACKEND_URL + `/images/${featuredImage}`;
+
   return (
     <Link
       to={`/blogs/${_id}`}
       className="group mx-auto block max-w-[400px] bg-white shadow-[0_2px_10px_rgba(0,0,0,0.03)]"
     >
       <img
-        src={featuredImage}
+        src={displayImage}
         alt={title}
         className="aspect-[4/3] w-full object-cover"
       />
       <div className="relative p-5 lg:p-10">
         <h4 className="pr-24 text-[13px] font-semibold uppercase text-dark/80 lg:pr-0">
-          {categories.join(", ")}
+          {categories.slice(0, 2).join(", ")}
         </h4>
         <h2 className="mt-5 text-lg font-bold uppercase leading-tight text-gray-700 duration-200">
           {title}
