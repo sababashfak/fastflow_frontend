@@ -15,8 +15,6 @@ const DashBlog = () => {
 
   const blogs = blogsQuery.data?.data?.blogs || [];
 
-  console.log(blogs);
-
   const handleAddBlog = () => navigate("new");
 
   return (

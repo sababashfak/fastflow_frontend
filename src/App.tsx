@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import DashBlog from "./components/Dashboard/Blog/DashBlog";
 import NewBlog from "./components/Dashboard/Blog/NewBlog";
+import UpdateBlog from "./components/Dashboard/Blog/UpdateBlog";
 import Profile from "./components/Dashboard/Profile/Profile";
 import DashNotFound from "./components/Dashboard/shared/DashNotFound";
 import Layout from "./components/shared/Layout";
@@ -50,6 +51,7 @@ const App = () => {
             <Route path="" element={<Navigate to="blog" replace />} />
             <Route path="blog" element={<DashBlog />} />
             <Route path="blog/new" element={<NewBlog />} />
+            <Route path="blog/edit/:blogId" element={<UpdateBlog />} />
             <Route path="profile" element={<Profile />} />
             <Route path="*" element={<DashNotFound />} />
           </Route>

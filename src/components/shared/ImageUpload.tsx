@@ -1,6 +1,6 @@
 import { upload } from "@/api/upload";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { FaStarOfLife } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
 import { TbPhotoUp } from "react-icons/tb";
@@ -60,6 +60,16 @@ const ImageUpload: React.FC<any> = ({
     onImageUpload("");
   };
 
+  const displayImage = useMemo(() => {
+    const previewImage = isUpdate ? photo || image : image;
+
+    if (previewImage?.startsWith("file_")) {
+      return `${import.meta.env.VITE_BACKEND_URL}/images/${previewImage}`;
+    }
+
+    return previewImage;
+  }, [image, photo, isUpdate]);
+
   return (
     <div
       className={cn(
@@ -110,7 +120,7 @@ const ImageUpload: React.FC<any> = ({
           )}
         >
           <img
-            src={isUpdate ? photo || image : image}
+            src={displayImage}
             alt=""
             className={cn(
               "h-full w-full rounded-md object-cover",
