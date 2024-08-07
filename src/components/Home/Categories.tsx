@@ -1,12 +1,14 @@
 import usePopularCategories from "@/hooks/usePopularCategories";
 import chunkArray from "@/lib/chunkArray";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import CategoriesList from "../Category/CategoriesList";
 import SectionTop from "../shared/SectionTop";
+import { Button } from "../ui/button";
 
 const Categories = () => {
   const categories = usePopularCategories();
@@ -45,6 +47,14 @@ const Categories = () => {
           <button className="category-next flex size-8 shrink-0 items-center justify-center rounded-full bg-[#008FD3] text-white sm:size-10">
             <GoChevronRight className="size-5 sm:size-6" />
           </button>
+        </div>
+        <div className="mt-7 flex justify-center">
+          <Button
+            className="block h-auto rounded-full bg-[#008FD3] px-6 py-3.5 text-base hover:bg-[#0077B6]"
+            asChild
+          >
+            <Link to="book-service">Browsle all</Link>
+          </Button>
         </div>
       </div>
     </section>
