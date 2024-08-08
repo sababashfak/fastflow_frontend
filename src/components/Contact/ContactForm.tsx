@@ -1,5 +1,8 @@
+import { contact } from "@/api/contact";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 import CustomFormField from "../shared/CustomFormField";
 import { Button } from "../ui/button";
@@ -31,15 +34,28 @@ const ContactForm = () => {
     },
   });
 
+  const contactMutation = useMutation({
+    mutationFn: contact,
+    onSuccess: (result) => {
+      if (result.success) {
+        toast.success("Message sent successfully");
+
+        form.reset();
+      } else {
+        toast.error("Failed to send message");
+      }
+    },
+  });
+
   const handleContact = (data: any) => {
-    console.log(data);
+    contactMutation.mutate(data);
   };
 
   return (
     <div className="rounded-md border bg-white p-3 sm:p-5">
       <Form {...form}>
         <form className="space-y-3" onSubmit={form.handleSubmit(handleContact)}>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-3">
             <CustomFormField
               label="Name"
               name="name"
@@ -66,7 +82,13 @@ const ContactForm = () => {
             formControl={form.control}
             isTextArea
           />
-          <Button type="submit">Submit</Button>
+          <Button
+            className="block h-auto bg-secondary px-5 py-3.5 hover:bg-secondary/95"
+            type="submit"
+            disabled={contactMutation.isPending}
+          >
+            Submit
+          </Button>
         </form>
       </Form>
     </div>
