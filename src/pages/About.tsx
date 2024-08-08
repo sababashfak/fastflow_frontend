@@ -1,3 +1,4 @@
+import SectionTop from "@/components/shared/SectionTop";
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -34,14 +35,9 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className="py-20">
-        <div className="container h-40">
-          <h2 className="text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quo
-            inventore magni impedit vel eos! Placeat, dolores quibusdam? Ex
-            ducimus incidunt numquam nesciunt praesentium laudantium quia
-            quisquam nihil tempore fuga.
-          </h2>
+      <section className="py-16 sm:py-20">
+        <div className="container">
+          <SectionTop title="About Us" subtitle="Who We Are" />
         </div>
       </section>
     </main>
