@@ -10,6 +10,7 @@ import DashNotFound from "./components/Dashboard/shared/DashNotFound";
 import Layout from "./components/shared/Layout";
 import { Toaster } from "./components/ui/sonner";
 import Blog from "./pages/Blog";
+import BlogDetails from "./pages/BlogDetails";
 import BookService from "./pages/BookService";
 import Dashboard from "./pages/Dashboard";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="book-service" element={<BookService />} />
             <Route path="projects" element={<UnderConstruction />} />
             <Route path="blog" element={<Blog />} />
+            <Route path="blog/:blogId" element={<BlogDetails />} />
             <Route path="contact" element={<UnderConstruction />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />

@@ -18,7 +18,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
 
   return (
     <Link
-      to={`/blogs/${_id}`}
+      to={`/blog/${_id}`}
       className="group mx-auto block max-w-[400px] bg-white shadow-[0_2px_10px_rgba(0,0,0,0.03)]"
     >
       <img

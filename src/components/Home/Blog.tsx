@@ -52,7 +52,7 @@ const Blog = () => {
               className="= mx-auto h-12 rounded-none bg-primary font-semibold text-dark duration-300 hover:bg-dark hover:text-white md:h-14 md:px-5 md:text-base"
               asChild
             >
-              <Link to="/blogs">Read All Blogs</Link>
+              <Link to="/blog">Read All Blogs</Link>
             </Button>
           </div>
         )}

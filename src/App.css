@@ -19,12 +19,12 @@ body {
 
 .ProseMirror h1,
 .blog-content h1 {
-  @apply text-2xl md:text-3xl lg:text-4xl;
+  @apply text-2xl md:text-3xl lg:text-[34px];
 }
 
 .ProseMirror h2,
 .blog-content h2 {
-  @apply text-[22px] md:text-2xl lg:text-3xl;
+  @apply text-[22px] md:text-2xl lg:text-[26px];
 }
 
 .ProseMirror h3,
