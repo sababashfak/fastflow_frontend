@@ -1,3 +1,4 @@
+import ContactForm from "@/components/Contact/ContactForm";
 import {
   IoCallOutline,
   IoLocationOutline,
@@ -19,7 +20,7 @@ const Contact = () => {
       </section>
       <section className="bg-gray-100">
         <div className="container py-20">
-          <div className="grid grid-cols-1 rounded-md lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-x-6 gap-y-8 rounded-md lg:grid-cols-2">
             <div className="text-[#232021]">
               <h4 className="mb-2.5 text-sm font-semibold uppercase lg:mb-4 lg:text-base">
                 Contact us
@@ -65,6 +66,7 @@ const Contact = () => {
                 </Link>
               </div>
             </div>
+            <ContactForm />
           </div>
         </div>
       </section>
