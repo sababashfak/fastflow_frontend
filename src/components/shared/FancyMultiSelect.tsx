@@ -114,7 +114,7 @@ const FancyMultiSelect: React.FC<FancyMultiSelectProps> = ({
               <Badge key={val.value} variant="secondary">
                 {val.label}
                 <button
-                  className="ring-offset-background focus:ring-ring ml-1 rounded-full outline-none focus:ring-2 focus:ring-offset-2"
+                  className="ml-1 rounded-full outline-none"
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       handleUnselect(val);
