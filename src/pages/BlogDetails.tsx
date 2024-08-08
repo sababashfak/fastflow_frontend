@@ -1,4 +1,5 @@
 import { getBlogById } from "@/api/blog";
+import BlogComments from "@/components/Blog/BlogComments";
 import BlogDetailsSkeleton from "@/components/Blog/BlogDetailsSkeleton";
 import ScrollToPageTop from "@/components/shared/ScrollToPageTop";
 import useStore from "@/store";
@@ -90,8 +91,7 @@ const BlogDetails = () => {
                 )}
               </div>
             )}
-
-            {/* <BlogComments blogId={blogId} /> */}
+            <BlogComments blogId={blogId!} />
           </div>
         </div>
       </section>
