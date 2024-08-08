@@ -30,3 +30,11 @@ export const getBookingById = async (bookingId: string) => {
     authAxios.get(`/bookings/${bookingId}`).then((res) => res.data),
   );
 };
+
+export const updateBooking = async (bookingId: string, bookingData: any) => {
+  return apiRequest(() =>
+    authAxios
+      .patch(`/bookings/${bookingId}`, bookingData)
+      .then((res) => res.data),
+  );
+};

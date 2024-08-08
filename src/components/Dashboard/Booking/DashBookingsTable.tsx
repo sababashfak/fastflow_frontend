@@ -50,7 +50,7 @@ const DashBookingsTable: React.FC<DashBookingsTableProps> = ({
       header: "Status",
       cell: (props: any) => {
         const styles = {
-          accepted: "bg-green-100 text-green-600",
+          approved: "bg-green-100 text-green-600",
           rejected: "bg-red-100 text-red-600",
           pending: "bg-blue-100 text-blue-600",
         };

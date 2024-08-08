@@ -1409,7 +1409,7 @@ const treeSizes: TStepOption[] = [
     option_name: "Medium - up to 8m (26 ft)",
   },
   {
-    option_name: "Larges - over 8m (26 ft)",
+    option_name: "Large - over 8m (26 ft)",
   },
 ];
 
