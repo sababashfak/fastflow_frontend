@@ -1,3 +1,4 @@
+import useAuth from "@/hooks/useAuth";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { IoMdCall, IoMdMail } from "react-icons/io";
 import { MdOutlineClose } from "react-icons/md";
@@ -16,6 +17,8 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
   isOpen,
   closeNavbar,
 }) => {
+  const { user, isFetching } = useAuth();
+
   return (
     <div
       className={cn(
@@ -55,9 +58,11 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
             className={cn(
               "flex items-center gap-5 py-1 font-semibold uppercase text-gray-200 duration-300 hover:text-white [&.active]:text-primary",
             )}
-            to={"/login"}
+            to={
+              isFetching || !user?._id ? "/login" : `/dashboard/${user?.role}`
+            }
           >
-            Login
+            {isFetching || !user?._id ? "Login" : "Dashboard"}
             <FaArrowRightLong className="text-base" />
           </NavLink>
         </li>
