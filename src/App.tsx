@@ -9,9 +9,11 @@ import Profile from "./components/Dashboard/Profile/Profile";
 import DashNotFound from "./components/Dashboard/shared/DashNotFound";
 import Layout from "./components/shared/Layout";
 import { Toaster } from "./components/ui/sonner";
+import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
 import BookService from "./pages/BookService";
+import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
 import ForgotPassword from "./pages/ForgotPassword";
 import Home from "./pages/Home";
@@ -30,13 +32,13 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="" index element={<Home />} />
-            <Route path="about" element={<UnderConstruction />} />
+            <Route path="about" element={<About />} />
             <Route path="services" element={<UnderConstruction />} />
             <Route path="book-service" element={<BookService />} />
             <Route path="projects" element={<UnderConstruction />} />
             <Route path="blog" element={<Blog />} />
             <Route path="blog/:blogId" element={<BlogDetails />} />
-            <Route path="contact" element={<UnderConstruction />} />
+            <Route path="contact" element={<Contact />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
             <Route path="verify-email" element={<VerifyEmail />} />

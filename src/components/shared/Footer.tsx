@@ -69,7 +69,7 @@ const Footer = () => {
                 </div>
                 <a
                   href="mailto:fastflowgassafeengineer@gmail.com"
-                  className="text-white duration-200 hover:text-primary"
+                  className="break-words text-white duration-200 hover:text-primary"
                 >
                   fastflowgassafeengineer@gmail.com
                 </a>
