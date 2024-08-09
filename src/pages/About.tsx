@@ -28,9 +28,9 @@ const About = () => {
             </div>
             <Link
               className="block shrink-0 rounded-sm bg-white px-5 py-3.5 font-semibold uppercase text-dark duration-300 hover:bg-primary"
-              to="/contact"
+              to="/book-service"
             >
-              Get a Quote
+              Book a Service
             </Link>
           </div>
         </div>

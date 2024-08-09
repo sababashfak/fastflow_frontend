@@ -18,9 +18,9 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <section className="bg-gray-100">
+      <section className="bg-gray-200/70">
         <div className="container py-16 md:py-20">
-          <div className="grid grid-cols-1 gap-x-6 gap-y-8 rounded-md lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-x-6 gap-y-8 rounded-md md:grid-cols-2">
             <div className="text-[#232021]">
               <h4 className="mb-2.5 text-sm font-semibold uppercase lg:mb-4 lg:text-base">
                 Contact us
@@ -69,6 +69,13 @@ const Contact = () => {
             <ContactForm />
           </div>
         </div>
+      </section>
+      <section>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2358.5130033665882!2d-2.6895819999999997!3d53.7625542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b72683fb1a23b%3A0xc08d8d8b7aec0b09!2sThe%20Watermark%2C%209-15%20Ribbleton%20Ln%2C%20Preston%20PR1%205EZ%2C%20UK!5e0!3m2!1sen!2sbd!4v1723185587758!5m2!1sen!2sbd"
+          className="h-[360px] w-full sm:h-[400px]"
+          loading="lazy"
+        ></iframe>
       </section>
     </main>
   );
