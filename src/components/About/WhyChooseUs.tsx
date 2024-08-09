@@ -13,7 +13,7 @@ const items = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="bg-white py-16 sm:py-20">
       <div className="container">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-[3fr_2fr] lg:grid-cols-2 lg:items-center lg:gap-12">
           <div className="">
