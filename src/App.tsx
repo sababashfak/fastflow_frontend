@@ -21,6 +21,7 @@ import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
 import Projects from "./pages/Projects";
 import ResetPassword from "./pages/ResetPassword";
+import Services from "./pages/Services";
 import Signup from "./pages/Signup";
 import UnderConstruction from "./pages/UnderConstruction";
 import VerifyEmail from "./pages/VerifyEmail";
@@ -34,7 +35,7 @@ const App = () => {
           <Route path="/" element={<Layout />}>
             <Route path="" index element={<Home />} />
             <Route path="about" element={<About />} />
-            <Route path="services" element={<UnderConstruction />} />
+            <Route path="services" element={<Services />} />
             <Route path="book-service" element={<BookService />} />
             <Route path="projects" element={<Projects />} />
             <Route path="blog" element={<Blog />} />
