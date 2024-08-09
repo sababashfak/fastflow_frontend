@@ -1,9 +1,9 @@
 import AboutCallback from "@/components/About/AboutCallback";
 import AboutCompany from "@/components/About/AboutCompany";
 import Affiliations from "@/components/About/Affiliations";
+import ContactUs from "@/components/About/ContactUs";
 import CoreValues from "@/components/About/CoreValues";
 import WhyChooseUs from "@/components/About/WhyChooseUs";
-import WorkWithUs from "@/components/About/WorkWithUs";
 
 const About = () => {
   return (
@@ -21,7 +21,7 @@ const About = () => {
       <AboutCallback />
       <WhyChooseUs />
       <CoreValues />
-      <WorkWithUs />
+      <ContactUs />
       <Affiliations />
     </main>
   );
