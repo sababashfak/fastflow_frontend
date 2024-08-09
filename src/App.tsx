@@ -19,6 +19,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
+import Projects from "./pages/Projects";
 import ResetPassword from "./pages/ResetPassword";
 import Signup from "./pages/Signup";
 import UnderConstruction from "./pages/UnderConstruction";
@@ -35,7 +36,7 @@ const App = () => {
             <Route path="about" element={<About />} />
             <Route path="services" element={<UnderConstruction />} />
             <Route path="book-service" element={<BookService />} />
-            <Route path="projects" element={<UnderConstruction />} />
+            <Route path="projects" element={<Projects />} />
             <Route path="blog" element={<Blog />} />
             <Route path="blog/:blogId" element={<BlogDetails />} />
             <Route path="contact" element={<Contact />} />

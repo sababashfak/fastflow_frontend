@@ -53,7 +53,9 @@ const ContactForm = () => {
 
   return (
     <div className="rounded-md bg-white p-3 sm:p-5 xl:p-6">
-      <h2 className="mb-5 text-xl font-bold xl:text-2xl">Send Message</h2>
+      <h2 className="mb-5 text-xl font-semibold lg:text-2xl xl:text-[26px]">
+        Send Message
+      </h2>
       <Form {...form}>
         <form className="space-y-3" onSubmit={form.handleSubmit(handleContact)}>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-3">

@@ -39,7 +39,7 @@ const Projects = () => {
           >
             {projects.map((project, index) => (
               <SwiperSlide className="max-w-[380px]" key={index}>
-                <Link to={`/projects/${project.link}`} className="relative">
+                <div className="relative">
                   <img
                     className="h-[490px] w-full object-cover"
                     src={`/projects/${project.image}`}
@@ -58,7 +58,7 @@ const Projects = () => {
                       </div>
                     </div>
                   </div>
-                </Link>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
