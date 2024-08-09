@@ -122,7 +122,7 @@ const BlogComments: React.FC<BlogCommentsProps> = ({ blogId }) => {
         <div className="text-center">
           <p className="rounded-md border p-5">
             You have to{" "}
-            <Link className="text-secondary hover:underline" to="/login">
+            <Link className="text-blue-500 hover:underline" to="/login">
               Login
             </Link>{" "}
             first to comment
