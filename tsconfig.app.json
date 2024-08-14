@@ -27,5 +27,5 @@
       "@/*": ["*"]
     }
   },
-  "include": ["src", "temp/Photo.tsx"]
+  "include": ["src"]
 }

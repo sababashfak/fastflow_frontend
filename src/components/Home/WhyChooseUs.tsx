@@ -36,7 +36,11 @@ const WhyChooseUs = () => {
               key={index}
             >
               <div className="flex size-[120px] items-center justify-center rounded-full border border-gray-200 sm:size-[110px] md:size-[140px]">
-                <img src={`/icons/${icon}`} alt={title} className="size-16" />
+                <img
+                  src={`/images/icons/${icon}`}
+                  alt={title}
+                  className="size-16"
+                />
               </div>
               <div className="flex flex-col items-center">
                 <div className="h-5 w-[1px] bg-gray-200"></div>

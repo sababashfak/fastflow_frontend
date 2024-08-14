@@ -5,19 +5,19 @@ const items = [
     title: "Innovative Solutions and Ideas",
     description:
       "We constantly monitor all of the innovations in the construction market and use them in our work.",
-    icon: "/about/building.png",
+    icon: "/images/about/building.png",
   },
   {
     title: "Latest Technologies",
     description:
       "We use the latest equipment, materials, technologies and developments to deliver better service.",
-    icon: "/about/crane.png",
+    icon: "/images/about/crane.png",
   },
   {
     title: "Impressive Design Solutions",
     description:
       "Our talented and experienced designers can create any project in any style you want.",
-    icon: "/about/geometry.png",
+    icon: "/images/about/geometry.png",
   },
 ];
 

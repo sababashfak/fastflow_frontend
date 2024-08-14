@@ -4,22 +4,22 @@ const workProcess = [
   {
     title: "Consultation",
     description: "Discuss goals and project requirements.",
-    icon: "/icons/work-process-1.png",
+    icon: "/images/icons/work-process-1.png",
   },
   {
     title: "Detailed Proposal",
     description: "Present detailed plan and cost estimates.",
-    icon: "/icons/work-process-2.png",
+    icon: "/images/icons/work-process-2.png",
   },
   {
     title: "Project Execution",
     description: "Begin construction based on approved plan.",
-    icon: "/icons/work-process-3.png",
+    icon: "/images/icons/work-process-3.png",
   },
   {
     title: "Final Inspection",
     description: "Verify completion and quality of work.",
-    icon: "/icons/work-process-4.png",
+    icon: "/images/icons/work-process-4.png",
   },
 ];
 

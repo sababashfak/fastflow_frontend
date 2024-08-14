@@ -15,7 +15,7 @@ const CategoriesList: React.FC<CategoriesListProps> = ({ categories }) => {
           key={category.cat_slug}
         >
           <img
-            src={`/categories/${category.cat_icon}`}
+            src={`/images/categories/${category.cat_icon}`}
             alt={category.cat_name}
             className="size-9 object-contain object-center sm:size-10 xl:size-11"
           />

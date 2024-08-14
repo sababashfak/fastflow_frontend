@@ -13,7 +13,7 @@ const slides: Slide[] = [
     subtitle: "Exceptional Home Renovations and Remodels",
     description:
       "With over 3 years of experience and a focus on customer satisfaction, rely on us for impeccable renovations and remodeling projects.",
-    image: "/hero/slide-1.jpg",
+    image: "/images/hero/slide-1.jpg",
     btnText: "Learn More",
     btnUrl: "/about",
   },
@@ -22,7 +22,7 @@ const slides: Slide[] = [
     subtitle: "Modern Living Spaces Crafted to Perfection",
     description:
       "Cutting-edge renovations reflecting the latest trends and technologies, ensuring your home is stylish and practical.",
-    image: "/hero/slide-4.jpg",
+    image: "/images/hero/slide-4.jpg",
     btnText: "Our Services",
     btnUrl: "/services",
   },
@@ -31,7 +31,7 @@ const slides: Slide[] = [
     subtitle: "Elevate Your Living Spaces with Us",
     description:
       "Dedicated professionals committed to enhancing your home's beauty and functionality with unparalleled craftsmanship.",
-    image: "/hero/slide-2.jpg",
+    image: "/images/hero/slide-2.jpg",
     btnText: "View Projects",
     btnUrl: "/projects",
   },
@@ -40,7 +40,7 @@ const slides: Slide[] = [
     subtitle: "Your Dream Home Renovation Awaits",
     description:
       "Customized renovation solutions that exceed expectations, blending style and functionality for your perfect home.",
-    image: "/hero/slide-3.jpg",
+    image: "/images/hero/slide-3.jpg",
     btnText: "Get a Quote",
     btnUrl: "/contact",
   },

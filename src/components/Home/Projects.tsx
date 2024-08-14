@@ -42,7 +42,7 @@ const Projects = () => {
                 <div className="relative">
                   <img
                     className="h-[490px] w-full object-cover"
-                    src={`/projects/${project.image}`}
+                    src={`/images/projects/${project.image}`}
                     alt={project.name}
                   />
                   <div className="absolute left-0 top-0 h-full w-full bg-black/30">

@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 const ContactUs = () => {
   return (
-    <section className="bg-[url(/about/contact-us.jpg)] bg-cover bg-fixed bg-center bg-no-repeat">
+    <section className="bg-[url(/images/about/contact-us.jpg)] bg-cover bg-fixed bg-center bg-no-repeat">
       <div className="bg-black/80 py-16 md:py-20">
         <div className="container">
           <div className="flex flex-col items-center text-center">

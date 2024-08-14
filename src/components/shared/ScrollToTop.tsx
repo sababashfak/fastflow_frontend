@@ -32,7 +32,11 @@ const ScrollToTop = () => {
         isVisible && "visible translate-y-0 opacity-100",
       )}
     >
-      <img src="/icons/top.png" alt="Top" className="w-[45px] sm:w-[50px]" />
+      <img
+        src="/images/icons/top.png"
+        alt="Top"
+        className="w-[45px] sm:w-[50px]"
+      />
     </button>
   );
 };

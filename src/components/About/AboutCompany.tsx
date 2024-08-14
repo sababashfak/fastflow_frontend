@@ -8,7 +8,7 @@ const AboutCompany = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <img
             className="aspect-[3/2] w-full object-cover md:aspect-auto md:h-full"
-            src="/hero/slide-2.jpg"
+            src="/images/hero/slide-2.jpg"
             alt="About Company"
           />
           <div className="">

@@ -131,7 +131,7 @@ const Services = () => {
                 )}
                 <div className="aspect-[4/2.6] w-full overflow-hidden">
                   <img
-                    src={`/services/services/${service.image}`}
+                    src={`/images/services/services/${service.image}`}
                     alt={service.name}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />

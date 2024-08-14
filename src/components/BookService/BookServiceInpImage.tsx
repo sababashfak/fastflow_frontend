@@ -58,7 +58,7 @@ const BookServiceInpImage: React.FC<BookServiceInpImageProps> = ({
       <label className="flex cursor-pointer items-center gap-x-5 border-2 border-dashed px-5 py-3.5">
         <img
           className="h-12"
-          src={"/icons/photo-upload.png"}
+          src={"/images/icons/photo-upload.png"}
           alt="Upload photo"
         />
         <span className="text-gray-600">Select images to upload</span>
