@@ -49,6 +49,7 @@ const DashBookingPhotos: React.FC<DashBookingPhotosProps> = ({ photos }) => {
           toggler={lightboxController.toggler}
           sources={photoUrls}
           slide={lightboxController.slide}
+          types={[...new Array(photoUrls.length).fill("image")]}
         />
       </div>
     </div>
