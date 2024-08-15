@@ -54,7 +54,7 @@ const AboutUs = () => {
 
   return (
     <section className="bg-white py-16 md:py-20">
-      <div className="container grid grid-cols-1 items-center gap-x-10 md:grid-cols-[auto_1fr] xl:gap-x-16">
+      <div className="container grid grid-cols-1 gap-x-10 md:grid-cols-[auto_1fr] xl:gap-x-16">
         <div className="w-full md:max-w-sm lg:max-w-md xl:max-w-lg">
           <img
             src="/about.jpg"
@@ -64,12 +64,12 @@ const AboutUs = () => {
         </div>
         <div className="py-5">
           <SectionTop
-            title="About Us"
             subtitle="We Transform Everything You Need"
             containerClass="items-start text-left"
+            subtitleClass="lg:text-4xl xl:text-5xl xl:leading-[1.1]"
           />
           <div className="mt-8">
-            <p className="mb-7 text-[15px] text-gray-600">
+            <p className="mb-7 text-[15px] text-gray-600 lg:text-base xl:text-[17px]">
               The reconstruction and renovation industry has become vital in
               transforming homes and commercial spaces across the world. Our
               focus on quality craftsmanship and innovative solutions sets us
@@ -90,7 +90,7 @@ const AboutUs = () => {
                 </button>
               ))}
             </div>
-            <div className="mt-5 text-[15px]">
+            <div className="mt-5 text-[15px] lg:text-base xl:text-[17px]">
               <p className="text-gray-600">{aboutItems[active].description}</p>
               <ul className="mt-4 grid list-inside grid-cols-[auto_1fr] gap-x-10 gap-y-3 text-gray-500">
                 {aboutItems[active].bullets.map((bullet, index) => (

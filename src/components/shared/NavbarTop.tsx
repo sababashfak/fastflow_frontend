@@ -16,16 +16,16 @@ const NavbarTop = () => {
                 href="tel:+447946193824"
                 className="text-[11px] font-medium uppercase text-[#fffc] duration-300 hover:text-primary"
               >
-                +44-7946-193824
+                01772230145
               </a>
             </div>
             <div className="flex items-center gap-2.5">
               <IoMdMail className="text-primary" />
               <a
-                href="mailto:fastflowgassafeengineer@gmail.com"
+                href="mailto:info@ffhp.co.uk"
                 className="text-[11px] font-medium uppercase text-[#fffc] duration-300 hover:text-primary"
               >
-                fastflowgassafeengineer@gmail.com
+                info@ffhp.co.uk
               </a>
             </div>
           </div>

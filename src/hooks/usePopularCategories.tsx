@@ -7,14 +7,14 @@ const popularCategories: TPopularCategory[] = [
     cat_slug: "plumber",
   },
   {
+    cat_name: "Gas Works",
+    cat_icon: "gas.png",
+    cat_slug: "gas-works",
+  },
+  {
     cat_name: "Electrician",
     cat_icon: "flash.png",
     cat_slug: "electrician",
-  },
-  {
-    cat_name: "Roofer",
-    cat_icon: "roof.png",
-    cat_slug: "roofer",
   },
   {
     cat_name: "Builder",
@@ -22,14 +22,24 @@ const popularCategories: TPopularCategory[] = [
     cat_slug: "builder",
   },
   {
-    cat_name: "Gardener",
-    cat_icon: "pot.png",
-    cat_slug: "gardener",
-  },
-  {
     cat_name: "Painter",
     cat_icon: "paint-roller.png",
     cat_slug: "painter",
+  },
+  {
+    cat_name: "Central Heating",
+    cat_icon: "central-heating.png",
+    cat_slug: "central-heating",
+  },
+  {
+    cat_name: "Roofer",
+    cat_icon: "roof.png",
+    cat_slug: "roofer",
+  },
+  {
+    cat_name: "Gardener",
+    cat_icon: "pot.png",
+    cat_slug: "gardener",
   },
   {
     cat_name: "Landscaper",
@@ -67,11 +77,6 @@ const popularCategories: TPopularCategory[] = [
     cat_slug: "handyman",
   },
   {
-    cat_name: "Locksmith",
-    cat_icon: "key-set.png",
-    cat_slug: "locksmith",
-  },
-  {
     cat_name: "Bathrooms",
     cat_icon: "bath.png",
     cat_slug: "bathrooms",
@@ -80,11 +85,6 @@ const popularCategories: TPopularCategory[] = [
     cat_name: "Tiler",
     cat_icon: "tiles.png",
     cat_slug: "tiler",
-  },
-  {
-    cat_name: "Central Heating",
-    cat_icon: "central-heating.png",
-    cat_slug: "central-heating",
   },
   {
     cat_name: "Boiler Repair",

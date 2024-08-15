@@ -65,7 +65,11 @@ const Navbar = () => {
           <div className="container">
             <div className="flex flex-wrap items-center justify-between gap-x-10 py-1.5 md:py-2">
               <Link to="/">
-                <img src="/logo.png" alt="Fastflow" className="h-14" />
+                <img
+                  src="/logo.png"
+                  alt="Fastflow"
+                  className={cn("h-[70px] duration-300", sticky && "h-[60px]")}
+                />
               </Link>
               <div className="md:hidden">
                 <button onClick={openNavbar} className="flex items-center">
@@ -93,7 +97,7 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-      <div className="h-[68px] w-full md:h-[122px]"></div>
+      <div className="h-[82px] w-full md:h-[136px]"></div>
     </>
   );
 };

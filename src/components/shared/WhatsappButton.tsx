@@ -11,9 +11,7 @@ const WhatsappButton = () => {
       <span className="flex w-10 justify-center py-2">
         <FaWhatsapp className="text-2xl" />
       </span>
-      <span className="block pr-2 text-[15px] font-medium">
-        +44-7946-193824
-      </span>
+      <span className="block pr-2 text-[15px] font-medium">01772230145</span>
     </Link>
   );
 };

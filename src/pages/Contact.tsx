@@ -46,22 +46,22 @@ const Contact = () => {
                 </Link>
                 <Link
                   target="_blank"
-                  to="tel:+44-7946-193824"
+                  to="tel:01772230145"
                   className="flex items-center gap-2.5"
                 >
                   <IoCallOutline className="text-xl text-blue-500" />
                   <span className="text-[15px] duration-300 hover:text-blue-500">
-                    +44-7946-193824
+                    01772230145
                   </span>
                 </Link>
                 <Link
                   target="_blank"
-                  to="mailto:fastflowgassafeengineer@gmail.com"
+                  to="mailto:info@ffhp.co.uk"
                   className="flex items-center gap-2.5"
                 >
                   <IoMailOutline className="text-xl text-blue-500" />
                   <span className="text-[15px] duration-300 hover:text-blue-500">
-                    fastflowgassafeengineer@gmail.com
+                    info@ffhp.co.uk
                   </span>
                 </Link>
               </div>

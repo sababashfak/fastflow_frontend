@@ -61,17 +61,17 @@ const Footer = () => {
                   href="tel:+447946193824"
                   className="text-white duration-200 hover:text-primary"
                 >
-                  +44-7946-193824
+                  01772230145
                 </a>
                 <div className="flex items-center gap-2.5">
                   <MdOutlineEmail className="text-base text-primary" />
                   <span className="text-white/50">Email:</span>
                 </div>
                 <a
-                  href="mailto:fastflowgassafeengineer@gmail.com"
+                  href="mailto:info@ffhp.co.uk"
                   className="break-words text-white duration-200 hover:text-primary"
                 >
-                  fastflowgassafeengineer@gmail.com
+                  info@ffhp.co.uk
                 </a>
                 <div className="flex items-center gap-2.5">
                   <SlLocationPin className="text-base text-primary" />

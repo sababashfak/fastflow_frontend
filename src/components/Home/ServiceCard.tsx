@@ -7,7 +7,7 @@ type ServiceCardProps = {
 };
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
-  const { name, description, image, slug } = service;
+  const { name, description, image } = service;
 
   return (
     <div className="mx-auto grid max-w-md grid-cols-[auto_1fr] items-center gap-5 border bg-white p-8 sm:p-5 md:p-7">
@@ -20,10 +20,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
         <h3 className="border-b pb-3 font-semibold">{name}</h3>
         <p className="py-2.5 text-[15px] text-gray-500">{description}</p>
         <Link
-          to={`/services/${slug}`}
+          to={`/services`}
           className="flex items-center gap-2 text-[15px] font-medium text-secondary duration-200 hover:gap-4"
         >
-          Learn More
+          View More
           <FaArrowRightLong />
         </Link>
       </div>

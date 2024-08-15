@@ -4,7 +4,7 @@ import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import CategoriesList from "../Category/CategoriesList";
 import SectionTop from "../shared/SectionTop";
@@ -27,12 +27,11 @@ const Categories = () => {
             <GoChevronLeft className="size-5 sm:size-6" />
           </button>
           <Swiper
-            modules={[Navigation, Autoplay]}
+            modules={[Navigation]}
             spaceBetween={10}
             slidesPerView={1}
             loop={true}
             speed={1000}
-            autoplay={{ delay: 5000 }}
             navigation={{
               nextEl: ".category-next",
               prevEl: ".category-prev",
