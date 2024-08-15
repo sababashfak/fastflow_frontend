@@ -26,17 +26,17 @@ const BookService = () => {
         </div>
       </section>
       {isDisabled && (
-        <div className="bg-gray-300">
+        <div className="bg-primary">
           <div className="container">
             <p className="py-3 text-center text-black">
               {!user && (
                 <>
                   You must be a logged in user to book a service:{" "}
                   <Link
-                    className="text-blue-500 underline hover:no-underline"
+                    className="ml-1 mt-1 inline-block rounded-md bg-purple-500 px-2 py-1 text-white duration-200 hover:bg-purple-600"
                     to="/login"
                   >
-                    Login
+                    Login now
                   </Link>
                 </>
               )}
