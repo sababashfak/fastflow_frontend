@@ -62,7 +62,7 @@ const AboutUs = () => {
             {images.map((image, index) => (
               <img
                 key={index}
-                src={images[active]}
+                src={image}
                 alt=""
                 className={cn(
                   "aspect-[5/3] w-full object-cover duration-300 md:aspect-[3/5] lg:aspect-[6/8] xl:aspect-[7/8]",
