@@ -16,6 +16,7 @@ import BookService from "./pages/BookService";
 import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
 import ForgotPassword from "./pages/ForgotPassword";
+import GoogleLogin from "./pages/GoogleLogin";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
@@ -49,6 +50,7 @@ const App = () => {
               path="reset-password/:resetToken"
               element={<ResetPassword />}
             />
+            <Route path="google-login/:jwtToken" element={<GoogleLogin />} />
             <Route path="privacy-policy" element={<UnderConstruction />} />
             <Route path="terms-of-use" element={<UnderConstruction />} />
             <Route path="*" element={<PageNotFound />} />

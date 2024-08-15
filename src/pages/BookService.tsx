@@ -26,7 +26,7 @@ const BookService = () => {
         </div>
       </section>
       {isDisabled && (
-        <div className="hidden bg-gray-300">
+        <div className="bg-gray-300">
           <div className="container">
             <p className="py-3 text-center text-black">
               {!user && (
@@ -48,7 +48,7 @@ const BookService = () => {
         </div>
       )}
       <div
-        // aria-disabled={isDisabled}
+        aria-disabled={isDisabled}
         className="aria-disabled:pointer-events-none aria-disabled:opacity-70"
       >
         <BookServiceForm

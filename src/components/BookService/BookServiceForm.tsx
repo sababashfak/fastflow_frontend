@@ -79,19 +79,6 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
   });
 
   const handleBooking = async (data: any) => {
-    toast.success("Booked successfully!");
-
-    setCategory(undefined);
-    setCurrentStep(0);
-    setFormData([]);
-    setDescription("");
-    setPhotos([]);
-    setIsLastStep(false);
-    setIsDescription(false);
-    setIsPhotoUpload(false);
-
-    return;
-
     bookingMutation.mutate(data);
   };
 

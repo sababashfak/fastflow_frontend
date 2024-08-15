@@ -1,5 +1,6 @@
 import { signup } from "@/api/auth";
 import AuthLayout from "@/components/Auth/AuthLayout";
+import GoogleLoginBtn from "@/components/Auth/GoogleLoginBtn";
 import CustomFormField from "@/components/shared/CustomFormField";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
@@ -130,6 +131,7 @@ const Signup = () => {
           </Button>
         </form>
       </Form>
+      <GoogleLoginBtn isSignup={true} />
     </AuthLayout>
   );
 };

@@ -1,5 +1,6 @@
 import { login } from "@/api/auth";
 import AuthLayout from "@/components/Auth/AuthLayout";
+import GoogleLoginBtn from "@/components/Auth/GoogleLoginBtn";
 import CustomFormField from "@/components/shared/CustomFormField";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
@@ -118,6 +119,7 @@ const Login = () => {
           </Button>
         </form>
       </Form>
+      <GoogleLoginBtn />
       <div className="mt-3 text-right">
         <Link
           to="/forgot-password"
