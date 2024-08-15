@@ -4,6 +4,7 @@ import {
   IoLocationOutline,
   IoMailOutline,
 } from "react-icons/io5";
+import { TbPhoneCall } from "react-icons/tb";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
@@ -52,6 +53,16 @@ const Contact = () => {
                   <IoCallOutline className="text-xl text-blue-500" />
                   <span className="text-[15px] duration-300 hover:text-blue-500">
                     01772230145
+                  </span>
+                </Link>
+                <Link
+                  target="_blank"
+                  to="tel:01772230145"
+                  className="flex items-center gap-2.5"
+                >
+                  <TbPhoneCall className="text-xl text-blue-500" />
+                  <span className="text-[15px] duration-300 hover:text-blue-500">
+                    (555) 555-1234
                   </span>
                 </Link>
                 <Link

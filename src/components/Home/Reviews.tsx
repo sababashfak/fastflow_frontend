@@ -1,5 +1,6 @@
 import { Review } from "@/interfaces/review";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -67,6 +68,14 @@ const Reviews = () => {
           <button className="review-next flex size-10 shrink-0 items-center justify-center rounded-full border border-white bg-transparent text-white duration-300 hover:bg-white hover:text-dark md:size-14">
             <GoChevronRight className="size-6 md:size-7" />
           </button>
+        </div>
+        <div className="container mt-8 flex justify-center">
+          <Link
+            className="block rounded-full border border-primary px-6 py-[18px] text-white duration-300 hover:bg-primary hover:text-dark"
+            to="#"
+          >
+            Leave us a Review
+          </Link>
         </div>
       </div>
     </section>

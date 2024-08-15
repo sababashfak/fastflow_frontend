@@ -49,20 +49,30 @@ const aboutItems = [
   },
 ];
 
+const images = ["/about.jpg", "/about-2.jpg", "/about-3.jpg", "/about-4.jpg"];
+
 const AboutUs = () => {
   const [active, setActive] = useState(0);
 
   return (
     <section className="bg-white py-16 md:py-20">
-      <div className="container grid grid-cols-1 gap-x-10 md:grid-cols-[auto_1fr] xl:gap-x-16">
+      <div className="container grid grid-cols-1 gap-x-10 gap-y-5 md:grid-cols-[auto_1fr] md:gap-x-4 lg:gap-x-10 xl:gap-x-16">
         <div className="w-full md:max-w-sm lg:max-w-md xl:max-w-lg">
-          <img
-            src="/about.jpg"
-            alt=""
-            className="aspect-[5/3] w-full object-cover md:aspect-auto md:h-full lg:aspect-[6/8] xl:aspect-[7/8]"
-          />
+          <div className="relative w-full">
+            {images.map((image, index) => (
+              <img
+                key={index}
+                src={images[active]}
+                alt=""
+                className={cn(
+                  "aspect-[5/3] w-full object-cover duration-300 md:aspect-[3/5] lg:aspect-[6/8] xl:aspect-[7/8]",
+                  index !== active && "absolute left-0 top-0 opacity-0",
+                )}
+              />
+            ))}
+          </div>
         </div>
-        <div className="py-5">
+        <div className="py-1 lg:py-5">
           <SectionTop
             subtitle="We Transform Everything You Need"
             containerClass="items-start text-left"
