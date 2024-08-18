@@ -4,14 +4,10 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 
 interface DashBookingStatusProps {
-  name: string;
   bookingId: string;
 }
 
-const DashBookingStatus: React.FC<DashBookingStatusProps> = ({
-  name,
-  bookingId,
-}) => {
+const DashBookingStatus: React.FC<DashBookingStatusProps> = ({ bookingId }) => {
   const queryClient = useQueryClient();
 
   const updateMutation = useMutation({
@@ -41,10 +37,7 @@ const DashBookingStatus: React.FC<DashBookingStatusProps> = ({
 
   return (
     <div className="mb-3 flex items-center justify-between gap-10 rounded-md bg-white p-3 sm:px-5">
-      <p>
-        <span className="font-medium text-blue-500">{name}</span> has requested
-        a booking
-      </p>
+      <p>A new booking has been made. Do you want to approve or reject it?</p>
       <div className="flex items-center gap-2">
         <Button
           onClick={() => handleMutation("rejected")}

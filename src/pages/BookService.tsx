@@ -2,11 +2,11 @@ import BookServiceForm from "@/components/BookService/BookServiceForm";
 import useCategories from "@/hooks/useCategories";
 import { TCategory } from "@/interfaces/categories";
 import useStore from "@/store";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const BookService = () => {
   const user = useStore((state) => state.user);
-  const isDisabled = !user?._id || user?.role === "admin";
+  const isDisabled = !!user?._id && user?.role === "admin";
   const [params] = useSearchParams();
   const categorySlug = params.get("category") || "";
   const categories = useCategories();
@@ -29,20 +29,7 @@ const BookService = () => {
         <div className="bg-primary">
           <div className="container">
             <p className="py-3 text-center text-black">
-              {!user && (
-                <>
-                  You must be a logged in user to book a service:{" "}
-                  <Link
-                    className="ml-1 mt-1 inline-block rounded-md bg-purple-500 px-2 py-1 text-white duration-200 hover:bg-purple-600"
-                    to="/login"
-                  >
-                    Login now
-                  </Link>
-                </>
-              )}
-              {user?.role === "admin" && (
-                <>Booking a service is not possible with an admin account</>
-              )}
+              Booking a service is not possible with an admin account
             </p>
           </div>
         </div>
@@ -54,6 +41,7 @@ const BookService = () => {
         <BookServiceForm
           categories={categories as TCategory[]}
           defaultCategory={defaultCategory as TCategory}
+          defaultEmail={user?.email}
         />
       </div>
     </main>

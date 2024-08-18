@@ -16,8 +16,8 @@ const DashBookingsTable: React.FC<DashBookingsTableProps> = ({
 }) => {
   const columns = [
     {
-      accessorKey: "user.name",
-      header: "User",
+      accessorKey: "email",
+      header: "Email",
       enableHiding: false,
     },
     {

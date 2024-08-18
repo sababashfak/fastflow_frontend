@@ -11,6 +11,7 @@ import BookServiceStep from "./BookServiceStep";
 type BookServiceFormProps = {
   categories: TCategory[];
   defaultCategory: TCategory | undefined;
+  defaultEmail: string | undefined;
 };
 
 type FormData = {
@@ -21,6 +22,7 @@ type FormData = {
 const BookServiceForm: React.FC<BookServiceFormProps> = ({
   categories,
   defaultCategory,
+  defaultEmail,
 }) => {
   const [category, setCategory] = useState<TCategory | undefined>(
     defaultCategory,
@@ -32,6 +34,9 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
   const [formData, setFormData] = useState<FormData[]>([]);
   const [description, setDescription] = useState<string>("");
   const [photos, setPhotos] = useState<File[]>([]);
+  const [email, setEmail] = useState<string>(defaultEmail || "");
+  const [phone, setPhone] = useState<string>("");
+
   const steps = category?.steps;
 
   const handleCategoryChange = (slug: string) => {
@@ -75,6 +80,8 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
       setIsLastStep(false);
       setIsDescription(false);
       setIsPhotoUpload(false);
+      setEmail(defaultEmail || "");
+      setPhone("");
     },
   });
 

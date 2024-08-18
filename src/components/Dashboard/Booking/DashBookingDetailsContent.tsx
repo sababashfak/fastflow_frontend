@@ -18,13 +18,22 @@ const DashBookingDetailsContent: React.FC<BookingDetailsProps> = ({
   booking,
 }) => {
   const loggedInUser = useStore((state) => state.user);
-  const { _id, status, user, category, qnas, description, photos, createdAt } =
-    booking;
+  const {
+    _id,
+    email,
+    phone,
+    status,
+    category,
+    qnas,
+    description,
+    photos,
+    createdAt,
+  } = booking;
 
   return (
     <div className="mx-auto max-w-4xl">
       {status === "pending" && loggedInUser?.role === "admin" && (
-        <DashBookingStatus name={user.name} bookingId={_id} />
+        <DashBookingStatus bookingId={_id} />
       )}
       <div className="rounded-md bg-white">
         <div className="flex items-center justify-between gap-10 border-b p-3 sm:px-5">
@@ -50,13 +59,15 @@ const DashBookingDetailsContent: React.FC<BookingDetailsProps> = ({
         </div>
         <div className="flex flex-col gap-y-5 p-3 sm:p-5">
           <div>
-            <h3 className="font-medium">Name</h3>
-            <p className="text-gray-600">{user.name}</p>
-          </div>
-          <div>
             <h3 className="font-medium">Contact Email</h3>
-            <p className="break-words text-gray-600">{user.email}</p>
+            <p className="break-words text-gray-600">{email}</p>
           </div>
+          {phone && (
+            <div>
+              <h3 className="font-medium">Contact Phone</h3>
+              <p className="text-gray-600">{phone}</p>
+            </div>
+          )}
           {qnas.map((qna: any, index: number) => {
             if (!qna.answer) return null;
 

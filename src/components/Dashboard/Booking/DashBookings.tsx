@@ -7,11 +7,8 @@ import DashBookingsTable from "./DashBookingsTable";
 const DashBookings = () => {
   const user = useStore((state) => state.user);
   const bookingsQuery = useQuery({
-    queryKey: ["bookings", user?._id],
-    queryFn: () =>
-      getBookings({
-        populate: "user:name",
-      }),
+    queryKey: ["bookings", user?.email],
+    queryFn: () => getBookings(),
   });
 
   const bookings = bookingsQuery.data?.data?.bookings || [];

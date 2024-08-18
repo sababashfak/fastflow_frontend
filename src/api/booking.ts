@@ -19,7 +19,7 @@ export const createBooking = async (photos: File[], bookingData: any) => {
   );
 };
 
-export const getBookings = async (query: any) => {
+export const getBookings = async (query?: any) => {
   return apiRequest(() =>
     authAxios.get("/bookings", { params: query }).then((res) => res.data),
   );
