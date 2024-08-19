@@ -4,6 +4,8 @@ import { cn } from "@/lib/utils";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { toast } from "sonner";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
 import BookServiceInpImage from "./BookServiceInpImage";
 import BookServiceInpTextarea from "./BookServiceInpTextarea";
 import BookServiceStep from "./BookServiceStep";
@@ -36,6 +38,7 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
   const [photos, setPhotos] = useState<File[]>([]);
   const [email, setEmail] = useState<string>(defaultEmail || "");
   const [phone, setPhone] = useState<string>("");
+  const [isCredentials, setIsCredentials] = useState<boolean>(false);
 
   const steps = category?.steps;
 
@@ -94,18 +97,12 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
       return toast.error("Please select a category");
     }
 
-    if (isLastStep && isPhotoUpload) {
-      if (!photos) {
-        return toast.error("Please upload at least one photo");
-      }
+    if (!isLastStep && !formData[currentStep]?.answer) {
+      return toast.error("Please provide the required information");
+    }
 
-      const data = {
-        category: category?.cat_name,
-        qnas: formData,
-        description,
-      };
-
-      return handleBooking(data);
+    if (!isLastStep) {
+      return setCurrentStep(currentStep + 1);
     }
 
     if (isLastStep && !isDescription) {
@@ -120,18 +117,40 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
       return setIsPhotoUpload(true);
     }
 
-    if (!formData[currentStep]?.answer) {
-      return toast.error("Please provide the required information");
+    if (isLastStep && isPhotoUpload && !isCredentials && !defaultEmail) {
+      if (!photos.length) {
+        return toast.error("Please upload at least one photo");
+      }
+
+      return setIsCredentials(true);
     }
 
-    if (!isLastStep) {
-      setCurrentStep(currentStep + 1);
+    if (isLastStep && isPhotoUpload && (isCredentials || defaultEmail)) {
+      if (isCredentials && !email) {
+        return toast.error("Please provide an email address");
+      }
+
+      const data = {
+        category: category?.cat_name,
+        qnas: formData,
+        description,
+        email: email || defaultEmail,
+        phone: defaultEmail ? "" : phone,
+      };
+
+      return handleBooking(data);
     }
   };
 
   const handleBack = () => {
     if (currentStep === 0) {
       return setCategory(undefined);
+    }
+
+    if (isCredentials) {
+      setEmail("");
+      setPhone("");
+      return setIsCredentials(false);
     }
 
     if (isPhotoUpload) {
@@ -202,6 +221,36 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
           {isLastStep && isPhotoUpload && (
             <BookServiceInpImage setPhotos={setPhotos} />
           )}
+          {isLastStep && isCredentials && (
+            <div className="max-w-[480px] space-y-6 pb-1">
+              <h3 className="text-lg font-semibold leading-tight">
+                Please provide your contact information so we can reach out to
+                you:
+              </h3>
+              <div className="flex flex-col space-y-1.5">
+                <Label htmlFor="email">Email Address</Label>
+                <Input
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value as string)}
+                  className="px-4 py-[22px] text-base"
+                  placeholder="Enter your email address"
+                  id="email"
+                  required
+                />
+              </div>
+              <div className="flex flex-col space-y-1.5">
+                <Label htmlFor="phone">Phone Number</Label>
+                <Input
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value as string)}
+                  className="px-4 py-[22px] text-base"
+                  placeholder="Enter your phone number (optional)"
+                  id="email"
+                  required
+                />
+              </div>
+            </div>
+          )}
         </div>
         <div className="mt-5 flex items-center gap-3 sm:mt-7">
           {!!category && (
@@ -215,9 +264,10 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
           )}
           <button
             onClick={handleContinue}
-            className="rounded-[4px] border-2 border-[#008FD3] bg-[#008FD3] px-4 py-2.5 font-medium text-white"
+            className="rounded-[4px] border-2 border-[#008FD3] bg-[#008FD3] px-4 py-2.5 font-medium text-white disabled:pointer-events-none disabled:opacity-70"
+            disabled={bookingMutation.isPending}
           >
-            Continue
+            {bookingMutation.isPending ? "Submitting..." : "Continue"}
           </button>
         </div>
       </div>
