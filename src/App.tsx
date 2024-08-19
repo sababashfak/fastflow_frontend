@@ -6,6 +6,9 @@ import UpdateBlog from "./components/Dashboard/Blog/UpdateBlog";
 import DashBookingDetails from "./components/Dashboard/Booking/DashBookingDetails";
 import DashBookings from "./components/Dashboard/Booking/DashBookings";
 import Profile from "./components/Dashboard/Profile/Profile";
+import DashReview from "./components/Dashboard/Review/DashReview";
+import NewReview from "./components/Dashboard/Review/NewReview";
+import UpdateReview from "./components/Dashboard/Review/UpdateReview";
 import DashNotFound from "./components/Dashboard/shared/DashNotFound";
 import Layout from "./components/shared/Layout";
 import { Toaster } from "./components/ui/sonner";
@@ -68,6 +71,9 @@ const App = () => {
             <Route path="blog" element={<DashBlog />} />
             <Route path="blog/new" element={<NewBlog />} />
             <Route path="blog/edit/:blogId" element={<UpdateBlog />} />
+            <Route path="reviews" element={<DashReview />} />
+            <Route path="reviews/new" element={<NewReview />} />
+            <Route path="reviews/edit/:reviewId" element={<UpdateReview />} />
             <Route path="profile" element={<Profile />} />
             <Route path="*" element={<DashNotFound />} />
           </Route>

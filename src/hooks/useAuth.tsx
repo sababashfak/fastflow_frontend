@@ -30,7 +30,7 @@ const useAuth = () => {
   }, [userQuery.data, token]);
 
   return {
-    user,
+    user: user || userQuery.data?.data?.user,
     isFetching,
     isError: userQuery.isError,
     error: userQuery.error,

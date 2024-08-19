@@ -1,4 +1,4 @@
-import { MdConstruction } from "react-icons/md";
+import { MdConstruction, MdOutlineReviews } from "react-icons/md";
 import { RiArticleLine } from "react-icons/ri";
 
 export type TSidebarItem = {
@@ -24,6 +24,11 @@ const sidebarItems: SidebarItemsProps = {
       title: "Blog",
       path: "blog",
       icon: <RiArticleLine />,
+    },
+    {
+      title: "Reviews",
+      path: "reviews",
+      icon: <MdOutlineReviews />,
     },
   ],
   user: [
