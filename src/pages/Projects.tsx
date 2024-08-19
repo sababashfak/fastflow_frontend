@@ -1,7 +1,33 @@
+import ProjectCard from "@/components/Project/ProjectCard";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import useProjects from "@/hooks/useProjects";
+import { TProject } from "@/interfaces/project";
+import { useState } from "react";
+import {
+  ReactCompareSlider,
+  ReactCompareSliderImage,
+} from "react-compare-slider";
 
 const Projects = () => {
+  const [quickView, setQuickView] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<TProject | null>(null);
   const projects = useProjects();
+
+  const handleQuickView = (project: TProject) => {
+    setSelectedProject(project);
+    setQuickView(true);
+  };
+
+  const handleCloseQuickView = () => {
+    setSelectedProject(null);
+    setQuickView(false);
+  };
 
   return (
     <main>
@@ -17,31 +43,46 @@ const Projects = () => {
       <section className="py-16 sm:py-20">
         <div className="container flex flex-wrap justify-center gap-5">
           {projects.map((project, index) => (
-            <div className="w-full max-w-[380px]" key={index}>
-              <div className="relative">
-                <img
-                  className="h-[490px] w-full object-cover"
-                  src={`/images/projects/${project.image}`}
-                  alt={project.name}
-                />
-                <div className="absolute left-0 top-0 h-full w-full bg-black/30">
-                  <div className="flex h-full w-full flex-col items-start justify-between bg-[linear-gradient(to_top,#000d,#0000)] px-8 py-6">
-                    <h4 className="bg-black/30 p-1.5 text-xl font-bold text-white backdrop-blur-md">
-                      0{index + 1}.
-                    </h4>
-                    <div>
-                      <h2 className="mb-3 text-2xl font-semibold uppercase tracking-tight text-white">
-                        {project.name}
-                      </h2>
-                      <p className="text-white/80">{project.description}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ProjectCard
+              key={index}
+              project={project}
+              handleQuickView={handleQuickView}
+            />
           ))}
         </div>
       </section>
+      <Dialog open={quickView} onOpenChange={handleCloseQuickView}>
+        <DialogContent className="z-[99999] mt-8 w-[calc(100%-20px)] rounded-md p-0 lg:max-w-xl">
+          <DialogHeader>
+            <DialogTitle className="border-b px-3 py-2.5 text-left text-xl">
+              {selectedProject?.name}
+            </DialogTitle>
+            <DialogDescription hidden />
+            <div className="p-3 pt-2">
+              <div className="mb-1 flex justify-between text-sm font-medium uppercase text-secondary">
+                <p>Before</p>
+                <p>After</p>
+              </div>
+              <ReactCompareSlider
+                className="h-[280px] md:h-[320px] lg:h-[350px]"
+                itemOne={
+                  <ReactCompareSliderImage
+                    src={`/images/projects/${selectedProject?.beforeImage}`}
+                    alt={selectedProject?.name}
+                    className="h-full"
+                  />
+                }
+                itemTwo={
+                  <ReactCompareSliderImage
+                    src={`/images/projects/${selectedProject?.image}`}
+                    alt={selectedProject?.name}
+                  />
+                }
+              />
+            </div>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </main>
   );
 };

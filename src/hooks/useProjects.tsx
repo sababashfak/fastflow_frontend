@@ -5,6 +5,7 @@ const projects: TProject[] = [
     name: "Modern Kitchen",
     description: "Sleek and contemporary design",
     image: "project-1.jpg",
+    beforeImage: "project-2.jpg",
   },
   {
     name: "Cozy Living Room",
