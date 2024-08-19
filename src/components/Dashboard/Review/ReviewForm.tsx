@@ -14,11 +14,25 @@ type ReviewFormProps = {
   review?: Review | null;
 };
 
+const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+
 const reviewSchema = z.object({
   name: z.string().min(1, "Name is required"),
   designation: z.string().min(1, "Designation is required"),
   review: z.string().min(1, "Review is required"),
-  reviewLink: z.string().optional(),
+  reviewLink: z
+    .string()
+    .optional()
+    .refine(
+      (value) => {
+        if (value === "") return true;
+
+        return urlRegex.test(value as string);
+      },
+      {
+        message: "Please provide a valid URL",
+      },
+    ),
 });
 
 const ReviewForm: React.FC<ReviewFormProps> = ({ review = null }) => {

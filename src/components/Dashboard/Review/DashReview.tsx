@@ -1,8 +1,18 @@
+import { getReviews } from "@/api/review";
 import { Button } from "@/components/ui/button";
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import DashboardHeader from "../shared/DashboardHeader";
+import DashReviewsTable from "./DashReviewsTable";
 
 const DashReview = () => {
+  const reviewsQuery = useQuery({
+    queryKey: ["reviews"],
+    queryFn: () => getReviews({}),
+  });
+
+  const reviews = reviewsQuery.data?.data?.reviews || [];
+
   return (
     <div>
       <DashboardHeader title="Reviews" desc="Manage all of your reviews" />
@@ -14,6 +24,10 @@ const DashReview = () => {
               <Link to="new">Add Review</Link>
             </Button>
           </div>
+          <DashReviewsTable
+            reviews={reviews}
+            isFetching={reviewsQuery.isFetching}
+          />
         </div>
       </div>
     </div>
