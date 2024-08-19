@@ -1,5 +1,6 @@
 import { Review } from "@/interfaces/review";
 import { FaRegComments } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 type ReviewCardProps = {
   review: Review;
@@ -7,7 +8,10 @@ type ReviewCardProps = {
 
 const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => {
   return (
-    <div className="mx-auto flex max-w-5xl flex-col items-center text-center text-white">
+    <Link
+      to={review.reviewLink || "#"}
+      className="mx-auto flex max-w-5xl flex-col items-center text-center text-white"
+    >
       <div className="flex size-20 items-center justify-center rounded-full border border-white">
         <FaRegComments className="text-5xl" />
       </div>
@@ -21,7 +25,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => {
       <p className="mt-1 text-sm font-light uppercase tracking-wide">
         {review.designation}
       </p>
-    </div>
+    </Link>
   );
 };
 
