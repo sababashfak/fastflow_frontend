@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { Review } from "@/interfaces/review";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -46,9 +46,11 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ review = null }) => {
       name: review?.name || "",
       designation: review?.designation || "",
       review: review?.review || "",
-      reviewLink: review?.review || "",
+      reviewLink: review?.reviewLink || "",
     },
   });
+
+  const queryClient = useQueryClient();
 
   const reviewMutation = useMutation({
     mutationFn: (data: Review) => {
@@ -61,6 +63,10 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ review = null }) => {
     onSuccess: (result) => {
       if (result.success) {
         toast.success(result.message);
+
+        queryClient.invalidateQueries({
+          queryKey: ["reviews"],
+        });
 
         if (!isUpdate) {
           return navigate("/dashboard/admin/reviews");
