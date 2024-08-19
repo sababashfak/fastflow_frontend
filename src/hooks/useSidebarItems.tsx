@@ -1,3 +1,4 @@
+import { GoProjectRoadmap } from "react-icons/go";
 import { MdConstruction, MdOutlineReviews } from "react-icons/md";
 import { RiArticleLine } from "react-icons/ri";
 
@@ -19,6 +20,11 @@ const sidebarItems: SidebarItemsProps = {
       title: "Bookings",
       path: "bookings",
       icon: <MdConstruction />,
+    },
+    {
+      title: "Projects",
+      path: "projects",
+      icon: <GoProjectRoadmap />,
     },
     {
       title: "Blog",

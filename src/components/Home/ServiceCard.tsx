@@ -10,7 +10,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   const { name, description, image } = service;
 
   return (
-    <div className="mx-auto grid max-w-md grid-cols-[auto_1fr] items-center gap-5 border bg-white p-8 sm:p-5 md:p-7">
+    <div className="mx-auto grid max-w-md grid-cols-[auto_1fr] items-center gap-5 border bg-white p-5 md:p-7">
       <img
         src={`/images/services/home/${image}`}
         alt={name}

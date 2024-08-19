@@ -6,6 +6,9 @@ import UpdateBlog from "./components/Dashboard/Blog/UpdateBlog";
 import DashBookingDetails from "./components/Dashboard/Booking/DashBookingDetails";
 import DashBookings from "./components/Dashboard/Booking/DashBookings";
 import Profile from "./components/Dashboard/Profile/Profile";
+import DashProjects from "./components/Dashboard/Project/DashProjects";
+import NewProject from "./components/Dashboard/Project/NewProject";
+import UpdateProject from "./components/Dashboard/Project/UpdateProject";
 import DashReview from "./components/Dashboard/Review/DashReview";
 import NewReview from "./components/Dashboard/Review/NewReview";
 import UpdateReview from "./components/Dashboard/Review/UpdateReview";
@@ -74,6 +77,12 @@ const App = () => {
             <Route path="reviews" element={<DashReview />} />
             <Route path="reviews/new" element={<NewReview />} />
             <Route path="reviews/edit/:reviewId" element={<UpdateReview />} />
+            <Route path="projects" element={<DashProjects />} />
+            <Route path="projects/new" element={<NewProject />} />
+            <Route
+              path="projects/edit/:projectId"
+              element={<UpdateProject />}
+            />
             <Route path="profile" element={<Profile />} />
             <Route path="*" element={<DashNotFound />} />
           </Route>
