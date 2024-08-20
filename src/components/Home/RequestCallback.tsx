@@ -1,5 +1,8 @@
+import { callback } from "@/api/callback";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 import { RequestCallbackData } from "../../interfaces/callback";
 import CustomFormField from "../shared/CustomFormField";
@@ -30,8 +33,21 @@ const RequestCallback = () => {
     },
   });
 
+  const callbackMutation = useMutation({
+    mutationFn: callback,
+    onSuccess: (result) => {
+      if (result.success) {
+        toast.success("Callback request sent successfully");
+
+        form.reset();
+      } else {
+        toast.error("Failed to send callback request");
+      }
+    },
+  });
+
   const handleRequestCallback = (data: RequestCallbackData) => {
-    console.log(data);
+    callbackMutation.mutate(data);
   };
 
   return (
@@ -58,30 +74,37 @@ const RequestCallback = () => {
                   name="name"
                   placeholder="Enter your name"
                   formControl={form.control}
+                  disabled={callbackMutation.isPending}
                 />
                 <CustomFormField
                   label="Email"
                   name="email"
                   placeholder="Enter your email"
                   formControl={form.control}
+                  disabled={callbackMutation.isPending}
                 />
                 <CustomFormField
                   label="Phone"
                   name="phone"
                   placeholder="Enter your phone number"
                   formControl={form.control}
+                  disabled={callbackMutation.isPending}
                 />
                 <CustomFormField
                   label="Company"
                   name="company"
                   placeholder="Enter your company name"
                   formControl={form.control}
+                  disabled={callbackMutation.isPending}
                 />
                 <Button
                   type="submit"
                   className="h-11 w-full bg-primary text-dark hover:bg-primary/90"
+                  disabled={callbackMutation.isPending}
                 >
-                  Request Callback
+                  {callbackMutation.isPending
+                    ? "Sending..."
+                    : "Request Callback"}
                 </Button>
               </form>
             </Form>
