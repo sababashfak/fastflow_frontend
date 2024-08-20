@@ -1,3 +1,4 @@
+import { getProjects } from "@/api/project";
 import ProjectCard from "@/components/Project/ProjectCard";
 import {
   Dialog,
@@ -6,8 +7,9 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import useProjects from "@/hooks/useProjects";
+import { Skeleton } from "@/components/ui/skeleton";
 import { TProject } from "@/interfaces/project";
+import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import {
   ReactCompareSlider,
@@ -17,7 +19,13 @@ import {
 const Projects = () => {
   const [quickView, setQuickView] = useState(false);
   const [selectedProject, setSelectedProject] = useState<TProject | null>(null);
-  const projects = useProjects();
+
+  const projectsQuery = useQuery({
+    queryKey: ["projects"],
+    queryFn: () => getProjects(),
+  });
+
+  const projects = projectsQuery.data?.data?.projects || [];
 
   const handleQuickView = (project: TProject) => {
     setSelectedProject(project);
@@ -42,13 +50,33 @@ const Projects = () => {
       </section>
       <section className="py-16 sm:py-20">
         <div className="container flex flex-wrap justify-center gap-5">
-          {projects.map((project, index) => (
+          {projects.map((project: TProject, index: number) => (
             <ProjectCard
               key={index}
               project={project}
               handleQuickView={handleQuickView}
             />
           ))}
+        </div>
+        <div className="container">
+          {projectsQuery.isFetching && (
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {[...Array(3)].map((_, index) => (
+                <div className="last:hidden lg:last:block" key={index}>
+                  <Skeleton className="mx-auto flex h-[460px] w-full max-w-[380px] flex-col justify-between bg-gray-300 p-6">
+                    <div className="flex justify-between">
+                      <Skeleton className="h-6 w-16 rounded-sm bg-gray-400" />
+                      <Skeleton className="h-6 w-20 rounded-full bg-gray-400" />
+                    </div>
+                    <div>
+                      <Skeleton className="mb-2 h-7 w-40 bg-gray-400" />
+                      <Skeleton className="h-6 w-64 bg-gray-400" />
+                    </div>
+                  </Skeleton>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
       <Dialog open={quickView} onOpenChange={handleCloseQuickView}>
@@ -67,15 +95,16 @@ const Projects = () => {
                 className="h-[280px] md:h-[320px] lg:h-[350px]"
                 itemOne={
                   <ReactCompareSliderImage
-                    src={`/images/projects/${selectedProject?.beforeImage}`}
+                    src={`${import.meta.env.VITE_BACKEND_URL}/images/${selectedProject?.beforeImage}`}
                     alt={selectedProject?.name}
-                    className="h-full"
+                    className="h-full object-cover"
                   />
                 }
                 itemTwo={
                   <ReactCompareSliderImage
-                    src={`/images/projects/${selectedProject?.image}`}
+                    src={`${import.meta.env.VITE_BACKEND_URL}/images/${selectedProject?.image}`}
                     alt={selectedProject?.name}
+                    className="h-full object-cover"
                   />
                 }
               />

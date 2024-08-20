@@ -1,8 +1,18 @@
+import { getProjects } from "@/api/project";
 import { Button } from "@/components/ui/button";
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import DashboardHeader from "../shared/DashboardHeader";
+import DashProjectsTable from "./DashProjectsTable";
 
 const DashProjects = () => {
+  const projectsQuery = useQuery({
+    queryKey: ["projects"],
+    queryFn: () => getProjects(),
+  });
+
+  const projects = projectsQuery.data?.data?.projects || [];
+
   return (
     <div>
       <DashboardHeader title="Projects" desc="Manage all of your projects" />
@@ -14,7 +24,10 @@ const DashProjects = () => {
               <Link to="new">Add Project</Link>
             </Button>
           </div>
-          {/* Projects Table */}
+          <DashProjectsTable
+            projects={projects}
+            isFetching={projectsQuery.isFetching}
+          />
         </div>
       </div>
     </div>

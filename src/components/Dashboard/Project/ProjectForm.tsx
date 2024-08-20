@@ -75,9 +75,11 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project }) => {
           queryKey: ["projects"],
         });
 
-        navigate("/dashboard/admin/projects", {
-          replace: true,
-        });
+        if (!isUpdate) {
+          return navigate("/dashboard/admin/projects", {
+            replace: true,
+          });
+        }
       } else {
         toast.error(result.message || "Something went wrong");
       }

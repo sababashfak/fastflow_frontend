@@ -15,11 +15,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="relative">
         <img
           className="h-[490px] w-full object-cover"
-          src={`/images/projects/${project.image}`}
+          src={`${import.meta.env.VITE_BACKEND_URL}/images/${project.image}`}
           alt={project.name}
         />
         <img
-          src={`/images/projects/${project.beforeImage}`}
+          src={`${import.meta.env.VITE_BACKEND_URL}/images/${project.beforeImage}`}
           alt="Before"
           className="invisible absolute left-0 top-0 h-full w-full object-cover opacity-0 duration-300 group-hover:visible group-hover:opacity-100"
         />
