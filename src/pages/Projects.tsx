@@ -77,6 +77,13 @@ const Projects = () => {
               ))}
             </div>
           )}
+          {!projectsQuery.isFetching && projects.length === 0 && (
+            <div className="py-10">
+              <p className="text-center text-lg font-medium text-gray-500">
+                No projects found.
+              </p>
+            </div>
+          )}
         </div>
       </section>
       <Dialog open={quickView} onOpenChange={handleCloseQuickView}>
