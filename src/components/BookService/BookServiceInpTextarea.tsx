@@ -3,14 +3,16 @@ import { Textarea } from "../ui/textarea";
 type BookServiceInpTextareaProps = {
   description: string;
   onDescriptionChange: (description: string) => void;
+  className?: string;
 };
 
 const BookServiceInpTextarea: React.FC<BookServiceInpTextareaProps> = ({
   description,
   onDescriptionChange,
+  className,
 }) => {
   return (
-    <div>
+    <div className={className}>
       <h3 className="mb-5 text-lg font-semibold text-gray-900 sm:text-xl">
         Add a description to your job
       </h3>

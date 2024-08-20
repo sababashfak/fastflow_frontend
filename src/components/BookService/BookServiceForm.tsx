@@ -126,8 +126,10 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
     }
 
     if (isLastStep && isPhotoUpload && (isCredentials || defaultEmail)) {
-      if (isCredentials && !email) {
-        return toast.error("Please provide an email address");
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      if (isCredentials && !emailRegex.test(email)) {
+        return toast.error("Please provide a valid email address");
       }
 
       const data = {
@@ -143,10 +145,6 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
   };
 
   const handleBack = () => {
-    if (currentStep === 0) {
-      return setCategory(undefined);
-    }
-
     if (isCredentials) {
       setEmail("");
       setPhone("");
@@ -163,6 +161,10 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
       setIsDescription(false);
 
       return setIsLastStep(false);
+    }
+
+    if (currentStep === 0) {
+      return setCategory(undefined);
     }
 
     setFormData((prev) => {
@@ -216,10 +218,14 @@ const BookServiceForm: React.FC<BookServiceFormProps> = ({
             <BookServiceInpTextarea
               description={description}
               onDescriptionChange={(value) => setDescription(value)}
+              className={cn(isPhotoUpload && "pointer-events-none opacity-70")}
             />
           )}
           {isLastStep && isPhotoUpload && (
-            <BookServiceInpImage setPhotos={setPhotos} />
+            <BookServiceInpImage
+              setPhotos={setPhotos}
+              className={cn(isCredentials && "pointer-events-none opacity-70")}
+            />
           )}
           {isLastStep && isCredentials && (
             <div className="max-w-[480px] space-y-6 pb-1">

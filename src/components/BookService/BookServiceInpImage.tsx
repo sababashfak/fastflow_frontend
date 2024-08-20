@@ -3,6 +3,7 @@ import { IoCloseOutline } from "react-icons/io5";
 
 type BookServiceInpImageProps = {
   setPhotos: React.Dispatch<React.SetStateAction<File[]>>;
+  className?: string;
 };
 
 type SelectedImage = {
@@ -12,6 +13,7 @@ type SelectedImage = {
 
 const BookServiceInpImage: React.FC<BookServiceInpImageProps> = ({
   setPhotos,
+  className,
 }) => {
   const [selectedImages, setSelectedImages] = useState<SelectedImage[]>([]);
 
@@ -46,7 +48,7 @@ const BookServiceInpImage: React.FC<BookServiceInpImageProps> = ({
   }, [selectedImages]);
 
   return (
-    <div>
+    <div className={className}>
       <div className="mb-5">
         <h3 className="text-lg font-semibold text-gray-900 sm:text-xl">
           Add images to your job
