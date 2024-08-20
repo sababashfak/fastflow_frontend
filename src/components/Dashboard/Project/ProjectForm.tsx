@@ -129,7 +129,13 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project }) => {
             className="h-auto w-full bg-secondary py-3 text-base transition-all duration-300 hover:bg-secondary/90"
             disabled={projectMutation.isPending}
           >
-            {isUpdate ? "Update Project" : "Create Project"}
+            {projectMutation.isPending
+              ? isUpdate
+                ? "Updating"
+                : "Adding"
+              : isUpdate
+                ? "Update Project"
+                : "Add Project"}
           </Button>
         </form>
       </Form>
