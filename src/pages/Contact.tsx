@@ -1,5 +1,11 @@
 import ContactForm from "@/components/Contact/ContactForm";
 import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+} from "react-icons/fa6";
+import {
   IoCallOutline,
   IoLocationOutline,
   IoMailOutline,
@@ -75,6 +81,36 @@ const Contact = () => {
                     info@ffhp.co.uk
                   </span>
                 </Link>
+                <div className="flex gap-2.5 md:pt-6">
+                  <a
+                    href="https://www.facebook.com/ffhpltd"
+                    className="flex size-[38px] items-center justify-center rounded-full bg-[#1974EC] text-base text-white duration-200 lg:hover:bg-primary lg:hover:text-dark"
+                    target="_blank"
+                  >
+                    <FaFacebookF />
+                  </a>
+                  <a
+                    href="#"
+                    className="flex size-[38px] items-center justify-center rounded-full bg-[#1D9CEB] text-base text-white duration-200 lg:hover:bg-primary lg:hover:text-dark"
+                    target="_blank"
+                  >
+                    <FaTwitter />
+                  </a>
+                  <a
+                    href="#"
+                    className="flex size-[38px] items-center justify-center rounded-full bg-[#0077B5] text-base text-white duration-200 lg:hover:bg-primary lg:hover:text-dark"
+                    target="_blank"
+                  >
+                    <FaLinkedinIn />
+                  </a>
+                  <a
+                    href="#"
+                    className="flex size-[38px] items-center justify-center rounded-full bg-[#F72270] text-base text-white duration-200 lg:hover:bg-primary lg:hover:text-dark"
+                    target="_blank"
+                  >
+                    <FaInstagram />
+                  </a>
+                </div>
               </div>
             </div>
             <ContactForm />
