@@ -15,6 +15,9 @@ const contactSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address",
   }),
+  mobileNo: z.string().min(10, {
+    message: "Please enter a valid mobile number",
+  }),
   subject: z.string().min(1, {
     message: "Please enter a subject",
   }),
@@ -29,6 +32,7 @@ const ContactForm = () => {
     defaultValues: {
       name: "",
       email: "",
+      mobileNo: "",
       subject: "",
       message: "",
     },
@@ -72,6 +76,12 @@ const ContactForm = () => {
               formControl={form.control}
             />
           </div>
+          <CustomFormField
+            label="Mobile No"
+            name="mobileNo"
+            placeholder="Enter your mobile number"
+            formControl={form.control}
+          />
           <CustomFormField
             label="Subject"
             name="subject"

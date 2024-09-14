@@ -110,7 +110,7 @@ const Services = () => {
         <div className="container">
           <SectionTop
             title="Our Services"
-            subtitle="Quality Service is Our Guarantee"
+            subtitle="Where Quality and Service Flow Together"
           />
           <div className="mt-12 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 lg:grid-cols-3">
             {services.map((service, index) => (

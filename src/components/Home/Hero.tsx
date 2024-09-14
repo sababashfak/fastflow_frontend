@@ -42,7 +42,7 @@ const slides: Slide[] = [
       "Customized renovation solutions that exceed expectations, blending style and functionality for your perfect home.",
     image: "/images/hero/slide-3.jpg",
     btnText: "Get a Quote",
-    btnUrl: "/contact",
+    btnUrl: "/get-a-quote",
   },
 ];
 

@@ -62,7 +62,7 @@ const Contact = () => {
                 >
                   <TbPhoneCall className="text-xl text-blue-500" />
                   <span className="text-[15px] duration-300 hover:text-blue-500">
-                    (555) 555-1234
+                    07437345474
                   </span>
                 </Link>
                 <Link

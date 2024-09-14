@@ -22,6 +22,7 @@ import BookService from "./pages/BookService";
 import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
 import ForgotPassword from "./pages/ForgotPassword";
+import GetAQuote from "./pages/GetAQuote";
 import GoogleLogin from "./pages/GoogleLogin";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -48,6 +49,7 @@ const App = () => {
             <Route path="blog" element={<Blog />} />
             <Route path="blog/:blogId" element={<BlogDetails />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="get-a-quote" element={<GetAQuote />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
             <Route path="verify-email" element={<VerifyEmail />} />

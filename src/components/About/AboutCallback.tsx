@@ -19,7 +19,7 @@ const AboutCallback = () => {
             className="block shrink-0 rounded-sm bg-white px-5 py-3.5 font-semibold uppercase text-dark duration-300 hover:bg-gray-100"
             to="/book-service"
           >
-            Book a Service
+            Book Now
           </Link>
         </div>
       </div>

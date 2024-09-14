@@ -4,6 +4,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { cn } from "../../lib/utils";
 import MobileNavbar from "./MobileNavbar";
 import NavbarTop from "./NavbarTop";
+import WhatsappButton from "./WhatsappButton";
 
 export type MenuItem = {
   name: string;
@@ -14,7 +15,7 @@ const menuItems: MenuItem[] = [
   { name: "Home", link: "/" },
   { name: "About", link: "/about" },
   { name: "Services", link: "/services" },
-  { name: "Book Service", link: "/book-service" },
+  { name: "Book now", link: "/book-service" },
   { name: "Projects", link: "/projects" },
   { name: "Blog", link: "/blog" },
   { name: "Contact", link: "/contact" },
@@ -62,37 +63,43 @@ const Navbar = () => {
             sticky && "top-0 shadow-md md:top-0",
           )}
         >
-          <div className="container">
-            <div className="flex flex-wrap items-center justify-between gap-x-10 py-1.5 md:py-2">
-              <Link to="/">
-                <img
-                  src="/logo.png"
-                  alt="Fastflow"
-                  className={cn("h-[70px] duration-300", sticky && "h-[60px]")}
+          <div className="relative w-full">
+            <WhatsappButton />
+            <div className="container">
+              <div className="flex flex-wrap items-center justify-between gap-x-10 py-1.5 md:py-2">
+                <Link to="/">
+                  <img
+                    src="/logo.png"
+                    alt="Fastflow"
+                    className={cn(
+                      "h-[70px] duration-300",
+                      sticky && "h-[60px]",
+                    )}
+                  />
+                </Link>
+                <div className="md:hidden">
+                  <button onClick={openNavbar} className="flex items-center">
+                    <IoMdMenu className="text-3xl text-dark" />
+                  </button>
+                </div>
+                <ul className="hidden items-center gap-5 md:flex">
+                  {menuItems.map((item) => (
+                    <li key={item.name}>
+                      <NavLink
+                        to={item.link}
+                        className="text-[13px] font-semibold uppercase text-dark duration-300 hover:text-primary [&.active]:text-primary"
+                      >
+                        {item.name}
+                      </NavLink>
+                    </li>
+                  ))}
+                </ul>
+                <MobileNavbar
+                  items={menuItems}
+                  isOpen={isOpen}
+                  closeNavbar={closeNavbar}
                 />
-              </Link>
-              <div className="md:hidden">
-                <button onClick={openNavbar} className="flex items-center">
-                  <IoMdMenu className="text-3xl text-dark" />
-                </button>
               </div>
-              <ul className="hidden items-center gap-5 md:flex">
-                {menuItems.map((item) => (
-                  <li key={item.name}>
-                    <NavLink
-                      to={item.link}
-                      className="text-[13px] font-semibold uppercase text-dark duration-300 hover:text-primary [&.active]:text-primary"
-                    >
-                      {item.name}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-              <MobileNavbar
-                items={menuItems}
-                isOpen={isOpen}
-                closeNavbar={closeNavbar}
-              />
             </div>
           </div>
         </div>
