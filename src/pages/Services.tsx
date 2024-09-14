@@ -5,88 +5,74 @@ import { Link } from "react-router-dom";
 
 const services = [
   {
-    name: "Complete Bathroom Renovations",
+    name: "Boiler Service, Repair, and Installation",
     description:
-      "Transform your old bathroom into a modern, stylish space with our comprehensive renovation services, including fixtures, tiling, and design.",
+      "Ensure your home stays warm and efficient with our expert boiler services, including repairs, maintenance, and new installations tailored to your needs.",
     image: "service-1.jpg",
-    identifier: "bathrooms",
-  },
-  {
-    name: "Expert Boiler Repair",
-    description:
-      "Ensure your boiler runs smoothly with our expert repair services. We diagnose and fix issues quickly to keep your heating system efficient.",
-    image: "service-2.jpg",
     identifier: "boiler-repair",
   },
   {
-    name: "Professional Central Heating Systems",
+    name: "Comprehensive Gas and Heating Services",
     description:
-      "Install or upgrade your central heating system with our professional services to ensure optimal warmth and efficiency throughout your home.",
-    image: "service-3.jpg",
-    identifier: "central-heating",
-  },
-  {
-    name: "Custom Kitchen Installations",
-    description:
-      "Revamp your kitchen with tailored installation services, including cabinets, countertops, and appliances, designed to fit your style and needs.",
-    image: "service-4.jpg",
-    identifier: "kitchen-fitting",
-  },
-  {
-    name: "Full Home Insulation",
-    description:
-      "Improve your home's energy efficiency with our complete insulation services, keeping your space warm in winter and cool in summer.",
-    image: "service-5.jpg",
-    identifier: "insulation",
-  },
-  {
-    name: "Comprehensive Loft Conversions",
-    description:
-      "Maximize your home’s space with our loft conversion services, transforming unused attics into functional living areas or additional rooms.",
-    image: "service-6.jpg",
-    identifier: "loft-conversion",
-  },
-  {
-    name: "Expert Groundwork and Foundations",
-    description:
-      "Lay a solid foundation for your building projects with our expert groundwork services, ensuring stability and durability for new constructions.",
-    image: "service-7.jpg",
-    identifier: "groundwork-foundations",
-  },
-  {
-    name: "Advanced Gas Work Services",
-    description:
-      "Get reliable gas installation and repair services from certified professionals, ensuring safety and efficiency for all your gas appliances.",
-    image: "service-8.jpg",
+      "From heating system installations to repairs and maintenance, we provide all-encompassing gas and heating solutions to keep your home safe and warm year-round.",
+    image: "service-2.jpg",
     identifier: "gas-works",
   },
   {
-    name: "Efficient Demolition and Clearance",
+    name: "Electric and Gas Safety Certificates",
     description:
-      "Clear out old structures and make way for new projects with our thorough demolition and clearance services, handling all debris and waste.",
-    image: "service-9.jpg",
-    identifier: "demolition-clearance",
+      "Get peace of mind with our certified safety checks for gas and electrical systems, ensuring your property complies with the latest safety regulations.",
+    image: "service-3.jpg",
+    identifier: "electrician",
   },
   {
-    name: "Precision Plumbing Services",
+    name: "Expert Plumbing Solutions",
     description:
-      "Address all your plumbing needs with our skilled professionals, offering everything from pipe repairs to full plumbing installations.",
-    image: "service-10.jpg",
+      "Whether it's a small leak or a major plumbing overhaul, our expert team delivers reliable solutions for residential and commercial properties.",
+    image: "service-4.jpg",
     identifier: "plumber",
   },
   {
-    name: "Modern Conservatory Installations",
+    name: "All Types of Electrical Work",
     description:
-      "Enhance your home with a stylish conservatory, designed and installed to provide a bright, versatile space for relaxation or entertaining.",
-    image: "service-11.jpg",
-    identifier: "conservatories",
+      "From wiring and lighting installations to repairs and upgrades, we offer a full range of electrical services to meet your needs with precision and care.",
+    image: "service-5.jpg",
+    identifier: "electrician",
   },
   {
-    name: "Skilled Electrical Work",
+    name: "Renovations and Refurbishments",
     description:
-      "Ensure your electrical systems are safe and up-to-date with our skilled electricians, offering installations, repairs, and maintenance services.",
-    image: "service-12.jpg",
-    identifier: "electrician",
+      "Our comprehensive renovation and refurbishment services help you transform your living or commercial space, from small updates to full property makeovers.",
+    image: "service-6.jpg",
+    identifier: "restoration-refurbishment",
+  },
+  {
+    name: "Kitchen Extensions and Upgrades",
+    description:
+      "Expand and enhance your kitchen with custom designs, high-quality materials, and expert installation to create a space that meets your lifestyle needs.",
+    image: "service-7.jpg",
+    identifier: "kitchen-fitting",
+  },
+  {
+    name: "Bathroom Renovations and Extensions",
+    description:
+      "Upgrade your bathroom with modern designs, new fixtures, and customized extensions to create a luxurious, functional space that enhances your home.",
+    image: "service-8.jpg",
+    identifier: "bathrooms",
+  },
+  {
+    name: "Flooring Installation and Repairs",
+    description:
+      "We provide expert flooring installation and repair services for all materials, ensuring durable and beautiful results that complement your home’s design.",
+    image: "service-9.jpg",
+    identifier: "carpets-lino-flooring",
+  },
+  {
+    name: "Home Decorating and Painting Services",
+    description:
+      "Transform your home with our professional painting and decorating services, including interior and exterior work that brings new life to any space.",
+    image: "service-10.jpg",
+    identifier: "painter",
   },
 ];
 
@@ -123,7 +109,7 @@ const Services = () => {
               >
                 {isUser && (
                   <Link
-                    className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-blue-500 px-5 py-3 text-white shadow-[0_3px_10px_rgba(59,130,246,.5)] duration-200 hover:bg-blue-600"
+                    className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-blue-500 px-5 py-2.5 text-white duration-200 hover:bg-blue-600"
                     to={`/book-service?category=${service.identifier}`}
                   >
                     Book Now
