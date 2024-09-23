@@ -63,7 +63,7 @@ const AboutUs = () => {
               <img
                 key={index}
                 src={image}
-                alt=""
+                alt="Abou Us"
                 className={cn(
                   "aspect-[5/3] w-full object-cover duration-300 md:aspect-[3/5] lg:aspect-[6/8] xl:aspect-[7/8]",
                   index !== active && "absolute left-0 top-0 opacity-0",

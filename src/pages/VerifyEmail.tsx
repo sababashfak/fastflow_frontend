@@ -35,7 +35,7 @@ const VerifyEmail = () => {
     <main className="bg-gray-200">
       <div className="container flex justify-center py-20">
         <div className="flex w-full max-w-sm flex-col items-center rounded-md bg-white px-5 py-7 text-center">
-          <img src="/processing.png" alt="" className="w-20" />
+          <img src="/processing.png" alt="Processing" className="w-20" />
           <h2 className="mt-3 text-xl font-semibold text-secondary">
             Verifying Email
           </h2>

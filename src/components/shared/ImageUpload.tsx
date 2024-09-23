@@ -121,7 +121,7 @@ const ImageUpload: React.FC<any> = ({
         >
           <img
             src={displayImage}
-            alt=""
+            alt="Image"
             className={cn(
               "h-full w-full rounded-md object-cover",
               customStyles.image,

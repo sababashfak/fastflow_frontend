@@ -115,7 +115,11 @@ const DashBlogsTable: React.FC<DashBlogsTableProps> = ({
             size="icon"
             asChild
           >
-            <Link target="_blank" to={`/blog/${props.getValue()}`}>
+            <Link
+              target="_blank"
+              rel="noreferrer"
+              to={`/blog/${props.getValue()}`}
+            >
               <LuEye className="text-lg" />
             </Link>
           </Button>

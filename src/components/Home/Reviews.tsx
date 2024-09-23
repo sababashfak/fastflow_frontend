@@ -63,6 +63,7 @@ const Reviews = () => {
                 className="block rounded-full border border-primary px-6 py-[18px] text-white duration-300 hover:bg-primary hover:text-dark"
                 to="https://www.trustpilot.com/"
                 target="_blank"
+                rel="noreferrer"
               >
                 Leave us a Review
               </Link>

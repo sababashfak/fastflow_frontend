@@ -41,6 +41,7 @@ const FloatingSocial = () => {
           href={social.url}
           className={`flex size-8 items-center justify-center text-sm text-white duration-200 md:size-[38px] md:text-base lg:hover:bg-primary lg:hover:text-dark ${social.className}`}
           target="_blank"
+          rel="noreferrer"
         >
           {social.icon}
         </a>

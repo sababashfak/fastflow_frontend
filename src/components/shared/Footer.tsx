@@ -81,6 +81,7 @@ const Footer = () => {
                   href="https://maps.app.goo.gl/V879nD6SdMz9yyNg7"
                   className="text-white duration-200 hover:text-primary"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   The Watermark, 9-15 Ribbleton Lane, Preston, PR1 5EZ
                 </a>
@@ -112,6 +113,7 @@ const Footer = () => {
                   href="https://www.facebook.com/ffhpltd"
                   className="flex size-9 items-center justify-center border border-white/10 bg-[#333] text-[13px] text-primary duration-200 lg:hover:bg-primary lg:hover:text-dark"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FaFacebookF />
                 </a>
@@ -119,6 +121,7 @@ const Footer = () => {
                   href="#"
                   className="flex size-9 items-center justify-center border border-white/10 bg-[#333] text-[13px] text-primary duration-200 lg:hover:bg-primary lg:hover:text-dark"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FaTwitter />
                 </a>
@@ -126,6 +129,7 @@ const Footer = () => {
                   href="#"
                   className="flex size-9 items-center justify-center border border-white/10 bg-[#333] text-[13px] text-primary duration-200 lg:hover:bg-primary lg:hover:text-dark"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FaLinkedinIn />
                 </a>
@@ -133,6 +137,7 @@ const Footer = () => {
                   href="#"
                   className="flex size-9 items-center justify-center border border-white/10 bg-[#333] text-[13px] text-primary duration-200 lg:hover:bg-primary lg:hover:text-dark"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FaInstagram />
                 </a>
@@ -151,6 +156,7 @@ const Footer = () => {
             Developed by{" "}
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://poshcoder.com"
               className="font-medium text-primary"
             >

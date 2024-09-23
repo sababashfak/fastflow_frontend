@@ -43,6 +43,7 @@ const Contact = () => {
               <div className="flex flex-col items-start gap-3.5 lg:gap-4">
                 <Link
                   target="_blank"
+                  rel="noreferrer"
                   to="https://maps.app.goo.gl/V879nD6SdMz9yyNg7"
                   className="flex items-center gap-2.5"
                 >
@@ -53,6 +54,7 @@ const Contact = () => {
                 </Link>
                 <Link
                   target="_blank"
+                  rel="noreferrer"
                   to="tel:01772230145"
                   className="flex items-center gap-2.5"
                 >
@@ -63,6 +65,7 @@ const Contact = () => {
                 </Link>
                 <Link
                   target="_blank"
+                  rel="noreferrer"
                   to="tel:01772230145"
                   className="flex items-center gap-2.5"
                 >
@@ -73,6 +76,7 @@ const Contact = () => {
                 </Link>
                 <Link
                   target="_blank"
+                  rel="noreferrer"
                   to="mailto:info@ffhp.co.uk"
                   className="flex items-center gap-2.5"
                 >
@@ -86,6 +90,7 @@ const Contact = () => {
                     href="https://www.facebook.com/ffhpltd"
                     className="flex size-[38px] items-center justify-center rounded-full bg-[#1974EC] text-base text-white duration-200 lg:hover:bg-primary lg:hover:text-dark"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <FaFacebookF />
                   </a>
@@ -93,6 +98,7 @@ const Contact = () => {
                     href="#"
                     className="flex size-[38px] items-center justify-center rounded-full bg-[#1D9CEB] text-base text-white duration-200 lg:hover:bg-primary lg:hover:text-dark"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <FaTwitter />
                   </a>
@@ -100,6 +106,7 @@ const Contact = () => {
                     href="#"
                     className="flex size-[38px] items-center justify-center rounded-full bg-[#0077B5] text-base text-white duration-200 lg:hover:bg-primary lg:hover:text-dark"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <FaLinkedinIn />
                   </a>
@@ -107,6 +114,7 @@ const Contact = () => {
                     href="#"
                     className="flex size-[38px] items-center justify-center rounded-full bg-[#F72270] text-base text-white duration-200 lg:hover:bg-primary lg:hover:text-dark"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <FaInstagram />
                   </a>
