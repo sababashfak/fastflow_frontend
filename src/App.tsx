@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import DashBlog from "./components/Dashboard/Blog/DashBlog";
@@ -38,6 +39,9 @@ const App = () => {
   return (
     <>
       <Toaster />
+      <Helmet>
+        <link rel="canonical" href="https://ffhp.co.uk" />
+      </Helmet>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
