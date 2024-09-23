@@ -42,9 +42,9 @@ const Projects = () => {
       <section className="bg-[url(/project-cover.jpg)] bg-cover bg-center bg-no-repeat">
         <div className="bg-black/80 py-20">
           <div className="container text-center">
-            <h3 className="text-3xl font-bold text-white lg:text-4xl">
+            <h1 className="text-3xl font-bold text-white lg:text-4xl">
               Recent <span className="text-primary">Projects</span>
-            </h3>
+            </h1>
           </div>
         </div>
       </section>

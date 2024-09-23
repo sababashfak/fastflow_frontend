@@ -44,7 +44,7 @@ const NavbarTop = () => {
               </Link>
             </div>
             <Link
-              to="/contact"
+              to="/get-a-quote"
               className="text-darkt-primary flex h-[50px] items-center bg-primary px-4 text-[11px] font-semibold uppercase duration-300 hover:bg-primary/90"
             >
               Get a quote

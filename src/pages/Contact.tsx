@@ -32,10 +32,10 @@ const Contact = () => {
               <h4 className="mb-2.5 text-sm font-semibold uppercase lg:mb-4 lg:text-base">
                 Contact us
               </h4>
-              <h2 className="mb-2.5 text-[22px] font-bold uppercase leading-tight lg:mb-5 lg:text-3xl xl:text-4xl">
+              <h1 className="mb-2.5 text-[22px] font-bold uppercase leading-tight lg:mb-5 lg:text-3xl xl:text-4xl">
                 Have questions? <br />
                 Get in touch!
-              </h2>
+              </h1>
               <p className="mb-5 max-w-md text-[#656565] lg:mb-7">
                 We are here to help you. If you have any questions or need
                 assistance, feel free to contact us.

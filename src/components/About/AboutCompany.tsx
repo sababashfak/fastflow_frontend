@@ -18,9 +18,9 @@ const AboutCompany = () => {
                 About Company
               </p>
             </div>
-            <h2 className="text mb-3 text-3xl font-bold text-secondary lg:mb-5 lg:text-4xl lg:leading-snug">
+            <h1 className="text mb-3 text-3xl font-bold text-secondary lg:mb-5 lg:text-4xl lg:leading-snug">
               With More Than 03 Years Of Combined Experience
-            </h2>
+            </h1>
             <h4 className="mb-4 font-semibold text-secondary lg:mb-5 lg:text-lg">
               We take pride in solving any problem you may have in a quick,
               professional and friendly manner.

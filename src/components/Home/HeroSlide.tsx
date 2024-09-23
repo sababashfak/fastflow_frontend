@@ -20,9 +20,9 @@ const HeroSlide: React.FC<SlideProps> = ({ slide }) => {
           <h4 className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary sm:text-[15px]">
             {slide.title}
           </h4>
-          <h2 className="mb-5 max-w-lg text-4xl font-bold leading-tight text-white md:text-[42px]">
+          <h1 className="mb-5 max-w-lg text-4xl font-bold leading-tight text-white md:text-[42px]">
             {slide.subtitle}
-          </h2>
+          </h1>
           <p className="mb-7 max-w-md text-[15px] text-gray-100 sm:text-base">
             {slide.description}
           </p>
