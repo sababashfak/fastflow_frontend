@@ -2,7 +2,7 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaTwitter,
+  FaYoutube,
 } from "react-icons/fa6";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { IoCallOutline } from "react-icons/io5";
@@ -118,15 +118,15 @@ const Footer = () => {
                   <FaFacebookF />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.youtube.com/@FastflowHeatingPlumbing"
                   className="flex size-9 items-center justify-center border border-white/10 bg-[#333] text-[13px] text-primary duration-200 lg:hover:bg-primary lg:hover:text-dark"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <FaTwitter />
+                  <FaYoutube />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/fastflow-heating-plumbing/"
                   className="flex size-9 items-center justify-center border border-white/10 bg-[#333] text-[13px] text-primary duration-200 lg:hover:bg-primary lg:hover:text-dark"
                   target="_blank"
                   rel="noreferrer"
@@ -134,7 +134,7 @@ const Footer = () => {
                   <FaLinkedinIn />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/fastflowpreston/"
                   className="flex size-9 items-center justify-center border border-white/10 bg-[#333] text-[13px] text-primary duration-200 lg:hover:bg-primary lg:hover:text-dark"
                   target="_blank"
                   rel="noreferrer"

@@ -4,6 +4,7 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaTwitter,
+  FaYoutube,
 } from "react-icons/fa6";
 import {
   IoCallOutline,
@@ -95,15 +96,15 @@ const Contact = () => {
                     <FaFacebookF />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.youtube.com/@FastflowHeatingPlumbing"
                     className="flex size-[38px] items-center justify-center rounded-full bg-[#1D9CEB] text-base text-white duration-200 lg:hover:bg-primary lg:hover:text-dark"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <FaTwitter />
+                    <FaYoutube />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/company/fastflow-heating-plumbing/"
                     className="flex size-[38px] items-center justify-center rounded-full bg-[#0077B5] text-base text-white duration-200 lg:hover:bg-primary lg:hover:text-dark"
                     target="_blank"
                     rel="noreferrer"
@@ -111,7 +112,7 @@ const Contact = () => {
                     <FaLinkedinIn />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/fastflowpreston/"
                     className="flex size-[38px] items-center justify-center rounded-full bg-[#F72270] text-base text-white duration-200 lg:hover:bg-primary lg:hover:text-dark"
                     target="_blank"
                     rel="noreferrer"

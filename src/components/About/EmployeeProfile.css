@@ -1,0 +1,96 @@
+.employee-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* exactly 4 columns */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* center the grid */
+}
+
+@media (max-width: 1024px) {
+  .employee-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .employee-grid {
+    grid-template-columns: 1fr; /* 1 column on phones */
+  }
+}
+
+.employee-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.employee-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px; /* square with rounded corners */
+  margin-bottom: 15px;
+}
+
+
+.employee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.employee-name {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.employee-post {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.employee-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.employee-contact a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.95em;
+  transition: color 0.2s ease;
+}
+
+.employee-contact a:hover {
+  color: #0056b3;
+}
+
+
+.employee-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.employee-icons a {
+  color: #007bff;
+  font-size: 1.4em;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.employee-icons a:hover {
+  color: #0056b3;
+  transform: scale(1.2);
+}
+
+

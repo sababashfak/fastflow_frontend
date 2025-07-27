@@ -2,7 +2,7 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaTwitter,
+  FaYoutube,
 } from "react-icons/fa6";
 
 const socials = [
@@ -13,20 +13,20 @@ const socials = [
     className: "bg-[#1974EC]",
   },
   {
-    name: "Twitter",
-    url: "#",
-    icon: <FaTwitter />,
+    name: "Youtube",
+    url: "https://www.youtube.com/@FastflowHeatingPlumbing",
+    icon: <FaYoutube />,
     className: "bg-[#1D9CEB]",
   },
   {
     name: "LinkedIn",
-    url: "#",
+    url: "https://www.linkedin.com/company/fastflow-heating-plumbing/",
     icon: <FaLinkedinIn />,
     className: "bg-[#0077B5]",
   },
   {
     name: "Instagram",
-    url: "#",
+    url: "https://www.instagram.com/fastflowpreston/",
     icon: <FaInstagram />,
     className: "bg-[#F72270]",
   },

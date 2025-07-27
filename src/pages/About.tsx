@@ -4,6 +4,8 @@ import Affiliations from "@/components/About/Affiliations";
 import ContactUs from "@/components/About/ContactUs";
 import CoreValues from "@/components/About/CoreValues";
 import WhyChooseUs from "@/components/About/WhyChooseUs";
+import EmployeeProfile from "@/components/About/EmployeeProfile";
+
 
 const About = () => {
   return (
@@ -18,6 +20,7 @@ const About = () => {
         </div>
       </section>
       <AboutCompany />
+      <EmployeeProfile />
       <AboutCallback />
       <WhyChooseUs />
       <CoreValues />
