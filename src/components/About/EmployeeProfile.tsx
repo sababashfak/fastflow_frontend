@@ -1,5 +1,5 @@
 
-import React from "react";
+
 import "./EmployeeProfile.css";
 import { FaPhoneAlt, FaEnvelope, FaFacebook } from "react-icons/fa";
 
