@@ -1,41 +1,34 @@
+import AboutCallback from "@/components/About/AboutCallback";
+import AboutCompany from "@/components/About/AboutCompany";
+import Affiliations from "@/components/About/Affiliations";
+import ContactUs from "@/components/About/ContactUs";
+import CoreValues from "@/components/About/CoreValues";
+import WhyChooseUs from "@/components/About/WhyChooseUs";
+import EmployeeProfile from "@/components/About/EmployeeProfile";
 
 
-import '../components/About/EmployeeProfile.css';
 
-
-const employees = [
-  {
-    name: "John Doe",
-    post: "Project Manager",
-    email: "john@example.com",
-    phone: "+1 234 567 890",
-    facebook: "https://facebook.com/john.doe",
-    image: "/images/employees/john.jpg",
-  },
-  {
-    name: "Jane Smith",
-    post: "Senior Developer",
-    email: "jane@example.com",
-    phone: "+1 987 654 321",
-    facebook: "https://facebook.com/jane.smith",
-    image: "/images/employees/jane.jpg",
-  },
-];
-
-export default function EmployeeProfile() {
+const About = () => {
   return (
-    <div className="employee-grid">
-      {employees.map((emp, index) => (
-        <div key={index} className="employee-card">
-          <img src={emp.image} alt={emp.name} className="employee-photo" />
-          <h3 className="employee-name">{emp.name}</h3>
-          <p className="employee-post">{emp.post}</p>
-          <p><a href={`mailto:${emp.email}`}>{emp.email}</a></p>
-          <p><a href={`tel:${emp.phone}`}>{emp.phone}</a></p>
-          <p><a href={emp.facebook} target="_blank" rel="noopener noreferrer">Facebook</a></p>
+    <main>
+      <section className="bg-[url(/about-cover.jpg)] bg-cover bg-center bg-no-repeat">
+        <div className="bg-black/80 py-20">
+          <div className="container text-center">
+            <h3 className="text-3xl font-bold text-white lg:text-4xl">
+              About <span className="text-primary">Fastflow</span>
+            </h3>
+          </div>
         </div>
-      ))}
-    </div>
+      </section>
+      <AboutCompany />
+      <EmployeeProfile />
+      <AboutCallback />
+      <WhyChooseUs />
+      <CoreValues />
+      <ContactUs />
+      <Affiliations />
+    </main>
   );
-}
+};
 
+export default About;
