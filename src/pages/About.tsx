@@ -1,5 +1,7 @@
 
-import "./EmployeeProfile.css";
+
+import '../components/About/EmployeeProfile.css';
+
 
 const employees = [
   {
